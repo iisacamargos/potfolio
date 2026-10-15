@@ -63,3 +63,30 @@
     try { localStorage.setItem("projetos-view", b.dataset.view); } catch (e) {}
   }));
 })();
+
+/* Revela blocos com um leve deslize conforme entram na tela.
+   Sem JavaScript ou com movimento reduzido, tudo aparece normalmente. */
+(() => {
+  if (!("IntersectionObserver" in window)) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const els = document.querySelectorAll(
+    ".work-tile, .section, .media, .media-grid, .ds, .lv-band, .logo-hero, .case-next"
+  );
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(({ target, isIntersecting }) => {
+      if (!isIntersecting) return;
+      target.classList.add("is-in");
+      io.unobserve(target);
+    });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+  els.forEach((el) => {
+    el.classList.add("reveal");
+    // cards lado a lado entram em cascata
+    if (el.classList.contains("work-tile")) {
+      const prev = el.previousElementSibling;
+      const sameRow = prev && Math.abs(prev.getBoundingClientRect().top - el.getBoundingClientRect().top) < 4;
+      el.style.setProperty("--d", sameRow ? `${(parseFloat(prev.style.getPropertyValue("--d")) || 0) + 0.12}s` : "0s");
+    }
+    io.observe(el);
+  });
+})();
