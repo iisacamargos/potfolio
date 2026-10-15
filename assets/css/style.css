@@ -178,7 +178,7 @@ html.lenis body {
   display: grid;
   grid-template-columns: var(--col-label) var(--col-content);
   gap: 32px 24px;
-  padding: 72px 0 88px;
+  padding: 64px 0 56px;
 }
 
 .hero-name {
@@ -1382,26 +1382,8 @@ a.is-case:hover strong {
 }
 
 /* ==========================================================
-   Home: abertura curta e cases em grade grande
+   Home: cases em grade grande
    ========================================================== */
-
-.intro {
-  padding: clamp(32px, 4.5vw, 64px) 0 clamp(28px, 3.5vw, 48px);
-}
-
-.intro-title {
-  max-width: 30ch;
-  margin: 0;
-  font-family: var(--sans);
-  font-size: clamp(24px, 3vw, 44px);
-  font-weight: 500;
-  line-height: 1.12;
-  letter-spacing: -0.02em;
-}
-
-.intro-title strong {
-  font-weight: 700;
-}
 
 .work-head {
   display: grid;
