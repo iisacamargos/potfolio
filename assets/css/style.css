@@ -58,6 +58,21 @@ a {
   color: var(--bg);
 }
 
+/* Rolagem suave (Lenis) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+/* Âncoras não ficam escondidas atrás do topo fixo */
+[id] {
+  scroll-margin-top: 72px;
+}
+
 /* ---------- Layout ---------- */
 
 .wrap {
@@ -484,6 +499,77 @@ a {
   text-underline-offset: 8px;
 }
 
+/* ---------- Cursor ---------- */
+
+.has-cursor,
+.has-cursor * {
+  cursor: none !important;
+}
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.cursor.is-visible {
+  opacity: 1;
+}
+
+.cursor-dot {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  background: var(--ink);
+  transition: width 0.25s ease, height 0.25s ease, top 0.25s ease, left 0.25s ease,
+    background-color 0.25s ease, transform 0.15s ease;
+}
+
+.cursor.is-link .cursor-dot {
+  top: -20px;
+  left: -20px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+}
+
+.cursor.is-label .cursor-dot {
+  top: -50px;
+  left: -50px;
+  width: 100px;
+  height: 100px;
+}
+
+.cursor.is-down .cursor-dot {
+  transform: scale(0.8);
+}
+
+.cursor-label {
+  color: var(--bg);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.cursor.is-label .cursor-label {
+  opacity: 1;
+}
+
 /* ---------- Rodapé ---------- */
 
 .footer .wrap {
@@ -570,7 +656,8 @@ a {
     scroll-behavior: auto;
   }
 
-  .project-thumb img {
+  .project-thumb img,
+  .cursor-dot {
     transition: none;
   }
 }
