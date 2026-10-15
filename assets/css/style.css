@@ -1892,3 +1892,39 @@ a.is-case:hover strong {
 .media img[src$=".png"] {
   background: none;
 }
+
+/* Tipografia no celular: specimen com respiro e ficha em duas colunas */
+@media (max-width: 600px) {
+  .ts-row {
+    gap: 18px;
+    padding: 28px 0;
+  }
+
+  .ts-svg {
+    width: auto;
+    height: auto;
+    max-width: 88%;
+    max-height: 40px;
+  }
+
+  .ts-live {
+    font-size: clamp(38px, 11vw, 52px);
+  }
+
+  .ts-meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 20px;
+  }
+
+  .ts-meta div {
+    grid-template-columns: minmax(0, 1fr);
+    align-content: start;
+    gap: 2px;
+  }
+
+  .ts-meta dt {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+}
