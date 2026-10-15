@@ -439,6 +439,7 @@ html.lenis body {
 .media-grid + .section,
 .lv-band + .section,
 .pal + .section,
+.stripes + .section,
 .ty + .section {
   margin-top: clamp(56px, 8vw, 120px);
 }
@@ -492,6 +493,11 @@ html.lenis body {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
+}
+
+.media-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 24px;
 }
 
 .media-grid .media {
@@ -873,6 +879,48 @@ html.lenis body {
     grid-column: 1 / -1;
     grid-row: auto;
     aspect-ratio: 16 / 9;
+  }
+}
+
+/* ---------- Paleta em faixas verticais ---------- */
+
+.stripes {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-bottom: 24px;
+  aspect-ratio: 16 / 9;
+  font-family: "Lato", var(--sans);
+}
+
+.stripes > div {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: clamp(16px, 4vw, 72px) 8px;
+  background: var(--bg);
+  color: var(--fg);
+  text-align: center;
+}
+
+.stripes span {
+  font-size: clamp(11px, 1.1vw, 17px);
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .stripes {
+    grid-template-columns: minmax(0, 1fr);
+    aspect-ratio: auto;
+  }
+
+  .stripes > div {
+    justify-content: flex-start;
+    padding: 28px var(--gutter);
+    text-align: left;
+  }
+
+  .media-grid--3 {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
