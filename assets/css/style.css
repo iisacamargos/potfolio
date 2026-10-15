@@ -34,6 +34,8 @@ html {
 
 body {
   margin: 0;
+  overflow-x: hidden;
+  overflow-x: clip;
   background: var(--bg);
   color: var(--ink);
   font-family: var(--mono);
@@ -417,6 +419,16 @@ html.lenis body {
 .media img {
   width: 100%;
   background: var(--placeholder);
+}
+
+/* Imagem sangrada: ocupa a largura inteira da tela, fora da coluna */
+.media--bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+.media--bleed figcaption {
+  padding: 0 var(--gutter);
 }
 
 .media figcaption {
