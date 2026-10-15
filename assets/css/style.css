@@ -434,6 +434,13 @@ html.lenis body {
   padding: 0 var(--gutter);
 }
 
+/* Respiro antes da linha que abre um novo capítulo depois de imagens */
+.media + .section,
+.media-grid + .section,
+.lv-band + .section {
+  margin-top: clamp(56px, 8vw, 120px);
+}
+
 /* Grade de variações de logo, montada em código */
 .lv-band {
   margin-bottom: 24px;
