@@ -1926,11 +1926,12 @@ a.is-case:hover strong {
 
 /* ---------- Entrada da página (só com JS e sem movimento reduzido) ---------- */
 
+/* a máscara tem folga embaixo para não cortar descendentes (g, j, p, ç) */
 .line {
   display: block;
   overflow: hidden;
-  padding-bottom: 0.08em;
-  margin-bottom: -0.08em;
+  padding-bottom: 0.22em;
+  margin-bottom: -0.22em;
 }
 
 .line > span {
