@@ -393,6 +393,19 @@ EN = {
 
 "E-mail": "Email",
 
+"Merch": "Merch",
+"A linha de produtos leva o traço de spray para o vestuário e os acessórios. O disco pintado vira estampa grande nas costas da camiseta e na ecobag, enquanto o hoodie e a garrafa assinam com mais discrição, só com o símbolo e o traço.": "The product line takes the spray stroke into apparel and accessories. The painted record becomes a large print on the back of the T-shirt and on the tote bag, while the hoodie and the bottle are signed more quietly, with just the symbol and the stroke.",
+"Homem de costas vestindo camiseta branca com o disco pintado em spray, o símbolo NT Records, 2026, Brasil e a assinatura Novo Traço": "Man seen from behind wearing a white T-shirt with the spray-painted record, the NT Records symbol, 2026, Brasil and the Novo Traço signature",
+"Estampa da camiseta em detalhe: disco com traços de spray em preto, símbolo NT Records entre 20 e 26, Brasil e a assinatura Novo Traço": "T-shirt print in detail: a record with black spray strokes, the NT Records symbol between 20 and 26, Brasil and the Novo Traço signature",
+"Modelo de frente vestindo hoodie azul lavado com o logo NT Records no peito": "Model facing forward in a washed blue hoodie with the NT Records logo on the chest",
+"Modelo de costas vestindo o hoodie azul lavado da NT Records": "Model seen from behind in the washed blue NT Records hoodie",
+"Ecobag creme com traços de spray em preto e o logo NT Records, carregada no ombro diante de uma parede de concreto com sombras diagonais": "Cream tote bag with black spray strokes and the NT Records logo, carried on the shoulder against a concrete wall with diagonal shadows",
+"Hoodie preto com manchas de spray brancas e o logo NT Records em branco no peito": "Black hoodie with white spray marks and the NT Records logo in white on the chest",
+"Ecobag com três discos pintados em spray e o logo NT Records, no ombro diante de uma parede de concreto": "Tote bag with three spray-painted records and the NT Records logo, on the shoulder against a concrete wall",
+"Garrafa de inox com traço de spray branco, a assinatura Novo Traço e o logo NT Records": "Stainless steel bottle with a white spray stroke, the Novo Traço signature and the NT Records logo",
+
+"Os cinco símbolos da marca e seus significados": "The brand's five symbols and their meanings",
+
 # ---------- idioma ----------
 "Idioma": "Language",
 "Idioma: Português (Brasil)": "Language: English",

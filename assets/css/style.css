@@ -1806,3 +1806,83 @@ a.is-case:hover strong {
     gap: 10px;
   }
 }
+
+/* Vídeo do logo mesclado ao fundo da página (o branco do vídeo some) */
+.media--logo {
+  aspect-ratio: 2 / 1;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.media--logo video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: none;
+  transform: scale(1.4);
+  mix-blend-mode: multiply;
+  filter: brightness(1.07) contrast(1.05);
+}
+
+.media--logo + .media {
+  margin-top: 0;
+}
+
+/* Celular: vídeos horizontais com assunto central viram 4:5 */
+@media (max-width: 700px) {
+  .media--mcrop video {
+    aspect-ratio: 4 / 5;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .media--logo {
+    aspect-ratio: 1 / 1;
+  }
+
+  .media--logo video {
+    transform: scale(1.5);
+  }
+}
+
+/* Símbolos com o significado ao lado */
+.sym {
+  margin: 32px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.sym-item {
+  display: grid;
+  grid-template-columns: clamp(64px, 7vw, 96px) minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 40px);
+  align-items: center;
+  padding: clamp(18px, 2.2vw, 28px) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.sym-icon {
+  display: block;
+  width: 100%;
+  height: clamp(56px, 6vw, 84px);
+  color: #7a8569;
+}
+
+.sym-title {
+  margin: 0 0 4px;
+  font-family: var(--sans);
+  font-size: clamp(17px, 1.5vw, 21px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.sym-text {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+/* PNG com transparência não leva o fundo de carregamento */
+.media img[src$=".png"] {
+  background: none;
+}

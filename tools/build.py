@@ -119,11 +119,13 @@ def img(src,w,h,alt,bleed=True,lazy=True):
     c='media media--bleed' if bleed else 'media'
     return f'''
     <figure class="{c}">
-      <img src="../assets/img/{src}" width="{w}" height="{h}"{' loading="lazy"' if lazy else ' fetchpriority="high"'} alt="{alt}">
+      {picture(src,w,h,alt,' loading="lazy"' if lazy else ' fetchpriority="high"')}
     </figure>
 '''
-def vid(name,w,h,label,bleed=True,band=None):
+def vid(name,w,h,label,bleed=True,band=None,cls=''):
     c='media media--bleed' if bleed else 'media'
+    if name in MOBILE_VIDEO: c+=' media--mcrop'
+    if cls: c+=' '+cls
     st=''
     if band: c+=' media--band'; st=f' style="--band:{band}"'
     return f'''
@@ -137,7 +139,7 @@ def vid(name,w,h,label,bleed=True,band=None):
 def grid(items):
     s='\n    <div class="media-grid">'
     for src,w,h,alt in items:
-        s+=f'\n      <figure class="media"><img src="../assets/img/{src}" width="{w}" height="{h}" loading="lazy" alt="{alt}"></figure>'
+        s+='\n      <figure class="media">'+picture(src,w,h,alt,' loading="lazy"')+'</figure>'
     return s+'\n    </div>\n'
 def sub(name,kicker):
     return f'''
@@ -215,6 +217,13 @@ h+=types('NT Records',[dict(UNIVERS,use='Toda a comunicação: títulos, crédit
 h+=img('novo-traco/rec-placa.jpg',1920,1080,'Placa emoldurada da NT Records em reconhecimento a um milhão de streams do artista Froid, sobre foto de show')
 h+=img('novo-traco/rec-papelaria.jpg',1920,1080,'Papelaria da NT Records: pasta com carta timbrada, envelope e caderno com o símbolo')
 h+=grid([('novo-traco/rec-garrafa.jpg',1920,1080,'Garrafa preta da NT Records com traço branco em spray'),('novo-traco/rec-cartao.jpg',1920,1080,'Cartão de visita da NT Records com textura de carimbo')])
+h+=sec('Merch','<p>A linha de produtos leva o traço de spray para o vestuário e os acessórios. O disco pintado vira estampa grande nas costas da camiseta e na ecobag, enquanto o hoodie e a garrafa assinam com mais discrição, só com o símbolo e o traço.</p>')
+h+=img('novo-traco/rec-camiseta.jpg',1920,1072,'Homem de costas vestindo camiseta branca com o disco pintado em spray, o símbolo NT Records, 2026, Brasil e a assinatura Novo Traço')
+h+=img('novo-traco/rec-estampa.jpg',1920,1648,'Estampa da camiseta em detalhe: disco com traços de spray em preto, símbolo NT Records entre 20 e 26, Brasil e a assinatura Novo Traço')
+h+=grid([('novo-traco/rec-hoodie-azul-frente.jpg',958,1072,'Modelo de frente vestindo hoodie azul lavado com o logo NT Records no peito'),('novo-traco/rec-hoodie-azul-costas.jpg',958,1072,'Modelo de costas vestindo o hoodie azul lavado da NT Records')])
+h+=img('novo-traco/rec-tote-1.jpg',1920,1072,'Ecobag creme com traços de spray em preto e o logo NT Records, carregada no ombro diante de uma parede de concreto com sombras diagonais')
+h+=img('novo-traco/rec-hoodie-preto.jpg',1920,1072,'Hoodie preto com manchas de spray brancas e o logo NT Records em branco no peito')
+h+=grid([('novo-traco/rec-tote-2.jpg',1920,1072,'Ecobag com três discos pintados em spray e o logo NT Records, no ombro diante de uma parede de concreto'),('novo-traco/rec-garrafa-inox.jpg',1920,1072,'Garrafa de inox com traço de spray branco, a assinatura Novo Traço e o logo NT Records')])
 h+='''
     <figure class="media media--bleed media--screen">
       <img src="../assets/img/novo-traco/rec-posts.jpg" width="1920" height="1080" loading="lazy" alt="Três posts da NT Records sobre uma mão ao fundo: um azul com a frase Um mundo sem música é como um corpo sem alma, um com discos pintados com spray, animado, e um com trompetista e o título De onde vem o jazz?">
@@ -237,8 +246,8 @@ h+=casehead('LatinJazz<br>Brazil','Uma sonoridade que também pertence ao Brasil
 h+=vid('latinjazz-colagem',1920,1080,'Colagem animada: o logotipo em papel preto amassado sobre raios verdes e amarelos, com traço de pincel amarelo')
 h+=sec('Conceito','''<p>O conceito visual do LatinJazz Brazil nasce do reconhecimento de uma sonoridade que pertence ao Brasil. A identidade traduz essa afirmação por meio de cores vibrantes inspiradas na Tropicália, texturas, traços e composições expressivas que refletem a energia brasileira.</p>
         <p>Assim como o próprio Latin Jazz é construído por encontros e atravessamentos culturais, o universo visual explora contrastes, ritmos e diferentes camadas gráficas para criar uma estética viva, diversa e em constante movimento.</p>''')
-h+=vid('latinjazz-logo',1920,1080,'Animação do logotipo LatinJazz Brazil: as letras se montam até formar LATIN JAZZ com o losango da bandeira brasileira')
 h+=sec('Logo','''<p>Logo desenhado à mão, com traços orgânicos que refletem expressividade, movimento e dinamismo. Suas variações para animação exploram elementos abstratos inspirados no universo da música, como figuras de musicistas, rostos, notas musicais e outros símbolos.</p>''')
+h+=vid('latinjazz-logo',1920,1080,'Animação do logotipo LatinJazz Brazil: as letras se montam até formar LATIN JAZZ com o losango da bandeira brasileira',bleed=False,cls='media--logo')
 h+=img('latinjazz/variacoes.png',1232,760,'Grade de variações do logo para animação: letras do LATIN JAZZ recombinadas com pontos e o losango da bandeira, formando pequenos rostos, figuras e símbolos',bleed=False)
 h+=sec('Cores','''<p>A paleta é construída a partir de cores vibrantes que dialogam com o universo tropical, expressivo e plural do Brasil. Amarelo, verde, rosa, azul, branco e preto convivem em contraste, como camadas de uma mesma colagem.</p>
         <p>As cores vêm direto do sistema da <a class="link" href="novo-traco.html">Novo Traço</a>, marca-mãe do projeto, o que mantém a conexão entre os dois universos.</p>''')
