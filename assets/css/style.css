@@ -17,6 +17,8 @@
 
   --gutter: clamp(16px, 4vw, 48px);
   --max: 1320px;
+  /* Largura máxima das imagens sangradas: tela de um MacBook Pro 16" */
+  --bleed-max: 1728px;
   --col-label: minmax(0, 1fr);
   --col-content: minmax(0, 2fr);
 }
@@ -424,8 +426,8 @@ html.lenis body {
 /* Imagem sangrada: ocupa a largura inteira da tela, fora da coluna */
 .bleed,
 .media--bleed {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
+  width: min(100vw, var(--bleed-max));
+  margin-left: calc(50% - min(50vw, var(--bleed-max) / 2));
 }
 
 .media--bleed figcaption {
