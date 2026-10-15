@@ -45,7 +45,8 @@
   videos.forEach((v) => io.observe(v));
 })();
 
-/* Home: alterna os projetos entre grade e lista e lembra a escolha. */
+/* Home: alterna os projetos entre grade e lista. A grade é sempre o padrão:
+   ao abrir a home ou clicar no nome no topo, ela volta para a grade. */
 (() => {
   const work = document.querySelector(".work[data-view]");
   if (!work) return;
@@ -54,10 +55,7 @@
     work.dataset.view = view;
     buttons.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.view === view)));
   };
-  try {
-    const saved = localStorage.getItem("projetos-view");
-    if (saved === "list" || saved === "grid") set(saved);
-  } catch (e) {}
+  try { localStorage.removeItem("projetos-view"); } catch (e) {}
   // ao trocar de visualização, os itens da vista nova entram de novo em cascata
   const replay = () => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -76,8 +74,11 @@
     if (work.dataset.view === b.dataset.view) return;
     set(b.dataset.view);
     replay();
-    try { localStorage.setItem("projetos-view", b.dataset.view); } catch (e) {}
   }));
+  // voltando pelo botão "voltar" do navegador (página restaurada da memória)
+  window.addEventListener("pageshow", (e) => {
+    if (e.persisted && work.dataset.view !== "grid") set("grid");
+  });
 })();
 
 /* Scroll reveal
