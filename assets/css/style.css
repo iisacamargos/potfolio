@@ -604,6 +604,13 @@ a.is-case:hover strong {
   height: var(--h);
 }
 
+.media video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--placeholder);
+}
+
 .media figcaption {
   margin-top: 8px;
   font-size: 12px;

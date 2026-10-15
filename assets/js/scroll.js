@@ -26,3 +26,21 @@
     history.pushState(null, "", url.hash);
   });
 })();
+
+/* Vídeos dos cases: tocam só quando estão na tela; quem pede menos
+   movimento vê apenas o quadro final (poster). */
+(() => {
+  const videos = document.querySelectorAll("video.autoplay");
+  if (!videos.length) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(({ target, isIntersecting }) => {
+      if (isIntersecting) {
+        target.play().catch(() => {});
+      } else {
+        target.pause();
+      }
+    });
+  }, { threshold: 0.25 });
+  videos.forEach((v) => io.observe(v));
+})();
