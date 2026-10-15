@@ -1971,115 +1971,27 @@ a.is-case:hover strong {
   .js .case-lede { animation-delay: 0.45s; }
   .js .case-facts { animation-delay: 0.6s; }
 
-  /* ---------- Scroll reveal ---------- */
+  /* ---------- Scroll reveal: fade simples e rápido em tudo ---------- */
 
-  /* imagens e vídeos: cortina na cor do fundo que recolhe para baixo + zoom saindo */
-  .rv-media {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .rv-media::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 3;
-    background: var(--bg);
-    transform-origin: bottom;
-    transition: transform 1.25s var(--ease-out);
-    transition-delay: var(--d, 0s);
-    pointer-events: none;
-  }
-
-  .rv-media.is-in::before {
-    transform: scaleY(0);
-  }
-
-  .rv-media > img,
-  .rv-media > video,
-  .rv-media > picture img,
-  .rv-media .work-media > img,
-  .rv-media .work-media > video,
-  .rv-media .work-shot {
-    transform: scale(1.12);
-    transition: transform 1.6s var(--ease-out);
-    transition-delay: var(--d, 0s);
-  }
-
-  .rv-media.is-in > img,
-  .rv-media.is-in > video,
-  .rv-media.is-in > picture img,
-  .rv-media.is-in .work-media > img,
-  .rv-media.is-in .work-media > video,
-  .rv-media.is-in .work-shot {
-    transform: none;
-  }
-
-  /* peças que dependem do enquadramento exato não recebem zoom */
-  .media--screen.rv-media > img,
-  .media--screen.rv-media > video,
-  .media--logo.rv-media > video {
-    transform: none;
-  }
-
-  .media--logo.rv-media.is-in > video {
-    transform: scale(1.4);
-  }
-
-  /* cards da home: fade rápido */
-  .rv-tile {
+  .rv-media,
+  .rv-tile,
+  .rv-text,
+  .rv-item {
     opacity: 0;
     transform: translateY(16px);
     transition: opacity 0.6s ease, transform 0.7s var(--ease-out);
+  }
+
+  .rv-tile {
     transition-delay: var(--d, 0s);
   }
 
-  .rv-tile.is-in {
-    opacity: 1;
-    transform: none;
-  }
-
-  /* textos */
-  .rv-text {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 1s ease, transform 1.2s var(--ease-out);
-  }
-
-  .rv-text.is-in {
-    opacity: 1;
-    transform: none;
-  }
-
-  /* itens em cascata */
-  .rv-item {
-    opacity: 0;
-    transform: translateY(22px);
-    transition: opacity 0.8s ease, transform 1s var(--ease-out);
-    transition-delay: var(--d, 0s);
-  }
-
+  .rv-media.is-in,
+  .rv-tile.is-in,
+  .rv-text.is-in,
   .rv-item.is-in {
     opacity: 1;
     transform: none;
   }
-
-  /* o chip de cor cresce de baixo para cima */
-  .rv-item .cs-chip {
-    transform: scaleY(0.001);
-    transform-origin: bottom;
-    transition: transform 1.1s var(--ease-out);
-    transition-delay: calc(var(--d, 0s) + 0.1s);
-  }
-
-  .rv-item.is-in .cs-chip {
-    transform: none;
-  }
-
 }
 
-@media (max-width: 700px) and (prefers-reduced-motion: no-preference) {
-  .media--logo.rv-media.is-in > video {
-    transform: none;
-  }
-}
