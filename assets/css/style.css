@@ -1158,3 +1158,32 @@ a.is-case:hover strong {
     transition: none;
   }
 }
+
+/* ---------- Ritmo dos cases: imagens encostadas, sem respiro entre elas ---------- */
+
+.media,
+.media-grid,
+.media-grid--3,
+.lv-band,
+.pal,
+.ty,
+.stripes,
+.arch,
+.logo-hero {
+  margin-bottom: 0;
+}
+
+.media-grid,
+.media-grid--3 {
+  gap: 0;
+  width: min(100vw, var(--bleed-max));
+  margin-left: calc(50% - min(50vw, var(--bleed-max) / 2));
+}
+
+/* um bloco de imagem logo depois de outro: sem vão */
+.media + .media,
+.media + .media-grid,
+.media-grid + .media,
+.media-grid + .media-grid {
+  margin-top: 0;
+}
