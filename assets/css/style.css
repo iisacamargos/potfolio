@@ -1754,3 +1754,15 @@ a.is-case:hover strong {
     gap: 14px;
   }
 }
+
+/* No celular, o número da seção Projetos sai para dar espaço ao título e ao seletor */
+@media (max-width: 700px) {
+  .work-head {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0 12px;
+  }
+
+  .work-head .section-num {
+    display: none;
+  }
+}
