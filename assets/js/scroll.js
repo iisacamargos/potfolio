@@ -58,8 +58,24 @@
     const saved = localStorage.getItem("projetos-view");
     if (saved === "list" || saved === "grid") set(saved);
   } catch (e) {}
+  // ao trocar de visualização, os itens da vista nova entram de novo em cascata
+  const replay = () => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const items = work.querySelectorAll(
+      work.dataset.view === "list" ? ".projects .project" : ".works .work-tile"
+    );
+    items.forEach((el, i) => {
+      el.classList.add(el.classList.contains("work-tile") ? "rv-tile" : "rv-item");
+      el.classList.remove("is-in");
+      el.style.transitionDelay = `${Math.min(i, 8) * 0.06}s`;
+    });
+    void work.offsetHeight; // força o navegador a registrar o estado inicial
+    requestAnimationFrame(() => items.forEach((el) => el.classList.add("is-in")));
+  };
   buttons.forEach((b) => b.addEventListener("click", () => {
+    if (work.dataset.view === b.dataset.view) return;
     set(b.dataset.view);
+    replay();
     try { localStorage.setItem("projetos-view", b.dataset.view); } catch (e) {}
   }));
 })();
