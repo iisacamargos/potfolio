@@ -1199,3 +1199,184 @@ a.is-case:hover strong {
 .media--band video {
   width: min(100%, 560px);
 }
+
+/* ==========================================================
+   Sistema de marca padrão dos cases: paleta (.cs) e tipografia (.ts)
+   Mesma estrutura em todos os projetos, cada um com seus dados.
+   ========================================================== */
+
+.ds {
+  padding: clamp(40px, 5vw, 80px) 0;
+}
+
+.ds-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--ink);
+  color: var(--ink-soft);
+}
+
+/* ---------- Paleta ---------- */
+
+.cs {
+  display: grid;
+  grid-template-columns: repeat(var(--n, 5), minmax(0, 1fr));
+  gap: 32px clamp(16px, 2vw, 32px);
+  margin: 0;
+  padding: clamp(18px, 2vw, 28px) 0 0;
+  list-style: none;
+}
+
+.cs-item {
+  min-width: 0;
+}
+
+.cs-chip {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  background: var(--c);
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.08);
+}
+
+/* Par de cores: a cor de apoio entra como faixa na base da principal */
+.cs-item--pair .cs-chip::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 30%;
+  background: var(--c2);
+}
+
+.cs-name {
+  margin: 14px 0 10px;
+  font-family: var(--sans);
+  font-size: clamp(15px, 1.3vw, 19px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.cs-codes {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 2px 10px;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.cs-codes dt {
+  color: var(--ink-soft);
+}
+
+.cs-codes dd {
+  margin: 0;
+}
+
+.cs-pair {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.cs-pair i {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  margin-top: 2px;
+  background: var(--c);
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.1);
+}
+
+/* ---------- Tipografia ---------- */
+
+.ts-row {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 64px);
+  align-items: end;
+  padding: clamp(28px, 4vw, 56px) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.ts-spec {
+  min-width: 0;
+}
+
+.ts-svg {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: clamp(36px, 5.6vw, 84px);
+  color: var(--ink);
+}
+
+.ts-live {
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-size: clamp(46px, 7.4vw, 112px);
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+}
+
+.ts-meta {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.ts-meta div {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  gap: 12px;
+}
+
+.ts-meta dt {
+  color: var(--ink-soft);
+}
+
+.ts-meta dd {
+  margin: 0;
+}
+
+.media + .ds,
+.media-grid + .ds,
+.ds + .media,
+.ds + .media-grid {
+  margin-top: 0;
+}
+
+.section + .ds {
+  padding-top: 0;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .cs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ts-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
