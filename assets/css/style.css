@@ -1187,3 +1187,14 @@ a.is-case:hover strong {
 .media-grid + .media-grid {
   margin-top: 0;
 }
+
+/* Vídeo vertical centralizado numa faixa da cor do próprio vídeo */
+.media--band {
+  display: flex;
+  justify-content: center;
+  background: var(--band);
+}
+
+.media--band video {
+  width: min(100%, 560px);
+}
