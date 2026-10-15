@@ -44,3 +44,22 @@
   }, { threshold: 0.25 });
   videos.forEach((v) => io.observe(v));
 })();
+
+/* Home: alterna os projetos entre grade e lista e lembra a escolha. */
+(() => {
+  const work = document.querySelector(".work[data-view]");
+  if (!work) return;
+  const buttons = work.querySelectorAll(".view-toggle button");
+  const set = (view) => {
+    work.dataset.view = view;
+    buttons.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.view === view)));
+  };
+  try {
+    const saved = localStorage.getItem("projetos-view");
+    if (saved === "list" || saved === "grid") set(saved);
+  } catch (e) {}
+  buttons.forEach((b) => b.addEventListener("click", () => {
+    set(b.dataset.view);
+    try { localStorage.setItem("projetos-view", b.dataset.view); } catch (e) {}
+  }));
+})();
