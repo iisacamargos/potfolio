@@ -5,7 +5,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 os.chdir(os.path.dirname(HERE))
 from ds import *
-BASE='https://iisacamargos.github.io/potfolio'
+BASE='https://isadoracamargo.com.br'
 def head(slug,title,desc,ogimg,ogw,ogh,ogalt,keywords,fonts=''):
     ld=[{"@context":"https://schema.org","@type":"CreativeWork","name":title+" — Identidade visual","headline":title+" — Identidade visual","description":desc,"image":f"{BASE}/{ogimg}","url":f"{BASE}/projetos/{slug}.html","inLanguage":"pt-BR","creator":{"@type":"Person","name":"Isadora Camargo","url":BASE+"/"},"keywords":keywords,"genre":"Identidade visual"},
         {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Isadora Camargo","item":BASE+"/"},{"@type":"ListItem","position":2,"name":title,"item":f"{BASE}/projetos/{slug}.html"}]}]

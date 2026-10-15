@@ -6,7 +6,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from en import EN
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE = 'https://iisacamargos.github.io/potfolio'
+BASE = 'https://isadoracamargo.com.br'
 SLUGS = ['novo-traco', 'orquestra-novo-traco', 'nt-records', 'latinjazz-brazil',
          'anju-mace', 'aquarie', 'be-brave', 'funnel-builder']
 IDS = {'projetos': 'projects', 'sobre': 'about', 'contato': 'contact'}
