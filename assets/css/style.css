@@ -2003,3 +2003,37 @@ a.is-case:hover strong {
 picture {
   display: contents;
 }
+
+/* Ouça e assista: player do Spotify + links */
+.listen {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.listen-player {
+  display: block;
+  border: 0;
+  border-radius: 12px;
+}
+
+.listen-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.listen-link {
+  padding: 10px 16px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.listen-link:hover {
+  background: var(--ink);
+  color: var(--bg);
+}

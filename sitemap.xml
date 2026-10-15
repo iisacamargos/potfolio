@@ -41,6 +41,16 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://isadoracamargo.com.br/en/projects/nt-records.html"/>
   </url>
   <url>
+    <loc>https://isadoracamargo.com.br/projetos/nt-sessions.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://isadoracamargo.com.br/projetos/nt-sessions.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://isadoracamargo.com.br/en/projects/nt-sessions.html"/>
+  </url>
+  <url>
+    <loc>https://isadoracamargo.com.br/en/projects/nt-sessions.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://isadoracamargo.com.br/projetos/nt-sessions.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://isadoracamargo.com.br/en/projects/nt-sessions.html"/>
+  </url>
+  <url>
     <loc>https://isadoracamargo.com.br/projetos/latinjazz-brazil.html</loc>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://isadoracamargo.com.br/projetos/latinjazz-brazil.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://isadoracamargo.com.br/en/projects/latinjazz-brazil.html"/>

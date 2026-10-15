@@ -7,7 +7,7 @@ from en import EN
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = 'https://isadoracamargo.com.br'
-SLUGS = ['novo-traco', 'orquestra-novo-traco', 'nt-records', 'latinjazz-brazil',
+SLUGS = ['novo-traco', 'orquestra-novo-traco', 'nt-records', 'nt-sessions', 'latinjazz-brazil',
          'anju-mace', 'aquarie', 'be-brave', 'funnel-builder']
 IDS = {'projetos': 'projects', 'sobre': 'about', 'contato': 'contact'}
 

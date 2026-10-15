@@ -235,9 +235,58 @@ h+='''
     </figure>
 '''
 h+=sec('No ecossistema','<p>A NT Records é a submarca do grupo <a class="link" href="novo-traco.html">Novo Traço</a> dedicada a lançar e manter vivo o catálogo dos artistas. Ela herda o traço do grupo e o assina com "by Novo Traço", mas tem voz própria, mais urbana e mais institucional ao mesmo tempo.</p>')
-h+=foot('latinjazz-brazil','LatinJazz Brazil')
+h+=foot('nt-sessions','NT Sessions')
 open('projetos/nt-records.html','w').write(h)
 
+
+# ============ NT SESSIONS ============
+n[0]=0
+h=head('nt-sessions','NT Sessions','Identidade visual do NT Sessions, projeto da Novo Traço que une a Orquestra Novo Traço a artistas da música urbana: capas, motion e cenografia em LED do show no Theatro Municipal do Rio. Projeto de Isadora Camargo.','assets/img/nt-sessions/live-teatro-vermelho.jpg',2000,1333,'Theatro Municipal do Rio de Janeiro lotado e iluminado em vermelho durante o NT Sessions Live, com a orquestra no palco e o logo no telão','identidade visual, direção de arte, música, orquestra, rap, funk, capas de disco, motion, cenografia')
+h+=casehead('NT Sessions','A orquestra encontra a música urbana: sessões gravadas, EPs e um show esgotado no Theatro Municipal do Rio, sob uma mesma identidade.',
+ [('Cliente','Novo Traço'),('Ano','2026'),('Papel','Direção de arte'),('Escopo','Identidade visual, capas, motion, cenografia em LED e digital')])
+h+='''
+    <div class="logo-hero logo-hero--tall">
+      <img src="../assets/img/nt-sessions/logo.svg" width="478" height="573" fetchpriority="high" alt="Logo NT Sessions: as letras N e t pintadas à mão dentro de um quadro, com a palavra SESSIONS numa faixa embaixo">
+    </div>
+'''
+h+=sec('Contexto','''<p>O NT Sessions é o projeto da <a class="link" href="novo-traco.html">Novo Traço</a> que coloca a <a class="link" href="orquestra-novo-traco.html">Orquestra Novo Traço</a> lado a lado com artistas essencialmente urbanos. Cada edição é uma collab: o repertório do artista ganha arranjos para orquestra, é gravado em sessão e vira EP nas plataformas, com vídeo no YouTube.</p>
+        <p>Já passaram pelo projeto L7NNON e Papatinho, MC Pedrinho e Froid. Além do formato digital, o NT Sessions tem uma versão ao vivo, que estreou no Theatro Municipal do Rio de Janeiro.</p>''')
+h+=vid('nts-testeira',1920,1032,'Animação da testeira de palco do NT Sessions Live: o logo, a palavra APRESENTA, os nomes L7NNON, Papatinho e orquestra Novo traço e traços pintados à mão em amarelo e azul')
+h+=sec('Identidade','''<p>O logo nasce do mesmo gesto da marca-mãe: as letras N e t pintadas à mão, presas num quadro como um selo, com SESSIONS numa faixa sólida. Funciona como carimbo, e por isso pode assinar qualquer capa, telão ou post sem disputar espaço com o artista.</p>
+        <p>As capas seguem uma linguagem única: fotografia em preto e branco com grão, recortes de colagem, um contorno amarelo e um traço à mão que atravessa a composição. Cada artista ganha o seu universo, mas a coleção inteira se reconhece de longe.</p>''')
+h+=colors('NT Sessions',[
+ dict(name='Illuminating',hex='F6EA60',pantone='13-0647 TCX'),
+ dict(name='My Soul',hex='020305',pantone='19-4010 TCX'),
+ dict(name='Cloud Dancer',hex='F0EFEB',pantone='11-4201 TCX'),
+ dict(name='Tropical Breeze',hex='87CDE7',pantone='13-4307 TCX')],'HEX · RGB · Pantone',cols=4)
+h+=types('NT Sessions',[dict(UNIVERS,use='Logo, nomes de artistas e informações das capas')])
+h+=sec('MC Pedrinho','''<p>Quatro faixas do funk de MC Pedrinho, gravadas com a orquestra no estúdio Sonastério. As capas misturam a rua e a sala de concerto: carros populares e a batuta do maestro, o violino no lugar do microfone, a TV de tubo e a multidão do baile.</p>''')
+h+=grid([('nt-sessions/pedrinho-rua.jpg',1500,1500,'Capa: MC Pedrinho sorrindo de boné e óculos escuros, a mão do maestro com a batuta e dois carros populares numa rua de periferia, com traços amarelos'),('nt-sessions/pedrinho-violino.jpg',1500,1500,'Capa: MC Pedrinho sem camisa tocando violino diante das cadeiras da orquestra, com o símbolo ONT gigante em amarelo ao fundo')])
+h+=grid([('nt-sessions/pedrinho-tv.jpg',1500,1500,'Capa: colagem com TV de tubo, a multidão de um show à noite e dois retratos de MC Pedrinho, com uma espiral amarela'),('nt-sessions/pedrinho-sorriso.jpg',1500,1500,'Capa: retrato de MC Pedrinho sorrindo com dente de ouro e boné para trás, com um violino ao fundo e contorno amarelo')])
+h+=sec('Froid','''<p>Na edição com Froid, o grão e o alto contraste ficam mais densos e introspectivos: o perfil contra pinceladas amarelas, a partitura refletida nas lentes, o violino entre cacos de espelho e o artista sentado numa janela suspensa nas nuvens.</p>''')
+h+=grid([('nt-sessions/froid-sol.jpg',1125,1125,'Capa: perfil de Froid de tranças e óculos claros diante de pinceladas amarelas que lembram um sol'),('nt-sessions/froid-partitura.jpg',1125,1125,'Capa: close de Froid de cabeça baixa com uma partitura refletida nas lentes dos óculos')])
+h+=grid([('nt-sessions/froid-espelho.jpg',1125,1125,'Capa: cacos de espelho refletindo Froid e um violino, com recortes contornados em amarelo'),('nt-sessions/froid-janela.jpg',1125,1125,'Capa: Froid sentado no batente de uma janela amarela suspensa entre nuvens em preto e branco')])
+h+=sec('NT Sessions Live','''<p>A primeira edição ao vivo levou L7NNON, Papatinho e a orquestra ao palco do Theatro Municipal do Rio de Janeiro. Os ingressos, a R$ 5, esgotaram em menos de 15 minutos, e o show foi transmitido ao vivo no YouTube.</p>
+        <p>Para o palco, a identidade virou cenografia: testeira, painéis de LED e telão animados com os traços à mão, o logo e os nomes dos artistas, num sistema de amarelo e azul sobre preto que conversa com a arquitetura do teatro.</p>''')
+h+=img('nt-sessions/live-teatro-vermelho.jpg',2000,1333,'Plateia lotada do Theatro Municipal do Rio iluminado em vermelho, com a orquestra no palco e o logo NT Sessions no telão')
+h+=vid('nts-led',1772,708,'Animação do painel de LED: o logo NT Sessions Live, os nomes dos artistas e traços amarelos, azuis e brancos desenhados sobre preto')
+h+=grid([('nt-sessions/live-palco.jpg',2000,1333,'L7NNON canta e Papatinho sorri no palco, com a orquestra atrás e o logo NT Sessions no telão'),('nt-sessions/live-papatinho.jpg',2000,1333,'Papatinho na mesa de produção do palco, que exibe o símbolo NT em LED, com o coro ao fundo')])
+h+=vid('nts-vertical',550,1024,'Animação vertical do painel de LED: logo NT Sessions Live, L7NNON, Papatinho, orquestra Novo traço, direção artística Rafaello e retratos recortados com traços amarelos',band='#0b0b0b')
+h+=grid([('nt-sessions/live-l7nnon.jpg',1333,2000,'L7NNON cantando de gorro azul, com os camarotes dourados do teatro ao fundo'),('nt-sessions/live-emocao.jpg',1333,2000,'Homem emocionado na plateia, com a mão no rosto, em foto preto e branco')])
+h+=img('nt-sessions/live-lanternas.jpg',2000,1333,'Vista do palco para a plateia: a orquestra tocando enquanto o público acende as lanternas dos celulares em todos os andares do teatro')
+h+=grid([('nt-sessions/live-abraco.jpg',2000,1333,'Abraço emocionado no palco ao fim do show, com Papatinho sorrindo e filmando ao lado'),('nt-sessions/live-bastidores.jpg',2000,1333,'Bastidores: entrevista com microfones ONT e NT Sessions, com os artistas sorrindo diante da câmera')])
+h+=img('nt-sessions/live-teatro-dourado.jpg',2000,1333,'Theatro Municipal visto do alto, em luz dourada, com o palco cheio e o logo NT Sessions no telão')
+h+=sec('Ouça e assista','''<p>As sessões estão nas plataformas de música e no canal do projeto no YouTube.</p>
+        <div class="listen">
+          <iframe class="listen-player" src="https://open.spotify.com/embed/artist/7fKwklnXKEJPlVvdOb9hUf?utm_source=generator" width="100%" height="352" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="NT Sessions no Spotify"></iframe>
+          <div class="listen-links">
+            <a class="listen-link" href="https://open.spotify.com/artist/7fKwklnXKEJPlVvdOb9hUf" target="_blank" rel="noopener">Ouvir no Spotify ↗</a>
+            <a class="listen-link" href="https://www.youtube.com/@ntsessions/videos" target="_blank" rel="noopener">Assistir no YouTube ↗</a>
+          </div>
+        </div>''',cls='section-body')
+h+=sec('No ecossistema','<p>O NT Sessions é um projeto da <a class="link" href="novo-traco.html">Novo Traço</a> com a <a class="link" href="orquestra-novo-traco.html">Orquestra Novo Traço</a>. Herda as cores, a Univers e o traço feito à mão do sistema, e os coloca a serviço de um encontro: o erudito e a rua no mesmo palco.</p>')
+h+=foot('latinjazz-brazil','LatinJazz Brazil')
+open('projetos/nt-sessions.html','w').write(h)
 
 # ============ LATINJAZZ ============
 n[0]=0
