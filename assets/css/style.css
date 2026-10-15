@@ -1769,12 +1769,40 @@ a.is-case:hover strong {
 
 .footer-links {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 8px 20px;
 }
 
-.contact-big--wa {
+.footer-links a {
+  white-space: nowrap;
+}
+
+/* e-mail e telefone no mesmo tamanho e peso; a fonte encolhe para o
+   e-mail caber inteiro numa linha em qualquer celular */
+.contact-big {
   display: block;
-  margin-top: 12px;
-  font-size: clamp(20px, 2.4vw, 32px);
-  font-weight: 500;
+  width: fit-content;
+  font-size: min(clamp(26px, 3.6vw, 48px), calc((100vw - 2 * var(--gutter)) / 13.6));
+  white-space: nowrap;
+  word-break: normal;
+}
+
+.contact-big + .contact-big {
+  margin-top: 0.25em;
+}
+
+/* Celulares bem estreitos: o topo aperta um pouco para tudo caber */
+@media (max-width: 380px) {
+  .topbar .wrap {
+    gap: 10px;
+    letter-spacing: 0.02em;
+  }
+
+  .topbar .wrap > a {
+    white-space: normal;
+  }
+
+  .topbar nav {
+    gap: 10px;
+  }
 }
