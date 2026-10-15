@@ -520,7 +520,8 @@ html.lenis body {
   border-top: 1px solid var(--ink);
 }
 
-.arch-kids > div {
+.arch-kids > div,
+.arch-kids > a {
   padding: 14px;
   border: 1px solid var(--line);
 }
