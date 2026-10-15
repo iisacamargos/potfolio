@@ -1469,7 +1469,7 @@ a.is-case:hover strong {
   aspect-ratio: 2 / 1;
 }
 
-.work-media > img,
+.work-media img,
 .work-media > video,
 .work-shot {
   position: absolute;
@@ -1546,10 +1546,10 @@ a.is-case:hover strong {
   opacity: 0.85;
 }
 
-.work-tile:hover .work-media > img,
+.work-tile:hover .work-media img,
 .work-tile:hover .work-media > video,
 .work-tile:hover .work-shot,
-.work-tile:focus-visible .work-media > img,
+.work-tile:focus-visible .work-media img,
 .work-tile:focus-visible .work-media > video,
 .work-tile:focus-visible .work-shot {
   transform: scale(1.035);
@@ -1614,7 +1614,7 @@ a.is-case:hover strong {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .work-media > img,
+  .work-media img,
   .work-media > video,
   .work-shot,
   .work-info {
@@ -1995,3 +1995,8 @@ a.is-case:hover strong {
   }
 }
 
+
+/* <picture> (WebP com srcset) não interfere no layout das imagens */
+picture {
+  display: contents;
+}

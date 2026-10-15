@@ -119,7 +119,7 @@ def main():
     pt = decorate(h, 'pt', './', 'en/', BASE + '/', BASE + '/en/')
     open(p, 'w').write(pt)
     en = common_en(h)
-    en = re.sub(r'(src|href|poster)="assets/', r'\1="../assets/', en)
+    en = re.sub(r'(?<![\w/.])assets/', '../assets/', en)
     en = en.replace('href="favicon.ico"', 'href="../favicon.ico"')
     en = en.replace('href="projetos/', 'href="projects/')
     en = decorate(en, 'en', '../', './', BASE + '/', BASE + '/en/')
@@ -131,7 +131,7 @@ def main():
         pt_url, en_url = f'{BASE}/projetos/{s}.html', f'{BASE}/en/projects/{s}.html'
         open(p, 'w').write(decorate(h, 'pt', f'{s}.html', f'../en/projects/{s}.html', pt_url, en_url))
         en = common_en(h)
-        en = en.replace('"../assets/', '"../../assets/').replace('"../favicon.ico"', '"../../favicon.ico"')
+        en = en.replace('../assets/', '../../assets/').replace('"../favicon.ico"', '"../../favicon.ico"')
         en = decorate(en, 'en', f'../../projetos/{s}.html', f'{s}.html', pt_url, en_url)
         open(f'{ROOT}/en/projects/{s}.html', 'w').write(en)
     # sitemap com as duas línguas

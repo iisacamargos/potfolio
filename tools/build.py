@@ -326,4 +326,5 @@ open('projetos/funnel-builder.html','w').write(h)
 
 # versão em inglês + seletor de idioma
 import runpy
+runpy.run_path(os.path.join(HERE, 'optimize.py'))
 runpy.run_path(os.path.join(HERE, 'i18n.py'))
