@@ -1426,6 +1426,10 @@ a.is-case:hover strong {
   grid-auto-rows: calc((100cqw - 3 * var(--gap)) / 4);
   gap: var(--gap);
   margin-bottom: clamp(56px, 7vw, 112px);
+}
+
+/* a seção é o contêiner: 100cqw = largura da grade */
+.work {
   container-type: inline-size;
 }
 
@@ -1462,6 +1466,16 @@ a.is-case:hover strong {
 
 .work-tile--wide {
   grid-column: span 2;
+}
+
+/* quadrado grande: duas colunas por duas linhas */
+.work-tile--big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.work-tile--big .work-name {
+  font-size: clamp(30px, 3.6vw, 60px);
 }
 
 /* destaque: ocupa a largura toda e duas linhas */
@@ -1571,7 +1585,8 @@ a.is-case:hover strong {
   }
 
   .work-tile--wide,
-  .work-tile--feature {
+  .work-tile--feature,
+  .work-tile--big {
     grid-column: 1 / -1;
     grid-row: auto;
   }
@@ -1609,6 +1624,7 @@ a.is-case:hover strong {
 
   .work-name,
   .work-tile--wide .work-name,
+  .work-tile--big .work-name,
   .work-tile--feature .work-name {
     font-size: 22px;
   }
@@ -1656,4 +1672,18 @@ a.is-case:hover strong {
   .footer .wrap {
     flex-wrap: wrap;
   }
+}
+
+/* Mockup com tela viva: o vídeo ocupa o lugar de uma peça dentro da foto */
+.media--screen {
+  position: relative;
+}
+
+.media .media-screen {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--w);
+  height: var(--h);
+  object-fit: cover;
 }
