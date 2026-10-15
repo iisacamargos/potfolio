@@ -90,3 +90,18 @@
     io.observe(el);
   });
 })();
+
+/* Seletor de idioma: fecha ao clicar fora ou apertar Esc. */
+(() => {
+  const lang = document.querySelector("details.lang");
+  if (!lang) return;
+  document.addEventListener("click", (e) => {
+    if (lang.open && !lang.contains(e.target)) lang.open = false;
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lang.open) {
+      lang.open = false;
+      lang.querySelector("summary").focus();
+    }
+  });
+})();
