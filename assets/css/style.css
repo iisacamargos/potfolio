@@ -525,6 +525,16 @@ html.lenis body {
   border: 1px solid var(--line);
 }
 
+a.is-case:hover strong {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.prose a.link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .arch-kids > .is-case {
   border-color: var(--ink);
   background: var(--ink);
