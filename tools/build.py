@@ -235,7 +235,7 @@ h+='''
     </figure>
 '''
 h+=sec('No ecossistema','<p>A NT Records é a submarca do grupo <a class="link" href="novo-traco.html">Novo Traço</a> dedicada a lançar e manter vivo o catálogo dos artistas. Ela herda o traço do grupo e o assina com "by Novo Traço", mas tem voz própria, mais urbana e mais institucional ao mesmo tempo.</p>')
-h+=foot('nt-sessions','NT Sessions')
+h+=foot('latinjazz-brazil','LatinJazz Brazil')
 open('projetos/nt-records.html','w').write(h)
 
 
@@ -285,7 +285,7 @@ h+=sec('Ouça e assista','''<p>As sessões estão nas plataformas de música e n
           </div>
         </div>''',cls='section-body')
 h+=sec('No ecossistema','<p>O NT Sessions é um projeto da <a class="link" href="novo-traco.html">Novo Traço</a> com a <a class="link" href="orquestra-novo-traco.html">Orquestra Novo Traço</a>. Herda as cores, a Univers e o traço feito à mão do sistema, e os coloca a serviço de um encontro: o erudito e a rua no mesmo palco.</p>')
-h+=foot('latinjazz-brazil','LatinJazz Brazil')
+h+=foot('be-brave','Be Brave Lab')
 open('projetos/nt-sessions.html','w').write(h)
 
 # ============ LATINJAZZ ============
