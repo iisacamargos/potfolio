@@ -1826,13 +1826,28 @@ a.is-case:hover strong {
   margin-top: 0;
 }
 
+.media--logo .logo-still {
+  display: none;
+}
+
+/* Celular: no lugar do vídeo, o logo estático em SVG */
 @media (max-width: 700px) {
   .media--logo {
-    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    aspect-ratio: auto;
+    padding: 48px 0 32px;
   }
 
   .media--logo video {
-    transform: scale(1.5);
+    display: none;
+  }
+
+  .media--logo .logo-still {
+    display: block;
+    width: 46%;
+    height: auto;
+    background: none;
   }
 }
 

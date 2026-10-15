@@ -406,6 +406,8 @@ EN = {
 
 "Os cinco símbolos da marca e seus significados": "The brand's five symbols and their meanings",
 
+"Logotipo LatinJazz Brazil: LATIN e JAZZ em letras recortadas, com o losango da bandeira e a palavra BRAZIL": "LatinJazz Brazil logo: LATIN and JAZZ in cut-out letters, with the flag's diamond and the word BRAZIL",
+
 # ---------- idioma ----------
 "Idioma": "Language",
 "Idioma: Português (Brasil)": "Language: English",

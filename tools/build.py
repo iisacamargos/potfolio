@@ -248,6 +248,9 @@ h+=sec('Conceito','''<p>O conceito visual do LatinJazz Brazil nasce do reconheci
         <p>Assim como o próprio Latin Jazz é construído por encontros e atravessamentos culturais, o universo visual explora contrastes, ritmos e diferentes camadas gráficas para criar uma estética viva, diversa e em constante movimento.</p>''')
 h+=sec('Logo','''<p>Logo desenhado à mão, com traços orgânicos que refletem expressividade, movimento e dinamismo. Suas variações para animação exploram elementos abstratos inspirados no universo da música, como figuras de musicistas, rostos, notas musicais e outros símbolos.</p>''')
 h+=vid('latinjazz-logo-bg',1920,1080,'Animação do logotipo LatinJazz Brazil: as letras se montam até formar LATIN JAZZ com o losango da bandeira brasileira',bleed=False,cls='media--logo')
+# no celular, no lugar do vídeo, o logo em SVG
+k=h.rfind('      </video>\n')+len('      </video>\n')
+h=h[:k]+'      <img class="logo-still" src="../assets/img/latinjazz/logo.svg" width="302" height="498" alt="Logotipo LatinJazz Brazil: LATIN e JAZZ em letras recortadas, com o losango da bandeira e a palavra BRAZIL">\n'+h[k:]
 h+=img('latinjazz/variacoes.png',1232,760,'Grade de variações do logo para animação: letras do LATIN JAZZ recombinadas com pontos e o losango da bandeira, formando pequenos rostos, figuras e símbolos',bleed=False)
 h+=sec('Cores','''<p>A paleta é construída a partir de cores vibrantes que dialogam com o universo tropical, expressivo e plural do Brasil. Amarelo, verde, rosa, azul, branco e preto convivem em contraste, como camadas de uma mesma colagem.</p>
         <p>As cores vêm direto do sistema da <a class="link" href="novo-traco.html">Novo Traço</a>, marca-mãe do projeto, o que mantém a conexão entre os dois universos.</p>''')
