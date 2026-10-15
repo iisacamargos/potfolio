@@ -1441,7 +1441,7 @@ a.is-case:hover strong {
   position: relative;
   display: block;
   overflow: hidden;
-  background: #111;
+  background: var(--placeholder);
   color: #fff;
 }
 
@@ -1469,18 +1469,20 @@ a.is-case:hover strong {
   aspect-ratio: 2 / 1;
 }
 
+/* 1px de sobra em cada lado evita fresta do fundo por arredondamento de subpixel */
 .work-media img,
 .work-media > video,
 .work-shot {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  inset: -1px;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
   object-fit: cover;
   transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .work-shot img {
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
@@ -1582,7 +1584,7 @@ a.is-case:hover strong {
   }
 
   .work-media {
-    background: #111;
+    background: var(--placeholder);
   }
 
   .work-info {
