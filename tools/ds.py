@@ -85,26 +85,11 @@ NT_COLORS=[
 ]
 
 # ---------- Recorte vertical (4:5) para celular ----------
-# Imagens horizontais com um assunto central ganham uma versão 4:5 que só
-# aparece em telas estreitas. Valor = posição horizontal do centro do recorte.
-MOBILE = {
-    'aquarie/02-detalhe.jpg': .5, 'aquarie/05-tags.jpg': .5, 'aquarie/06-ecobag.jpg': .5,
-    'aquarie/07-instagram.jpg': .5,
-    'be-brave/3d.jpg': .5, 'be-brave/caixa.jpg': .45, 'be-brave/construcao.jpg': .5,
-    'be-brave/foto.jpg': .5, 'be-brave/garrafas.jpg': .5, 'be-brave/instagram.jpg': .5,
-    'latinjazz/vinil.jpg': .42,
-    'novo-traco/nt-ecobag.jpg': .55, 'novo-traco/nt-livro.jpg': .4, 'novo-traco/nt-poster.jpg': .53,
-    'novo-traco/nt-stories.jpg': .5,
-    'novo-traco/orq-foto.jpg': .55, 'novo-traco/orq-mockup.jpg': .5,
-    'novo-traco/orq-moletom-branco.jpg': .5, 'novo-traco/orq-moletom-preto.jpg': .5,
-    'novo-traco/rec-cartao.jpg': .5, 'novo-traco/rec-garrafa.jpg': .6, 'novo-traco/rec-placa.jpg': .5,
-    'novo-traco/rec-proposito.jpg': .37,
-    'novo-traco/rec-camiseta.jpg': .5, 'novo-traco/rec-tote-1.jpg': .5, 'novo-traco/rec-tote-2.jpg': .52,
-    'novo-traco/rec-hoodie-preto.jpg': .5, 'novo-traco/rec-garrafa-inox.jpg': .5,
-}
+# Desligado a pedido: as imagens aparecem iguais no celular e no desktop.
+# (Formato: {'pasta/imagem.jpg': centro_x} gera uma versão 4:5 para celular.)
+MOBILE = {}
 # vídeos horizontais com o assunto no centro: no celular viram 4:5 (object-fit)
-MOBILE_VIDEO = {'novo-traco-logo', 'novo-traco-making-1', 'novo-traco-making-2', 'orquestra-simbolo',
-                'orquestra-logo', 'nt-records-logo', 'nt-records-apresentacao', 'latinjazz-colagem'}
+MOBILE_VIDEO = set()
 
 def mcrop(src):
     """Gera assets/img/<nome>-m.jpg (4:5) se ainda não existe; devolve o caminho relativo."""

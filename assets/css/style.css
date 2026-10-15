@@ -1807,7 +1807,7 @@ a.is-case:hover strong {
   }
 }
 
-/* Vídeo do logo mesclado ao fundo da página (o branco do vídeo some) */
+/* Vídeo do logo com o fundo já na cor da página (funciona em qualquer navegador) */
 .media--logo {
   aspect-ratio: 2 / 1;
   overflow: hidden;
@@ -1820,22 +1820,13 @@ a.is-case:hover strong {
   object-fit: cover;
   background: none;
   transform: scale(1.4);
-  mix-blend-mode: multiply;
-  filter: brightness(1.07) contrast(1.05);
 }
 
 .media--logo + .media {
   margin-top: 0;
 }
 
-/* Celular: vídeos horizontais com assunto central viram 4:5 */
 @media (max-width: 700px) {
-  .media--mcrop video {
-    aspect-ratio: 4 / 5;
-    height: auto;
-    object-fit: cover;
-  }
-
   .media--logo {
     aspect-ratio: 1 / 1;
   }
