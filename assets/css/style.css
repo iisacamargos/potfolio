@@ -414,6 +414,11 @@ html.lenis body {
   margin: 0 0 24px;
 }
 
+.media img {
+  width: 100%;
+  background: var(--placeholder);
+}
+
 .media figcaption {
   margin-top: 8px;
   font-size: 12px;
@@ -463,8 +468,34 @@ html.lenis body {
   margin: 24px 0 40px;
 }
 
+.swatches--5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
 .swatch {
   font-size: 12px;
+}
+
+.pillars {
+  margin: 32px 0 0;
+}
+
+.pillars > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: 4px 24px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+
+.pillars dt {
+  font-family: var(--sans);
+  font-weight: 700;
+}
+
+.pillars dd {
+  margin: 0;
+  color: var(--ink-soft);
 }
 
 .swatch-chip {
@@ -653,8 +684,9 @@ html.lenis body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .swatches {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .swatches,
+  .swatches--5 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -673,7 +705,8 @@ html.lenis body {
 
   .media-grid,
   .results,
-  .timeline-item {
+  .timeline-item,
+  .pillars > div {
     grid-template-columns: minmax(0, 1fr);
   }
 
