@@ -2026,6 +2026,19 @@ a.is-case:hover strong {
     transform: scale(1.4);
   }
 
+  /* cards da home: fade rápido */
+  .rv-tile {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.7s var(--ease-out);
+    transition-delay: var(--d, 0s);
+  }
+
+  .rv-tile.is-in {
+    opacity: 1;
+    transform: none;
+  }
+
   /* textos */
   .rv-text {
     opacity: 0;
@@ -2063,13 +2076,6 @@ a.is-case:hover strong {
     transform: none;
   }
 
-  /* hover dos cards da home depois de revelados */
-  .rv-media.is-in.work-tile:hover .work-media > img,
-  .rv-media.is-in.work-tile:hover .work-media > video,
-  .rv-media.is-in.work-tile:hover .work-shot {
-    transform: scale(1.035);
-    transition: transform 0.9s var(--ease-out);
-  }
 }
 
 @media (max-width: 700px) and (prefers-reduced-motion: no-preference) {

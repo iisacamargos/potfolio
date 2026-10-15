@@ -73,7 +73,8 @@
   if (!("IntersectionObserver" in window)) return;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-  const MEDIA = ".work-tile, main .media, .media-grid > .media, .logo-hero";
+  const MEDIA = "main .media, .media-grid > .media, .logo-hero";
+  const TILES = ".work-tile";
   const TEXT = ".section, .ds-head, .case-next, .work-head, .lv-band";
   const STAGGER = ".cs-item, .ts-row, .sym-item, .timeline-item, .project, .pillars > div";
 
@@ -97,6 +98,12 @@
     if (el.closest(".media-grid") && el.parentElement.matches(".media-grid") === false) return;
     el.classList.add("rv-media");
     el.style.setProperty("--d", `${cascade(el, 0.12)}s`);
+    io.observe(el);
+  });
+  // cards da home: fade simples e rápido, em cascata na mesma linha
+  document.querySelectorAll(TILES).forEach((el) => {
+    el.classList.add("rv-tile");
+    el.style.setProperty("--d", `${cascade(el, 0.08)}s`);
     io.observe(el);
   });
   document.querySelectorAll(TEXT).forEach((el) => {
