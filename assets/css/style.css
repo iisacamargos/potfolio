@@ -422,6 +422,7 @@ html.lenis body {
 }
 
 /* Imagem sangrada: ocupa a largura inteira da tela, fora da coluna */
+.bleed,
 .media--bleed {
   width: 100vw;
   margin-left: calc(50% - 50vw);
@@ -429,6 +430,46 @@ html.lenis body {
 
 .media--bleed figcaption {
   padding: 0 var(--gutter);
+}
+
+/* Grade de variações de logo, montada em código */
+.lv-band {
+  margin-bottom: 24px;
+  padding: clamp(24px, 4vw, 64px) 0;
+}
+
+.lv {
+  --g: clamp(8px, 1.25vw, 20px);
+  display: grid;
+  gap: var(--g);
+}
+
+.lv-row {
+  display: grid;
+  gap: var(--g);
+  aspect-ratio: 1631 / 366;
+}
+
+.lv-tile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.lv-tile .lv-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lv-tile .lv-logo {
+  position: relative;
+  width: auto;
+  height: var(--h);
 }
 
 .media figcaption {
@@ -694,6 +735,15 @@ html.lenis body {
 
   .case-facts {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lv-row {
+    grid-template-columns: minmax(0, 1fr) !important;
+    aspect-ratio: auto;
+  }
+
+  .lv-tile {
+    aspect-ratio: 16 / 10;
   }
 
   .swatches,
