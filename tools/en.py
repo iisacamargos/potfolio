@@ -391,6 +391,8 @@ EN = {
 "Guidelines de marca": "Brand guidelines",
 "Direção de arte": "Art direction",
 
+"E-mail": "Email",
+
 # ---------- idioma ----------
 "Idioma": "Language",
 "Idioma: Português (Brasil)": "Language: English",
