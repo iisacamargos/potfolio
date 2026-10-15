@@ -1766,3 +1766,15 @@ a.is-case:hover strong {
     display: none;
   }
 }
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.contact-big--wa {
+  display: block;
+  margin-top: 12px;
+  font-size: clamp(20px, 2.4vw, 32px);
+  font-weight: 500;
+}

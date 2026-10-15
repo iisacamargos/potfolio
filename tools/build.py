@@ -75,7 +75,10 @@ def foot(nextslug,nextname):
   <footer class="footer">
     <div class="wrap">
       <span>© 2026 Isadora Camargo</span>
-      <a href="https://www.instagram.com/isaccamargo__/" target="_blank" rel="me noopener">Instagram</a>
+      <span class="footer-links">
+        <a href="https://www.instagram.com/isaccamargo__/" target="_blank" rel="me noopener">Instagram</a>
+        <a href="https://www.linkedin.com/in/isadora-camargo-86a217266/" target="_blank" rel="me noopener">LinkedIn</a>
+      </span>
       <span>São Paulo, SP</span>
     </div>
   </footer>
