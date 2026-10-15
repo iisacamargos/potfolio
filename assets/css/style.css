@@ -437,7 +437,6 @@ html.lenis body {
 /* Grade de variações de logo, montada em código */
 .lv-band {
   margin-bottom: 24px;
-  padding: clamp(24px, 4vw, 64px) 0;
 }
 
 .lv {
