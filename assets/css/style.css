@@ -437,7 +437,9 @@ html.lenis body {
 /* Respiro antes da linha que abre um novo capítulo depois de imagens */
 .media + .section,
 .media-grid + .section,
-.lv-band + .section {
+.lv-band + .section,
+.pal + .section,
+.ty + .section {
   margin-top: clamp(56px, 8vw, 120px);
 }
 
@@ -691,6 +693,187 @@ html.lenis body {
 
 .cursor.is-label .cursor-label {
   opacity: 1;
+}
+
+/* ---------- Paleta recriada em código ---------- */
+
+.pal {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: clamp(8px, 1.25vw, 20px);
+  margin: 0 0 24px;
+  aspect-ratio: 1635 / 902;
+  font-family: "Outfit", var(--sans);
+}
+
+.pal-c {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(16px, 2.4vw, 40px);
+  background: var(--bg);
+  color: var(--fg);
+  border: 1px solid color-mix(in srgb, var(--fg) 12%, transparent);
+}
+
+.pal-c--main {
+  grid-row: 1 / span 2;
+}
+
+.pal-name {
+  font-size: clamp(20px, 2.4vw, 40px);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.pal-c--main .pal-name {
+  font-size: clamp(28px, 3.6vw, 56px);
+}
+
+.pal-codes {
+  font-size: clamp(11px, 1vw, 15px);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* ---------- Specimen tipográfico recriado em código ---------- */
+
+.ty {
+  --ink-ty: #262626;
+  margin-bottom: 24px;
+  background: #9eab87;
+  color: var(--ink-ty);
+  font-family: "Outfit", var(--sans);
+}
+
+.ty-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 96px);
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(48px, 7vw, 112px) var(--gutter);
+}
+
+.ty-label {
+  margin: 0;
+  font-size: clamp(14px, 1.2vw, 18px);
+  font-weight: 300;
+}
+
+.ty-label--sec {
+  margin-top: clamp(32px, 4vw, 56px);
+  padding-top: clamp(24px, 3vw, 40px);
+  border-top: 1px solid var(--ink-ty);
+}
+
+.ty-hero {
+  margin: 0 0 clamp(16px, 2vw, 28px);
+  font-family: "Lexend", var(--sans);
+  font-size: clamp(64px, 9vw, 136px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.ty-meta {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--ink-ty);
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.ty-text {
+  margin: 24px 0 0;
+  max-width: 34ch;
+  margin-left: auto;
+  font-size: clamp(13px, 1vw, 15px);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.ty-sec {
+  margin: 8px 0 24px;
+  font-size: clamp(36px, 3.6vw, 52px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.ty-alpha {
+  margin: 0;
+  font-size: clamp(20px, 2.2vw, 34px);
+  font-weight: 200;
+  line-height: 1.2;
+  word-spacing: 0.1em;
+}
+
+.ty-weights {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-self: stretch;
+  min-height: clamp(360px, 50vw, 760px);
+  border: 1px solid var(--ink-ty);
+}
+
+.ty-w {
+  position: relative;
+  overflow: hidden;
+  border-left: 1px solid var(--ink-ty);
+  container-type: inline-size;
+}
+
+.ty-w:first-child {
+  border-left: 0;
+}
+
+.ty-w span {
+  display: block;
+  padding-top: 0.6em;
+  font-family: "Lexend", var(--sans);
+  font-size: clamp(14px, 2vw, 30px);
+  font-weight: var(--w);
+  text-align: center;
+}
+
+.ty-w b {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  font-family: "Lexend", var(--sans);
+  font-size: 175cqi;
+  font-weight: var(--w);
+  line-height: 0.72;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 900px) {
+  .ty-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ty-weights {
+    min-height: 320px;
+  }
+
+  .pal {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    aspect-ratio: auto;
+  }
+
+  .pal-c {
+    aspect-ratio: 1 / 1;
+  }
+
+  .pal-c--main {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    aspect-ratio: 16 / 9;
+  }
 }
 
 /* ---------- Rodapé ---------- */
