@@ -444,6 +444,30 @@ html.lenis body {
   margin-top: clamp(56px, 8vw, 120px);
 }
 
+/* Abertura do case: só o logo, sobre o fundo da página */
+.logo-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: clamp(280px, 42vw, 620px);
+  margin-bottom: 24px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.logo-hero img {
+  width: min(62%, 720px);
+  height: auto;
+}
+
+.logo-hero--wide img {
+  width: min(48%, 560px);
+}
+
+.logo-hero + .section {
+  margin-top: clamp(56px, 8vw, 120px);
+}
+
 /* Grade de variações de logo, montada em código */
 .lv-band {
   margin-bottom: 24px;
