@@ -73,6 +73,37 @@ html.lenis body {
   scroll-margin-top: 72px;
 }
 
+/* ---------- Barra de rolagem ---------- */
+
+/* Chrome, Edge e Safari: barra fina, fundo areia, puxador grafite reto */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+  border-left: 1px solid var(--line);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ink-soft);
+  border: 3px solid var(--bg);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ink);
+}
+
+/* Firefox */
+@supports (-moz-appearance: none) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--ink-soft) var(--bg);
+  }
+}
+
 /* ---------- Layout ---------- */
 
 .wrap {
