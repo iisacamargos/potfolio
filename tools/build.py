@@ -13,6 +13,7 @@ def head(slug,title,desc,ogimg,ogw,ogh,ogalt,keywords,fonts=''):
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
+  <script>document.documentElement.classList.add("js")</script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title} — Isadora Camargo</title>
   <meta name="description" content="{desc}">
@@ -96,7 +97,7 @@ def casehead(title,lede,facts):
     return f'''
     <section class="case-head">
       <a class="case-back" href="../#projetos">← Todos os projetos</a>
-      <h1 class="case-title">{title}</h1>
+      <h1 class="case-title">{"".join(f'<span class="line" style="--i:{i}"><span>{t}</span></span>' for i,t in enumerate(title.split('<br>')))}</h1>
       <p class="case-lede">{lede}</p>
 
       <dl class="case-facts">{f}
