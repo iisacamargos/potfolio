@@ -2042,3 +2042,46 @@ picture {
   width: auto;
   height: clamp(72px, 9vw, 130px);
 }
+
+/* Card da Zouti na home: posts passando da direita para a esquerda */
+.marquee {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #0e0f0e;
+}
+
+.marquee-track {
+  display: flex;
+  height: 82%;
+  animation: marquee 60s linear infinite;
+  will-change: transform;
+}
+
+.work-media .marquee-track img {
+  position: static;
+  flex: none;
+  width: auto;
+  height: 100%;
+  aspect-ratio: 4 / 5;
+  margin-right: clamp(10px, 1.2vw, 20px);
+  object-fit: cover;
+  transform: none;
+  transition: none;
+}
+
+.work-tile:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}

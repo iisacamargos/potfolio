@@ -501,6 +501,8 @@ EN = {
 'Quatro posts da Zouti lado a lado: parcelamento, app de vendas, integrações e pixel': 'Four Zouti posts side by side: installments, sales app, integrations and pixel',
 'Capa do projeto Zouti: posts escuros com luz verde-limão': 'Zouti project cover: dark posts with lime-green light',
 
+"Posts da Zouti passando em sequência: parcelamento, taxas, app de vendas, área de membros, reembolsos, pixel, integrações e métricas": "Zouti posts scrolling by: installments, fees, sales app, members area, refunds, pixel, integrations and metrics",
+
 # ---------- idioma ----------
 "Idioma": "Language",
 "Idioma: Português (Brasil)": "Language: English",
