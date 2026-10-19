@@ -370,8 +370,40 @@ h+=sec('Resultado','''<div class="results">
           <div><span class="result-num">R$ 30 mi</span><span class="caps">faturamento do lançamento</span></div>
         </div>
         <div class="prose"><p>A marca e o sistema visual sustentaram um lançamento que faturou R$ 30 milhões, com um time interno de três pessoas e designers freelancers sob a minha liderança.</p></div>''',cls='section-body')
-h+=foot('novo-traco','Novo Traço')
+h+=foot('zouti','Zouti')
 open('projetos/funnel-builder.html','w').write(h)
+
+# ============ ZOUTI ============
+n[0]=0
+h=head('zouti','Zouti','Templates de redes sociais da Zouti, plataforma de vendas para produtores digitais: base escura, vidro fosco, luz verde-limão e interfaces reais do produto. Projeto de Isadora Camargo.','assets/img/zouti/capa.jpg',2400,1200,'Quatro posts da Zouti lado a lado sobre fundo escuro: parcelamento inteligente, app de vendas, integrações e pixel nativo','redes sociais, templates, social media, direção de arte, produto digital, fintech, design system',fonts='&family=Space+Grotesk:wght@400;500&family=Inter:wght@300;500')
+h+=casehead('Zouti','Um sistema de templates para redes sociais que transforma funcionalidades de produto em posts com cara de lançamento.',
+ [('Cliente','Zouti'),('Papel','Design'),('Escopo','Templates de redes sociais, sistema visual e cenas de produto')])
+h+='''
+    <div class="logo-hero logo-hero--small">
+      <img src="../assets/img/zouti/logo.svg" width="160" height="105" fetchpriority="high" alt="Símbolo da Zouti: um Z formado por duas faixas diagonais em verde-limão">
+    </div>
+'''
+h+=sec('Contexto','''<p>A Zouti é uma plataforma de vendas para produtores digitais: checkout, parcelamento, área de membros, aplicativo, reembolsos, pixel e integrações. Muitas funcionalidades para comunicar, e todas precisavam soar como parte da mesma marca.</p>
+        <p>O desafio era criar templates que o time pudesse replicar com rapidez e que, ao mesmo tempo, apresentassem cada funcionalidade com o peso de um lançamento.</p>''')
+h+=grid([('zouti/parcelamento.jpg',1080,1350,'Post Parcelamento Inteligente: ícones de pagamento em vidro fosco, um deles aceso em verde-limão, com o selo de mais 4,3% de conversão'),('zouti/taxas.jpg',1080,1350,'Post Cobrimos suas taxas e migramos seus produtos: duas moedas 3D em verde-limão com o Z da Zouti e o símbolo de porcentagem sobre um túnel em grade')])
+h+=sec('Sistema','''<p>Todos os posts partem da mesma base: fundo quase preto, superfícies em vidro fosco, uma luz verde-limão que entra pela borda e uma etiqueta em caixa-alta espaçada que nomeia a funcionalidade. O título, em Space Grotesk, ganha um degradê do branco para o cinza que dá profundidade sem usar outra cor.</p>
+        <p>No lugar de ilustrações genéricas, entram as próprias interfaces do produto: notificações de venda, dashboard de métricas, área de membros e o fluxo de reembolso. O produto vira a imagem.</p>''')
+h+=colors('Zouti',[
+ dict(name='Verde Zouti',hex='E4FF00'),
+ dict(name='Verde Lima',hex='BCCF1C'),
+ dict(name='Verde Claro',hex='D7DF75'),
+ dict(name='Grafite',hex='141414'),
+ dict(name='Branco',hex='FFFFFF')])
+h+=types('Zouti',[
+ dict(family='Space Grotesk',live="'Space Grotesk', sans-serif",use='Títulos e etiquetas',style='Sem serifa geométrica',weights='Regular, Medium'),
+ dict(family='Inter',live="'Inter', sans-serif",w=300,use='Textos de apoio e interface',style='Sem serifa',weights='Light, Medium, Semi Bold, Bold')])
+h+=grid([('zouti/app-vendas.jpg',1080,1350,'Post Suas vendas na palma das suas mãos: celular inclinado com o faturamento do app e três notificações de venda Pix aprovada'),('zouti/mobile.jpg',1080,1350,'Post Área de membros Mobile: a palavra Mobile gigante atrás de um celular com a área de membros aberta')])
+h+=grid([('zouti/area-membros.jpg',1080,1350,'Post Área de membros estilo Netflix: capas verticais de cursos em sequência sobre a interface escurecida'),('zouti/reembolso.jpg',1080,1350,'Post Reverta reembolsos: etiquetas de status coloridas e a janela de motivo do reembolso em vidro fosco')])
+h+=grid([('zouti/pixel.jpg',1080,1350,'Post CPA menor, escala maior: o ícone da Meta ligado ao Z da Zouti por uma seta, dentro de círculos de luz verde'),('zouti/integracoes.jpg',1080,1350,'Post de integrações: o ícone da Zouti no centro, cercado por Google Analytics, webhooks, Cademí, Meta, ActiveCampaign, Google Ads, Zapier e Profitfy')])
+h+=grid([('zouti/metricas.jpg',1080,1350,'Post de métricas: cards em perspectiva com checkouts, taxa de vendas, ticket médio e order bump ligados por linhas verdes'),('zouti/app-vendas-2.jpg',1080,1350,'Variação do post do aplicativo: título centralizado e celular com notificações de venda sobre luz verde-limão')])
+h+=sec('Resultado','''<p>Um conjunto de templates com regras claras de cor, tipografia, luz e composição, pronto para receber novas funcionalidades sem precisar reinventar o layout. Cada post apresenta uma única ideia, e o feed inteiro se reconhece como Zouti.</p>''')
+h+=foot('novo-traco','Novo Traço')
+open('projetos/zouti.html','w').write(h)
 
 # versão em inglês + seletor de idioma
 import runpy

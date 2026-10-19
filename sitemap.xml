@@ -100,4 +100,14 @@
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://isadoracamargo.com.br/projetos/funnel-builder.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://isadoracamargo.com.br/en/projects/funnel-builder.html"/>
   </url>
+  <url>
+    <loc>https://isadoracamargo.com.br/projetos/zouti.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://isadoracamargo.com.br/projetos/zouti.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://isadoracamargo.com.br/en/projects/zouti.html"/>
+  </url>
+  <url>
+    <loc>https://isadoracamargo.com.br/en/projects/zouti.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://isadoracamargo.com.br/projetos/zouti.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://isadoracamargo.com.br/en/projects/zouti.html"/>
+  </url>
 </urlset>

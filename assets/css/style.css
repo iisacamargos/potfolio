@@ -2037,3 +2037,8 @@ picture {
   background: var(--ink);
   color: var(--bg);
 }
+
+.logo-hero--small img {
+  width: auto;
+  height: clamp(72px, 9vw, 130px);
+}
