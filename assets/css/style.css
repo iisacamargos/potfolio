@@ -2072,10 +2072,6 @@ picture {
   transition: none;
 }
 
-.work-tile:hover .marquee-track {
-  animation-play-state: paused;
-}
-
 @keyframes marquee {
   to { transform: translateX(-50%); }
 }
