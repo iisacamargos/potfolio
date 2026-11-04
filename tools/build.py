@@ -235,7 +235,7 @@ h+='''
     </figure>
 '''
 h+=sec('No ecossistema','<p>A NT Records é a submarca do grupo <a class="link" href="novo-traco.html">Novo Traço</a> dedicada a lançar e manter vivo o catálogo dos artistas. Ela herda o traço do grupo e o assina com "by Novo Traço", mas tem voz própria, mais urbana e mais institucional ao mesmo tempo.</p>')
-h+=foot('anju-mace','ANJU MACE')  # LatinJazz oculto por enquanto
+h+=foot('nt-sessions','NT Sessions')
 open('projetos/nt-records.html','w').write(h)
 
 
@@ -285,7 +285,7 @@ h+=sec('Ouça e assista','''<p>As sessões estão nas plataformas de música e n
           </div>
         </div>''',cls='section-body')
 h+=sec('No ecossistema','<p>O NT Sessions é um projeto da <a class="link" href="novo-traco.html">Novo Traço</a> com a <a class="link" href="orquestra-novo-traco.html">Orquestra Novo Traço</a>. Herda as cores, a Univers e o traço feito à mão do sistema, e os coloca a serviço de um encontro: o erudito e a rua no mesmo palco.</p>')
-h+=foot('be-brave','Be Brave Lab')
+h+=foot('anju-mace','ANJU MACE')
 open('projetos/nt-sessions.html','w').write(h)
 
 # ============ LATINJAZZ ============
@@ -371,7 +371,7 @@ h+=sec('Resultado','''<div class="results">
           <div><span class="result-num">R$ 30 mi</span><span class="caps">faturamento do lançamento</span></div>
         </div>
         <div class="prose"><p>A marca e o sistema visual sustentaram um lançamento que faturou R$ 30 milhões, com um time interno de três pessoas e designers freelancers sob a minha liderança.</p></div>''',cls='section-body')
-h+=foot('zouti','Zouti')
+h+=foot('novo-traco','Novo Traço')
 open('projetos/funnel-builder.html','w').write(h)
 
 # ============ ZOUTI ============
@@ -403,7 +403,7 @@ h+=grid([('zouti/area-membros.jpg',1080,1350,'Post Área de membros estilo Netfl
 h+=grid([('zouti/pixel.jpg',1080,1350,'Post CPA menor, escala maior: o ícone da Meta ligado ao Z da Zouti por uma seta, dentro de círculos de luz verde'),('zouti/integracoes.jpg',1080,1350,'Post de integrações: o ícone da Zouti no centro, cercado por Google Analytics, webhooks, Cademí, Meta, ActiveCampaign, Google Ads, Zapier e Profitfy')])
 h+=grid([('zouti/metricas.jpg',1080,1350,'Post de métricas: cards em perspectiva com checkouts, taxa de vendas, ticket médio e order bump ligados por linhas verdes'),('zouti/app-vendas-2.jpg',1080,1350,'Variação do post do aplicativo: título centralizado e celular com notificações de venda sobre luz verde-limão')])
 h+=sec('Resultado','''<p>Um conjunto de templates com regras claras de cor, tipografia, luz e composição, pronto para receber novas funcionalidades sem precisar reinventar o layout. Cada post apresenta uma única ideia, e o feed inteiro se reconhece como Zouti.</p>''')
-h+=foot('novo-traco','Novo Traço')
+h+=foot('be-brave','Be Brave Lab')
 open('projetos/zouti.html','w').write(h)
 
 # versão em inglês + seletor de idioma
