@@ -235,7 +235,7 @@ h+='''
     </figure>
 '''
 h+=sec('No ecossistema','<p>A NT Records é a submarca do grupo <a class="link" href="novo-traco.html">Novo Traço</a> dedicada a lançar e manter vivo o catálogo dos artistas. Ela herda o traço do grupo e o assina com "by Novo Traço", mas tem voz própria, mais urbana e mais institucional ao mesmo tempo.</p>')
-h+=foot('latinjazz-brazil','LatinJazz Brazil')
+h+=foot('anju-mace','ANJU MACE')  # LatinJazz oculto por enquanto
 open('projetos/nt-records.html','w').write(h)
 
 
@@ -321,6 +321,7 @@ h+=img('latinjazz/cartazes.jpg',1920,1905,'Dois cartazes com raios verdes e amar
 h+=img('latinjazz/banners.jpg',1920,1221,'Banners do LatinJazz Brazil pendurados entre colunas do Theatro Municipal: o logo sobre raios verdes e amarelos, o trompetista Dudu Santana e a data 30 de setembro às 19h')
 h+=sec('Uma marca Novo Traço','''<p>O LatinJazz Brazil é um projeto da <a class="link" href="novo-traco.html">Novo Traço</a>. Ele compartilha com a marca-mãe as cores, a Univers, a Margem e o gesto feito à mão, mas ganha um vocabulário próprio de colagem, raios de sol e papel amassado, pensado para se mexer nas redes, nos telões e na rua.</p>''')
 h+=foot('anju-mace','ANJU MACE')
+h=h.replace('<meta name="author"','<meta name="robots" content="noindex">\n  <meta name="author"',1)  # oculto por enquanto
 open('projetos/latinjazz-brazil.html','w').write(h)
 
 # ============ BE BRAVE ============

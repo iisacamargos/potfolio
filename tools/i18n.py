@@ -9,6 +9,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = 'https://isadoracamargo.com.br'
 SLUGS = ['novo-traco', 'orquestra-novo-traco', 'nt-records', 'nt-sessions', 'latinjazz-brazil',
          'anju-mace', 'aquarie', 'be-brave', 'funnel-builder', 'zouti']
+HIDDEN = {'latinjazz-brazil'}  # cases ocultos por enquanto: fora da home e do sitemap
 IDS = {'projetos': 'projects', 'sobre': 'about', 'contato': 'contact'}
 
 FLAG_BR = '<span class="flag flag--br" aria-hidden="true"></span>'
@@ -135,7 +136,7 @@ def main():
         en = decorate(en, 'en', f'../../projetos/{s}.html', f'{s}.html', pt_url, en_url)
         open(f'{ROOT}/en/projects/{s}.html', 'w').write(en)
     # sitemap com as duas línguas
-    urls = [('', 'en/')] + [(f'projetos/{s}.html', f'en/projects/{s}.html') for s in SLUGS]
+    urls = [('', 'en/')] + [(f'projetos/{s}.html', f'en/projects/{s}.html') for s in SLUGS if s not in HIDDEN]
     out = ['<?xml version="1.0" encoding="UTF-8"?>',
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
     for a, b in urls:
