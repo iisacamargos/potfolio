@@ -93,7 +93,7 @@
   const MEDIA = "main .media, .media-grid > .media, .logo-hero";
   const TILES = ".work-tile";
   const TEXT = ".section, .ds-head, .case-next, .work-head, .lv-band";
-  const STAGGER = ".cs-item, .ts-row, .sym-item, .timeline-item, .project, .pillars > div";
+  const STAGGER = ".cs-item, .ts-row, .sym-item, .project, .pillars > div";
 
   const io = new IntersectionObserver((entries) => {
     entries.forEach(({ target, isIntersecting }) => {

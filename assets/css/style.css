@@ -318,24 +318,6 @@ html.lenis body {
   left: 0;
 }
 
-.timeline {
-  margin-top: 40px;
-}
-
-.timeline-item {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 4px 24px;
-  padding: 14px 0;
-  border-top: 1px solid var(--line);
-  font-size: 13px;
-}
-
-.timeline-item strong {
-  font-family: var(--sans);
-  font-size: 15px;
-}
-
 .caps {
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -1139,7 +1121,6 @@ a.is-case:hover strong {
 
   .media-grid,
   .results,
-  .timeline-item,
   .pillars > div {
     grid-template-columns: minmax(0, 1fr);
   }
