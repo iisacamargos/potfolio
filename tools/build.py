@@ -56,7 +56,6 @@ def head(slug,title,desc,ogimg,ogw,ogh,ogalt,keywords,fonts=''):
       <span>Designer · Identidade visual e branding</span>
       <nav>
         <a href="../#projetos">Projetos</a>
-        <a href="../#sobre">Sobre</a>
         <a href="../#contato">Contato</a>
       </nav>
     </div>
