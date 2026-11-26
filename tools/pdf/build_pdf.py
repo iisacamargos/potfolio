@@ -151,10 +151,10 @@ NT = dict(cd=dict(name='Cloud Dancer', hex='F0EFEB', pantone='11-4201 TCX'), ms=
           tb=dict(name='Tropical Breeze', hex='87CDE7', pantone='13-4307 TCX'), ft=dict(name='First Tree', hex='00733C', pantone='18-6031 TCX'),
           il=dict(name='Illuminating', hex='F6EA60', pantone='13-0647 TCX'))
 PROJ = [('01', 'Novo Traço', 'Identidade visual · Sistema de marca'), ('02', 'Orquestra Novo Traço', 'Símbolo · Submarca'),
-        ('03', 'NT Records', 'Submarca · Gravadora'), ('04', 'NT Sessions', 'Identidade · Capas · Cenografia'),
-        ('05', 'ANJU MACE', 'Identidade visual · Símbolos'), ('06', 'Aquarie', 'Identidade visual · Ilustração'),
-        ('07', 'Zouti', 'Sistema de templates'), ('08', 'Be Brave Lab', 'Símbolo · Identidade visual'),
-        ('09', 'Funnel Builder', 'Marca · Sistema de lançamento')]
+        ('03', 'NT Records', 'Submarca · Gravadora'), ('04', 'NT Sessions', 'Identidade · Capas · Cenografia'), ('05', 'LatinJazz Brazil', 'Logotipo · Colagem · Motion'),
+        ('06', 'ANJU MACE', 'Identidade visual · Símbolos'), ('07', 'Aquarie', 'Identidade visual · Ilustração'),
+        ('08', 'Zouti', 'Sistema de templates'), ('09', 'Be Brave Lab', 'Símbolo · Identidade visual'),
+        ('10', 'Funnel Builder', 'Marca · Sistema de lançamento')]
 START = {}
 
 # ================= CAPA + ÍNDICE =================
@@ -273,9 +273,34 @@ one(V + 'nts-testeira.jpg', 'Cenografia', 'Testeira animada de palco.')
 bleed(A + 'nt-sessions/live-l7nnon.jpg')
 one(A + 'nt-sessions/live-lanternas.jpg', cap='A plateia acende as lanternas')
 
+# ================= 05 LATINJAZZ BRAZIL =================
+project('05', 'LatinJazz Brazil', 'LatinJazz<br>Brazil', extra=[])
+divider('05', 'LatinJazz Brazil', '00733C', '#F6EA60'); START['05'] = len(pages)
+opener('Uma sonoridade que também pertence ao Brasil: Tropicália, colagem e um logo desenhado à mão para um projeto da Novo Traço.',
+       [('Cliente', 'Novo Traço'), ('Papel', 'Direção de arte'), ('Escopo', 'Logotipo, identidade visual, motion e aplicações')],
+       A + 'latinjazz/banners.jpg')
+text_page('Conceito', 'Encontros e atravessamentos culturais.',
+          '<p>O conceito nasce do reconhecimento de uma sonoridade que pertence ao Brasil. Cores vibrantes inspiradas na Tropicália, texturas, traços e composições expressivas traduzem essa afirmação.</p>'
+          '<p>Assim como o próprio Latin Jazz, o universo visual explora contrastes, ritmos e camadas gráficas: uma estética viva, diversa e em constante movimento.</p>')
+logo_page('Desenhado à mão, com traços orgânicos que refletem expressividade, movimento e dinamismo — e o losango da bandeira no lugar de destaque.',
+          tile(A + 'latinjazz/logo.svg', 'FFFFFF', 'h70'))
+one(A + 'latinjazz/variacoes.png', 'Variações', 'Para a animação, as letras se recombinam em figuras de musicistas, rostos, notas musicais e outros símbolos.')
+bleed(V + 'latinjazz-colagem.jpg', '50% center')
+color_page('Amarelo, verde, rosa, azul, branco e preto em contraste, como camadas de uma mesma colagem. As cores vêm do sistema da Novo Traço.',
+           [NT['il'], NT['ft'], NT['rp'], NT['tb'], NT['cd'], NT['ms']])
+type_page('A Univers organiza datas, nomes e informações; a Margem traz simpatia, leveza e brasilidade.',
+          [dict(UNIVERS, use='Títulos, datas e nomes de artistas'), dict(MARGEM, use='Textos e apoio')])
+spread_band(V + 'latinjazz-faixa.jpg')
+one(A + 'latinjazz/cartaz.jpg', 'Aplicações', 'Cartaz em colagem: raios de sol, dançarinos e o trompete.')
+one(A + 'latinjazz/revista.jpg', cap='Revista')
+spread(A + 'latinjazz/vinil.jpg')
+bleed(A + 'latinjazz/cartazes.jpg')
+text_page('Uma marca Novo Traço', 'Um vocabulário próprio, pensado para se mexer.',
+          '<p>O LatinJazz Brazil compartilha com a marca-mãe as cores, a Univers, a Margem e o gesto feito à mão, mas ganha colagem, raios de sol e papel amassado — feitos para as redes, os telões e a rua.</p>')
+
 # ================= 05 ANJU MACE =================
-project('05', 'ANJU MACE', extra=[A + 'anju-mace/02-assinatura.jpg'])
-divider('05', 'ANJU MACE', '7A8569', '#F5F5DD'); START['05'] = len(pages)
+project('06', 'ANJU MACE', extra=[A + 'anju-mace/02-assinatura.jpg'])
+divider('06', 'ANJU MACE', '7A8569', '#F5F5DD'); START['06'] = len(pages)
 opener('Uma identidade para o fitness feminino construída sobre o equilíbrio entre força e leveza.',
        [('Cliente', 'ANJU MACE'), ('Ano', '2025'), ('Papel', 'Direção de arte e coordenação da equipe'), ('Escopo', 'Identidade, símbolos, brandbook e digital')],
        A + 'anju-mace/01-capa.jpg')
@@ -306,8 +331,8 @@ text_page('Resultado', '“Ninguém nunca tinha entendido a minha essência tão
           '<p>A identidade foi lançada junto com o aplicativo de treino, hoje no ar, e as alunas se identificaram de imediato com a nova marca.</p>')
 
 # ================= 06 AQUARIE =================
-project('06', 'Aquarie', extra=[A + 'aquarie/01-capa.jpg'])
-divider('06', 'Aquarie', '055E89'); START['06'] = len(pages)
+project('07', 'Aquarie', extra=[A + 'aquarie/01-capa.jpg'])
+divider('07', 'Aquarie', '055E89'); START['07'] = len(pages)
 opener('Moda praia de Santa Catarina com o verão do sul da Itália como referência.',
        [('Cliente', 'Aquarie Beach & Swimwear'), ('Ano', '2025'), ('Papel', 'Designer de marca'), ('Escopo', 'Identidade, ilustrações e aplicações')],
        A + 'aquarie/06-ecobag.jpg')
@@ -326,8 +351,8 @@ one(A + 'aquarie/05-tags.jpg', 'Aplicações', 'Logotipo vertical e concha recor
 one(A + 'aquarie/07-instagram.jpg', cap='Instagram')
 
 # ================= 07 ZOUTI =================
-project('07', 'Zouti', extra=[A + 'zouti/mobile.jpg'])
-divider('07', 'Zouti', '141414', '#E4FF00'); START['07'] = len(pages)
+project('08', 'Zouti', extra=[A + 'zouti/mobile.jpg'])
+divider('08', 'Zouti', '141414', '#E4FF00'); START['08'] = len(pages)
 opener('Templates de redes sociais que transformam funcionalidades de produto em posts com cara de lançamento.',
        [('Cliente', 'Zouti'), ('Papel', 'Design'), ('Escopo', 'Templates, sistema visual e cenas de produto')], A + 'zouti/capa.jpg')
 text_page('Conceito', 'O produto vira a imagem.',
@@ -342,8 +367,8 @@ mosaic('m4', [A + 'zouti/parcelamento.jpg', A + 'zouti/taxas.jpg', A + 'zouti/ap
 mosaic('m4', [A + 'zouti/area-membros.jpg', A + 'zouti/reembolso.jpg', A + 'zouti/metricas.jpg', A + 'zouti/integracoes.jpg'])
 
 # ================= 08 BE BRAVE =================
-project('08', 'Be Brave Lab', extra=[A + 'be-brave/logo-laranja.jpg'])
-divider('08', 'Be Brave Lab', 'FA4C05'); START['08'] = len(pages)
+project('09', 'Be Brave Lab', extra=[A + 'be-brave/logo-laranja.jpg'])
+divider('09', 'Be Brave Lab', 'FA4C05'); START['09'] = len(pages)
 opener('Uma identidade com coragem de sobra para uma agência audiovisual que disputa atenção em segundos.',
        [('Cliente', 'Be Brave Lab'), ('Segmento', 'Agência audiovisual'), ('Papel', 'Design de marca'), ('Escopo', 'Símbolo, identidade e aplicações')],
        A + 'be-brave/caixa.jpg')
@@ -362,8 +387,8 @@ one(A + 'be-brave/garrafas.jpg', cap='Garrafas')
 one(A + 'be-brave/instagram.jpg', cap='Instagram')
 
 # ================= 09 FUNNEL BUILDER =================
-project('09', 'Funnel Builder', extra=[])
-divider('09', 'Funnel Builder', '002D51'); START['09'] = len(pages)
+project('10', 'Funnel Builder', extra=[])
+divider('10', 'Funnel Builder', '002D51'); START['10'] = len(pages)
 opener('Marca e sistema de lançamento para formar a primeira geração de construtores de funis de venda do Brasil.',
        [('Cliente', 'Bilhon'), ('Ano', '2024 — 2025'), ('Papel', 'Head de Design: marca e direção do lançamento'), ('Escopo', 'Símbolo, ícone, sistema visual e criativos')],
        A + 'funnel-builder/logo-3d.jpg')
