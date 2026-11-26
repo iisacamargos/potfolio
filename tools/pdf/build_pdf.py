@@ -117,7 +117,7 @@ def spread(src, pos_y='center'):
     """Uma imagem atravessando a página dupla (verso + frente seguinte)."""
     pad_to_verso()
     for side in ('left', 'right'):
-        page(f'<img class="spread-img spread-img--{side}" src="{src}" style="object-position:{side} {pos_y}" alt="">', 'p-bleed')
+        page(f'<img class="spread-img spread-img--{side}" src="{src}" style="object-position:center {pos_y}" alt="">', 'p-bleed')
 
 def spread_band(src):
     """Foto panorâmica numa faixa que atravessa a página dupla, com branco acima e abaixo."""
@@ -192,14 +192,12 @@ page(f'''{head_txt('Assinaturas', 'Quem traçou a marca.')}
 text_page('O quadro', 'Tudo o que foi traçado, numa peça só.',
           '<p>Os traços, os desenhos, as palavras e as assinaturas de cada pessoa da equipe foram reunidos num cartaz-manifesto que virou quadro na sede da Novo Traço.</p>')
 bleed(E + 'quadro.svg')
-one(A + 'novo-traco/nt-poster.jpg', cap='O quadro impresso')
 logo_page('A assinatura manuscrita saiu da própria dinâmica: um gesto único, com a energia do pincel preservada.', tile(A + 'novo-traco/escritos/novo-traco.svg', 'FFFFFF', 'h60'))
 color_page('Uma paleta ampla de propósito. Cada submarca escolhe suas cores dentro dela e ganha um traço próprio: variedade sem perder a unidade.',
            [NT[k] for k in ('cd', 'ms', 'ot', 'rp', 'tb', 'ft', 'il')])
 type_page('Uma paleta tipográfica: cada segmento de comunicação tem sua voz. A Univers permite misturar pesos dentro da mesma palavra.', [UNIVERS, ROSLINDALE, MARGEM])
 one(A + 'novo-traco/nt-livro.jpg', 'Aplicações', 'Box de livros com o propósito da marca na capa.')
 one(A + 'novo-traco/nt-cartazes.jpg', cap='Cartazes NT Academy e NT Music Sessions')
-one(A + 'novo-traco/nt-stories.jpg', cap='Stories de agenda de shows')
 text_page('Vestuário', 'A marca vestida por quem faz a música.',
           '<p>A assinatura manuscrita vai para moletons, bonés, camisetas e ecobags, usados pela equipe, pelos músicos e pelos artistas convidados nas sessões e nos bastidores.</p>')
 bleed(A + 'novo-traco/nt-moletom-2.jpg')
@@ -232,12 +230,11 @@ stack((A + 'novo-traco/orq-moletom-branco.jpg', 'Símbolo bordado no peito'), (A
 bleed(A + 'novo-traco/orq-retrato-1.jpg', 'left center')
 bleed(A + 'novo-traco/orq-retrato-2.jpg')
 one(A + 'novo-traco/orq-batuta.jpg', 'Detalhe', 'O símbolo no peito do maestro, a batuta na mão.')
-spread(A + 'novo-traco/orq-grupo-costas.jpg')
 bleed(A + 'novo-traco/orq-violinistas.jpg')
 one(A + 'novo-traco/orq-bastidores.jpg', 'Bastidores', 'Gravação de sessão: a marca presente em cada detalhe da produção.')
 spread(A + 'novo-traco/orq-silhueta.jpg', 'center')
-spread_band(A + 'novo-traco/orq-grupo-panorama.jpg')
-one(A + 'novo-traco/orq-sessao.jpg', cap='Sessão de gravação com Rincon Sapiência')
+stack((A + 'novo-traco/orq-grupo-costas.jpg', 'Os músicos de costas: ONT, ONT, ONT'), (A + 'novo-traco/orq-grupo-costas-2.jpg', ''), 'O grupo', 'Juntos, os moletons formam a sigla repetida: a orquestra como um só corpo.')
+one(A + 'novo-traco/orq-grupo-panorama.jpg', cap='A orquestra completa')
 one(A + 'novo-traco/orq-foto.jpg', cap='Ensaio')
 
 # ================= 03 NT RECORDS =================
@@ -251,14 +248,10 @@ text_page('Conceito', 'Do pincel à tinta spray. Do traço livre ao grid.',
 logo_page('O símbolo NT dentro de um quadro, envolvido por um traço circular de spray — o disco — e assinado “by Novo Traço”.', fig(V + 'nt-records-logo.jpg', fit=True, cls='fig--tile'))
 one(A + 'novo-traco/rec-linhas.jpg', 'Princípios', 'Linhas organizam; traços expressam. A tensão entre o grid e o gesto é a marca.')
 disc(A + 'novo-traco/rec-traco-circulo.webp', 'Traço — o círculo de spray que envolve o símbolo', 'mid')
-text_page('Discos', 'Cada disco, uma peça única.',
-          '<p>Discos de vinil pintados à mão com spray e pincel formam o acervo gráfico da gravadora. Letras, corações, raios e gestos em preto e branco: cada disco vira estampa, post, capa ou textura, e nenhum se repete.</p>')
-spread(A + 'novo-traco/rec-processo-coracao.jpg')
-text_page('Processo', 'Spray, pincel e tinta, direto no vinil.',
-          '<p>Os discos foram pintados à mão no ateliê: camadas de tinta branca a pincel, spray preto por cima e o gesto de raspar e arrastar a tinta. O erro e o respingo fazem parte da marca.</p>')
-bleed(A + 'novo-traco/rec-processo-sol.jpg')
-stack((A + 'novo-traco/rec-processo-pincel.jpg', 'Pinceladas sobre o vinil'), (A + 'novo-traco/rec-processo-branco.jpg', 'Base de tinta branca'))
+text_page('Discos', 'Spray, pincel e tinta, direto no vinil.',
+          '<p>Discos de vinil pintados à mão no ateliê formam o acervo gráfico da gravadora: camadas de tinta branca a pincel, spray preto por cima e o gesto de raspar e arrastar a tinta.</p><p>Cada disco vira estampa, post, capa ou textura, e nenhum se repete. O erro e o respingo fazem parte da marca.</p>')
 bleed(A + 'novo-traco/rec-processo-transparente.jpg')
+stack((A + 'novo-traco/rec-processo-pincel.jpg', 'Pinceladas sobre o vinil'), (A + 'novo-traco/rec-processo-branco.jpg', 'Base de tinta branca'))
 disc(A + 'novo-traco/rec-disco-02.webp', 'Disco 02', 'edge')
 disc(A + 'novo-traco/rec-disco-13.webp', 'Disco 13', 'mid')
 disc(A + 'novo-traco/rec-disco-06.webp', 'Disco 06', 'edge')
