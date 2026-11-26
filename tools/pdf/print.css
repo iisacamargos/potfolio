@@ -220,3 +220,10 @@ img { display: block; }
 .p-sigs { justify-content: space-between; }
 .sigs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12mm 8mm; align-items: center; justify-items: center; }
 .sigs img { max-width: 100%; max-height: 24mm; width: auto; height: auto; }
+
+/* ---------- LatinJazz: iterações, cartaz e mockup sobre o branco ---------- */
+.p-iter { justify-content: space-between; }
+.iter-img { width: 100%; height: auto; margin-bottom: 20mm; }
+.p-poster, .p-mock { justify-content: center; align-items: center; }
+.poster-img { height: 220mm; width: auto; }
+.mock-img { width: 100%; height: auto; }

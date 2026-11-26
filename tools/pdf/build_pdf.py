@@ -313,28 +313,30 @@ text_page('Conceito', 'Encontros e atravessamentos culturais.',
           '<p>O conceito nasce do reconhecimento de uma sonoridade que pertence ao Brasil. Cores vibrantes inspiradas na Tropicália, texturas, traços e composições expressivas traduzem essa afirmação.</p>'
           '<p>Assim como o próprio Latin Jazz, o universo visual explora contrastes, ritmos e camadas gráficas: uma estética viva, diversa e em constante movimento.</p>')
 logo_page('Desenhado à mão, com traços orgânicos que refletem expressividade, movimento e dinamismo — e o losango da bandeira no lugar de destaque.',
-          tile(A + 'latinjazz/logo.svg', 'FFFFFF', 'h70'))
-one(A + 'latinjazz/variacoes.png', 'Variações', 'Para a animação, as letras se recombinam em figuras de musicistas, rostos, notas musicais e outros símbolos.')
+          tile(A + 'latinjazz/logo-vetor.svg', 'FFFFFF', 'h70'))
+page(f'''{head_txt('Iterações', 'Para a animação, as letras se recombinam em figuras de musicistas, rostos, notas musicais e outros símbolos.')}
+  <img class="iter-img" src="{A}latinjazz/iteracoes.svg" alt="">''', 'p-iter', fol())
 bleed(V + 'latinjazz-colagem.jpg', '50% center')
 color_page('Amarelo, verde, rosa, azul, branco e preto em contraste, como camadas de uma mesma colagem. As cores vêm do sistema da Novo Traço.',
            [NT['il'], NT['ft'], NT['rp'], NT['tb'], NT['cd'], NT['ms']])
 type_page('A Univers organiza datas, nomes e informações; a Margem traz simpatia, leveza e brasilidade.',
           [dict(UNIVERS, use='Títulos, datas e nomes de artistas'), dict(MARGEM, use='Textos e apoio')])
 spread_band(V + 'latinjazz-faixa.jpg')
-one(A + 'latinjazz/cartaz.jpg', 'Aplicações', 'Cartaz em colagem: raios de sol, dançarinos e o trompete.')
-one(A + 'latinjazz/revista.jpg', cap='Revista')
+text_page('Aplicações', 'Cartazes que parecem colados no muro.', '<p>Fotografia em duotom, recortes de colagem, raios de sol em verde e amarelo e a textura de tijolo por baixo: cada peça tem a energia de um lambe-lambe.</p>')
+bleed(A + 'latinjazz/cartaz-trompete.jpg')
 spread(A + 'latinjazz/vinil.jpg')
+bleed(A + 'latinjazz/cartaz-sax.jpg')
+page(f'<img class="poster-img" src="{A}latinjazz/cartaz-dancarinos.webp" alt="">', 'p-poster', fol())
+page(f'<img class="mock-img" src="{A}latinjazz/revista-mockup.webp" alt=""><p class="disc-cap">Revista</p>', 'p-mock', fol())
 bleed(A + 'latinjazz/cartazes.jpg')
 text_page('Uma marca Novo Traço', 'Um vocabulário próprio, pensado para se mexer.',
           '<p>O LatinJazz Brazil compartilha com a marca-mãe as cores, a Univers, a Margem e o gesto feito à mão, mas ganha colagem, raios de sol e papel amassado — feitos para as redes, os telões e a rua.</p>')
 
 # ================= CONTATO + CONTRACAPA =================
 CUR.update(prev=CUR['extra'], extra=[])
-pad_to_verso()   # contato no verso, contracapa na última frente... (livro fecha em página par)
 page('''<div class="end"><span class="kicker">Contato</span><p class="statement">Obrigada.</p>
   <dl class="meta meta--end"><dt>WhatsApp</dt><dd>+55 19 97116-3478</dd><dt>Site</dt><dd>isadoracamargo.com.br</dd>
   <dt>LinkedIn</dt><dd>in/isadora-camargo-86a217266</dd><dt>Instagram</dt><dd>@isaccamargo__</dd></dl></div>''', 'p-end')
-page('', 'p-blank')
 page('<span class="cover-site">isadoracamargo.com.br</span>', 'p-back')
 if len(pages) % 2: pages.insert(-1, ('', 'p-blank', None))
 
