@@ -125,6 +125,11 @@ def spread_band(src):
     for side in ('left', 'right'):
         page(f'<img class="band-img band-img--{side}" src="{src}" alt="">', 'p-bleed p-band')
 
+def disc(src, cap, mode='mid'):
+    """Disco recortado sobre o branco da página: 'mid' centralizado; 'edge' enorme, saindo pela borda externa."""
+    c = f'<p class="disc-cap">{esc(cap)}</p>' if cap else ''
+    page(f'<img class="disc-img disc-img--{mode}" src="{src}" alt="">{c}', f'p-disc p-disc--{mode}', fol())
+
 def mosaic(kind, imgs, pos=None):
     pos = pos or ['center'] * len(imgs)
     cells = ''.join(f'<img src="{s}" style="object-position:{p}" alt="">' for s, p in zip(imgs, pos))
@@ -194,6 +199,7 @@ one(A + 'novo-traco/nt-sessao-moletom.jpg', cap='Sessão com a orquestra')
 bleed(A + 'novo-traco/nt-camiseta-pb.jpg')
 one(A + 'novo-traco/nt-moletom-1.jpg', cap='Moletom e boné Novo Traço')
 stack((A + 'novo-traco/nt-camiseta-marrom.jpg', 'Camiseta'), (A + 'novo-traco/nt-ecobag-vermelha.jpg', 'Ecobag'))
+bleed(A + 'novo-traco/nt-ecobag-estudio.jpg', '35% center')
 text_page('Resultado', 'Um sistema que sustenta toda a comunicação do grupo.',
           '<p>Dos eventos ao digital, cada novo projeto nasce dentro dele. Como diretora de arte, coordeno um time de três designers e desenvolvo os manuais e guidelines que mantêm a marca consistente.</p>')
 
@@ -221,6 +227,7 @@ one(A + 'novo-traco/orq-batuta.jpg', 'Detalhe', 'O símbolo no peito do maestro,
 spread(A + 'novo-traco/orq-grupo-costas.jpg')
 bleed(A + 'novo-traco/orq-violinistas.jpg')
 one(A + 'novo-traco/orq-bastidores.jpg', 'Bastidores', 'Gravação de sessão: a marca presente em cada detalhe da produção.')
+spread(A + 'novo-traco/orq-silhueta.jpg', 'center')
 spread_band(A + 'novo-traco/orq-grupo-panorama.jpg')
 spread(A + 'novo-traco/orq-sessao.jpg')
 one(A + 'novo-traco/orq-foto.jpg', cap='Ensaio')
@@ -235,6 +242,23 @@ text_page('Conceito', 'Do pincel à tinta spray. Do traço livre ao grid.',
           '<p><i>Existir para que a música que nasceu no palco e no estúdio continue acessível depois da luz apagar.</i></p><p>O spray traz urbanidade e textura; as linhas retas, a seriedade de uma marca sólida.</p>')
 logo_page('O símbolo NT dentro de um quadro, envolvido por um traço circular de spray — o disco — e assinado “by Novo Traço”.', fig(V + 'nt-records-logo.jpg', fit=True, cls='fig--tile'))
 one(A + 'novo-traco/rec-linhas.jpg', 'Princípios', 'Linhas organizam; traços expressam. A tensão entre o grid e o gesto é a marca.')
+disc(A + 'novo-traco/rec-traco-circulo.webp', 'Traço — o círculo de spray que envolve o símbolo', 'mid')
+text_page('Discos', 'Cada disco, uma peça única.',
+          '<p>Discos de vinil pintados à mão com spray e pincel formam o acervo gráfico da gravadora. Letras, corações, raios e gestos em preto e branco: cada disco vira estampa, post, capa ou textura, e nenhum se repete.</p>')
+spread(A + 'novo-traco/rec-processo-coracao.jpg')
+text_page('Processo', 'Spray, pincel e tinta, direto no vinil.',
+          '<p>Os discos foram pintados à mão no ateliê: camadas de tinta branca a pincel, spray preto por cima e o gesto de raspar e arrastar a tinta. O erro e o respingo fazem parte da marca.</p>')
+bleed(A + 'novo-traco/rec-processo-sol.jpg')
+stack((A + 'novo-traco/rec-processo-pincel.jpg', 'Pinceladas sobre o vinil'), (A + 'novo-traco/rec-processo-branco.jpg', 'Base de tinta branca'))
+bleed(A + 'novo-traco/rec-processo-transparente.jpg')
+disc(A + 'novo-traco/rec-disco-02.webp', 'Disco 02', 'edge')
+disc(A + 'novo-traco/rec-disco-13.webp', 'Disco 13', 'mid')
+disc(A + 'novo-traco/rec-disco-06.webp', 'Disco 06', 'edge')
+disc(A + 'novo-traco/rec-disco-08.webp', 'Disco 08', 'mid')
+disc(A + 'novo-traco/rec-disco-10.webp', 'Disco 10', 'edge')
+disc(A + 'novo-traco/rec-disco-12.webp', 'Disco 12', 'mid')
+page(f'''{head_txt('Acervo', 'Treze discos, um mesmo gesto.')}
+  <div class="discs-all">{''.join(f'<img src="{A}novo-traco/rec-disco-{i:02d}.webp" alt="">' for i in range(1, 14))}</div>''', 'p-discs', fol())
 color_page('Preto, azul e branco: autoridade e confiança, com o spray como protagonista.', [NT['ms'], dict(name='Azul Records', hex='003AE7'), NT['cd']])
 type_page('A Univers da marca-mãe, usada com mais rigor e menos contraste de pesos.', [dict(UNIVERS, use='Toda a comunicação: títulos, créditos e texto')])
 one(A + 'novo-traco/rec-papelaria.jpg', 'Papelaria', 'Carta, envelope, pasta e caderno.')
@@ -270,6 +294,11 @@ spread(A + 'nt-sessions/live-teatro-dourado.jpg')
 text_page('Ao vivo', 'Ingressos esgotados em menos de 15 minutos.',
           '<p>Na estreia ao vivo, no Theatro Municipal do Rio de Janeiro, a identidade virou cenografia: testeira, painéis de LED e telão animados com os traços à mão, num sistema de amarelo e azul sobre preto que conversa com a arquitetura do teatro.</p>')
 one(V + 'nts-testeira.jpg', 'Cenografia', 'Testeira animada de palco.')
+spread(A + 'nt-sessions/live-palco.jpg')
+one(V + 'nts-led.jpg', 'Painel de LED', 'O logo, os nomes dos artistas e os traços à mão animados atrás da orquestra.')
+bleed(A + 'nt-sessions/live-papatinho.jpg', '40% center')
+bleed(A + 'nt-sessions/live-teatro-vermelho.jpg', '55% center')
+mosaic('m2', [V + 'nts-vertical.jpg', A + 'nt-sessions/live-abraco.jpg'], ['center', '60% center'])
 bleed(A + 'nt-sessions/live-l7nnon.jpg')
 one(A + 'nt-sessions/live-lanternas.jpg', cap='A plateia acende as lanternas')
 

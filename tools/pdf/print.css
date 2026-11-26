@@ -194,3 +194,19 @@ img { display: block; }
 .band-img { position: absolute; top: 50%; transform: translateY(-50%); width: 200%; max-width: none; height: auto; }
 .band-img--left { left: 0; }
 .band-img--right { left: -100%; }
+
+/* ---------- discos pintados (recorte sobre o branco) ---------- */
+.p-disc { justify-content: center; align-items: center; }
+.disc-img--mid { width: 150mm; height: auto; }
+.p-disc--edge { padding: 0 !important; }
+.disc-img--edge { position: absolute; width: 290mm; height: auto; top: 50%; transform: translateY(-50%); }
+.recto .disc-img--edge { left: 40mm; }
+.verso .disc-img--edge { right: 40mm; }
+.disc-cap { margin-top: 10mm; font-size: 6.4pt; letter-spacing: .12em; text-transform: uppercase; color: var(--soft); }
+.p-disc--edge .disc-cap { position: absolute; bottom: 22mm; }
+.recto.p-disc--edge .disc-cap { left: var(--in); }
+.verso.p-disc--edge .disc-cap { right: var(--in); }
+.p-disc--edge .folio { z-index: 1; }
+.p-discs { justify-content: space-between; }
+.discs-all { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6mm 4mm; }
+.discs-all img { width: 100%; height: auto; }
