@@ -232,3 +232,19 @@ img { display: block; }
 .p-row3 { justify-content: space-between; }
 .row3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; margin-bottom: 30mm; }
 .row3 img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+
+/* ---------- post de rede social, um por página ---------- */
+.p-post { justify-content: center; align-items: center; }
+.post-img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+
+/* logos soltos na página: sem fundo e sem contorno */
+.tile { background: none !important; box-shadow: none !important; }
+.tile img { max-width: 82%; max-height: 70%; }
+.tile img.w75 { width: 82%; max-width: 82%; }
+.tile img.h60 { height: 70%; }
+
+/* assinaturas lado a lado, soltas na página */
+.p-lockups { justify-content: space-between; }
+.lockups { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 34mm; }
+.lk-v { width: 62%; height: auto; }
+.lk-h { width: 88%; height: auto; }

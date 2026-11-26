@@ -178,7 +178,7 @@ page('', 'p-blank')
 page('__INDEX__', 'p-index')
 
 # ================= 01 NOVO TRAÇO =================
-project('01', 'Novo Traço', extra=[V + 'novo-traco-making-2.jpg'])
+project('01', 'Novo Traço', extra=[])
 divider('01', 'Novo Traço', 'F6EA60'); START['01'] = len(pages)
 opener('Uma marca-mãe para um grupo de arte e música: a expressividade brasileira traduzida em traço, cor e contraste.',
        [('Cliente', 'Novo Traço'), ('Ano', '2025 — 2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Identidade, sistema de marca, submarcas e guidelines')],
@@ -207,8 +207,6 @@ logo_page('A assinatura manuscrita saiu da própria dinâmica: um gesto único, 
 color_page('Uma paleta ampla de propósito. Cada submarca escolhe suas cores dentro dela e ganha um traço próprio: variedade sem perder a unidade.',
            [NT[k] for k in ('cd', 'ms', 'ot', 'rp', 'tb', 'ft', 'il')])
 type_page('Uma paleta tipográfica: cada segmento de comunicação tem sua voz. A Univers permite misturar pesos dentro da mesma palavra.', [UNIVERS, ROSLINDALE, MARGEM])
-one(A + 'novo-traco/nt-livro.jpg', 'Aplicações', 'Box de livros com o propósito da marca na capa.')
-one(A + 'novo-traco/nt-cartazes.jpg', cap='Cartazes NT Academy e NT Music Sessions')
 text_page('Vestuário', 'A marca vestida por quem faz a música.',
           '<p>A assinatura manuscrita vai para moletons, bonés, camisetas e ecobags, usados pela equipe, pelos músicos e pelos artistas convidados nas sessões e nos bastidores.</p>')
 bleed(A + 'novo-traco/nt-moletom-2.jpg')
@@ -221,7 +219,7 @@ text_page('Resultado', 'Um sistema que sustenta toda a comunicação do grupo.',
           '<p>Dos eventos ao digital, cada novo projeto nasce dentro dele. Como diretora de arte, coordeno um time de três designers e desenvolvo os manuais e guidelines que mantêm a marca consistente.</p>')
 
 # ================= 02 ORQUESTRA =================
-project('02', 'Orquestra Novo Traço', 'Orquestra<br>Novo Traço', extra=[V + 'orquestra-logo.jpg'])
+project('02', 'Orquestra Novo Traço', 'Orquestra<br>Novo Traço', extra=[])
 divider('02', 'Orquestra Novo Traço', 'F0EFEB'); START['02'] = len(pages)
 opener('Uma orquestra que toca com artistas da música urbana, com identidade nascida da partitura.',
        [('Cliente', 'Novo Traço'), ('Ano', '2025 — 2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Símbolo, identidade, eventos e vestuário')],
@@ -229,12 +227,12 @@ opener('Uma orquestra que toca com artistas da música urbana, com identidade na
 text_page('Conceito', 'Uma partitura: clareza, elegância e respiro.',
           '<p>A identidade deriva da marca-mãe, com mais espaço em branco e predominância do preto sobre fundo claro.</p>')
 logo_page('A equipe já chamava a orquestra de “ONT”, e a sigla virou símbolo. As letras se apoiam umas nas outras, como os instrumentos de uma orquestra, em que nenhum atua isolado.',
-          fig(A + 'novo-traco/orq-logo.jpg', fit=True, cls='fig--tile'), 'Símbolo')
-bleed(V + 'orquestra-simbolo.jpg', '62% center')
+          tile(A + 'novo-traco/ont.svg', 'FFFFFF', 'w75'), 'Símbolo')
+page(f'''<span class="kicker">Assinaturas</span>
+  <div class="lockups"><img class="lk-v" src="{A}novo-traco/orq-logo-vertical.svg" alt=""><img class="lk-h" src="{A}novo-traco/orq-logo.svg" alt=""></div>''', 'p-lockups', fol())
 color_page('Três cores: o preto da tinta, o branco do papel e o amarelo como acento.', [NT['ms'], NT['cd'], NT['il']])
 one(A + 'novo-traco/orq-cartoes.jpg', 'Papelaria', 'Cartões em creme e amarelo: o símbolo recortado pela borda e os nomes em Roslindale.')
 one(A + 'novo-traco/orq-batuta-arte.jpg', 'Digital', 'A batuta do maestro sobre o símbolo: colagem, grão e o amarelo da marca.')
-one(V + 'orquestra-evento.jpg', cap='Post do evento: Orquestra NT convida L7NNON')
 text_page('Vestuário', 'O símbolo veste a orquestra.',
           '<p>Nos ensaios, nas sessões e nos bastidores, os músicos usam o moletom ONT: o símbolo no peito, a assinatura “orquestra Novo traço” logo abaixo. A identidade sai do papel e passa a fazer parte do grupo.</p>')
 bleed(A + 'novo-traco/orq-retrato-violino.jpg')
@@ -248,7 +246,7 @@ one(A + 'novo-traco/orq-bastidores.jpg', 'Bastidores', 'Gravação de sessão: a
 spread(A + 'novo-traco/orq-silhueta.jpg', 'center')
 stack((A + 'novo-traco/orq-grupo-costas.jpg', 'Os músicos de costas: ONT, ONT, ONT'), (A + 'novo-traco/orq-grupo-costas-2.jpg', ''), 'O grupo', 'Juntos, os moletons formam a sigla repetida: a orquestra como um só corpo.')
 one(A + 'novo-traco/orq-grupo-panorama.jpg', cap='A orquestra completa')
-one(A + 'novo-traco/orq-foto.jpg', cap='Ensaio')
+spread(A + 'novo-traco/orq-foto.jpg', force=True)
 
 # ================= 03 NT RECORDS =================
 project('03', 'NT Records', extra=[A + 'novo-traco/rec-hoodie-preto.jpg', A + 'novo-traco/rec-garrafa-inox.jpg'])
@@ -258,12 +256,12 @@ opener('A gravadora do grupo: o traço da marca-mãe ganha tinta spray, textura 
        A + 'novo-traco/rec-camiseta.jpg')
 text_page('Conceito', 'Do pincel à tinta spray. Do traço livre ao grid.',
           '<p><i>Existir para que a música que nasceu no palco e no estúdio continue acessível depois da luz apagar.</i></p><p>O spray traz urbanidade e textura; as linhas retas, a seriedade de uma marca sólida.</p>')
-logo_page('O símbolo NT dentro de um quadro, envolvido por um traço circular de spray — o disco — e assinado “by Novo Traço”.', fig(V + 'nt-records-logo.jpg', fit=True, cls='fig--tile'))
+logo_page('O símbolo NT dentro de um quadro, envolvido por um traço circular de spray — o disco — e assinado “by Novo Traço”.', tile(A + 'novo-traco/rec-logo-vertical.svg', 'FFFFFF', 'h60'))
 one(A + 'novo-traco/rec-linhas.jpg', 'Princípios', 'Linhas organizam; traços expressam. A tensão entre o grid e o gesto é a marca.')
 disc(A + 'novo-traco/rec-traco-circulo.webp', 'Traço — o círculo de spray que envolve o símbolo', 'mid')
 text_page('Discos', 'Spray, pincel e tinta, direto no vinil.',
           '<p>Discos de vinil pintados à mão no ateliê formam o acervo gráfico da gravadora: camadas de tinta branca a pincel, spray preto por cima e o gesto de raspar e arrastar a tinta.</p><p>Cada disco vira estampa, post, capa ou textura, e nenhum se repete. O erro e o respingo fazem parte da marca.</p>')
-bleed(A + 'novo-traco/rec-processo-transparente.jpg', force=True)
+bleed(A + 'novo-traco/rec-processo-coracao.jpg', '96% center', force=True)
 stack((A + 'novo-traco/rec-processo-pincel.jpg', 'Pinceladas sobre o vinil'), (A + 'novo-traco/rec-processo-branco.jpg', 'Base de tinta branca'))
 disc(A + 'novo-traco/rec-disco-02.webp', 'Disco 02', 'edge')
 disc(A + 'novo-traco/rec-disco-13.webp', 'Disco 13', 'mid')
@@ -282,8 +280,9 @@ page(f'<img class="poster-img" src="{A}novo-traco/rec-poster.webp" alt="">', 'p-
 one(A + 'novo-traco/rec-tote-1.jpg', 'Merch', 'O disco pintado vira estampa; o símbolo assina com discrição.')
 page(f'<img class="mock-img" src="{A}novo-traco/rec-tote-discos.webp" alt=""><p class="disc-cap">Ecobag com os discos</p>', 'p-mock', fol())
 one(A + 'novo-traco/rec-hoodie-spray.webp', cap='Hoodie tingido com spray')
-page(f'''{head_txt('Digital', 'O azul da gravadora, o spray e o disco como linguagem nas redes.')}
-  <div class="row3">{''.join(f'<img src="{A}novo-traco/{f}.jpg" alt="">' for f in ('rec-post-jazz','rec-post-discos','rec-post-frase'))}</div>''', 'p-row3', fol())
+text_page('Digital', 'O azul da gravadora, o spray e o disco como linguagem nas redes.')
+for f in ('rec-post-jazz', 'rec-post-discos', 'rec-post-frase'):
+    page(f'<img class="post-img" src="{A}novo-traco/{f}.jpg" alt="">', 'p-post', fol())
 
 # ================= 04 NT SESSIONS =================
 project('04', 'NT Sessions', extra=[A + 'nt-sessions/live-emocao.jpg'])
@@ -309,9 +308,7 @@ page(f'''{head_txt('Coleção', 'Oito capas, uma linguagem.')}
 spread(A + 'nt-sessions/live-teatro-dourado.jpg')
 text_page('Ao vivo', 'Ingressos esgotados em menos de 15 minutos.',
           '<p>Na estreia ao vivo, no Theatro Municipal do Rio de Janeiro, a identidade virou cenografia: testeira, painéis de LED e telão animados com os traços à mão, num sistema de amarelo e azul sobre preto que conversa com a arquitetura do teatro.</p>')
-one(V + 'nts-testeira.jpg', 'Cenografia', 'Testeira animada de palco.')
 spread(A + 'nt-sessions/live-palco.jpg')
-one(V + 'nts-led.jpg', 'Painel de LED', 'O logo, os nomes dos artistas e os traços à mão animados atrás da orquestra.')
 bleed(A + 'nt-sessions/live-papatinho.jpg', '40% center')
 bleed(A + 'nt-sessions/live-teatro-vermelho.jpg', '55% center')
 one(A + 'nt-sessions/live-abraco.jpg', cap='O abraço no fim do show')
@@ -331,18 +328,15 @@ logo_page('Desenhado à mão, com traços orgânicos que refletem expressividade
           tile(A + 'latinjazz/logo-vetor.svg', 'FFFFFF', 'h70'))
 page(f'''{head_txt('Iterações', 'Para a animação, as letras se recombinam em figuras de musicistas, rostos, notas musicais e outros símbolos.')}
   <img class="iter-img" src="{A}latinjazz/iteracoes.svg" alt="">''', 'p-iter', fol())
-bleed(V + 'latinjazz-colagem.jpg', '50% center')
 color_page('Amarelo, verde, rosa, azul, branco e preto em contraste, como camadas de uma mesma colagem. As cores vêm do sistema da Novo Traço.',
            [NT['il'], NT['ft'], NT['rp'], NT['tb'], NT['cd'], NT['ms']])
 page(f'<img class="mock-img" src="{A}latinjazz/revista-mockup.webp" alt=""><p class="disc-cap">Revista</p>', 'p-mock', fol())
-spread_band(V + 'latinjazz-faixa.jpg')
 text_page('Aplicações', 'Cartazes que parecem colados no muro.', '<p>Fotografia em duotom, recortes de colagem, raios de sol em verde e amarelo e a textura de tijolo por baixo: cada peça tem a energia de um lambe-lambe.</p>')
 bleed(A + 'latinjazz/cartaz-trompete.jpg')
 one(A + 'latinjazz/vinil.jpg', cap='Capa de vinil')
 bleed(A + 'latinjazz/cartaz-sax.jpg')
 spread(A + 'latinjazz/banners-hd.jpg', force=True)
 page(f'<img class="poster-img" src="{A}latinjazz/cartaz-dancarinos.webp" alt="">', 'p-poster', fol())
-bleed(A + 'latinjazz/cartazes.jpg')
 text_page('Uma marca Novo Traço', 'Um vocabulário próprio, pensado para se mexer.',
           '<p>O LatinJazz Brazil compartilha com a marca-mãe as cores, a Univers, a Margem e o gesto feito à mão, mas ganha colagem, raios de sol e papel amassado — feitos para as redes, os telões e a rua.</p>')
 
@@ -355,11 +349,11 @@ opener('Uma coleção-cápsula da Novo Traço com Papatinho: o traço da marca, 
 text_page('Conceito', 'Duas assinaturas na mesma peça.',
           '<p>A NT Collection leva o universo da Novo Traço para o vestuário em parceria com artistas. Na primeira edição, com Papatinho, o N pintado à mão da marca encontra a tag manuscrita do produtor, a serifa do “Collection” e as informações da cápsula: Los Angeles, CA, 2026.</p>')
 logo_page('O N pintado à mão da Novo Traço encontra o “Collection” em serifa: uma assinatura pensada para dividir espaço com a tag de cada artista convidado.', tile(A + 'nt-collection/logo.svg', 'FFFFFF', 'w75'))
-page(f'<img class="esc-img esc-img--logo" src="{A}nt-collection/simbolo.svg" alt=""><p class="esc-cap">Símbolo NT</p>', 'p-esc', fol())
 bleed(A + 'nt-collection/etiqueta.jpg')
 one(A + 'nt-collection/papatinho-sofa.jpg', 'Papatinho', 'O moletom da coleção no estúdio, com o símbolo NT Collection no peito.')
 bleed(A + 'nt-collection/ecobags.jpg')
 bleed(A + 'nt-collection/camisetas.jpg')
+bleed(A + 'nt-collection/moletom-costas.jpg')
 
 # ================= CONTATO + CONTRACAPA =================
 CUR.update(prev=CUR['extra'], extra=[])
