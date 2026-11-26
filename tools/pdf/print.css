@@ -275,3 +275,32 @@ img { display: block; }
 .open-logo { height: 120mm; display: flex; align-items: center; justify-content: flex-start; }
 .open-logo img.tall { height: 100mm; width: auto; max-width: 100%; }
 .open-logo img.wide { width: 120mm; height: auto; max-height: 100mm; }
+
+/* ---------- capa preta ---------- */
+.p-cover--dark { background: #111 !important; color: #f4f2ec; justify-content: space-between; }
+.cv-top, .cv-foot { display: flex; justify-content: space-between; font-size: 7pt; letter-spacing: .14em; text-transform: uppercase; color: #9a9a96; }
+.cv-foot { border-top: .25mm solid #3a3a38; padding-top: 4mm; }
+.cv-mark { position: absolute; top: 34mm; right: var(--out); height: 118mm; width: auto; filter: invert(1); opacity: .95; }
+.cv-title { margin-top: auto; margin-bottom: 14mm; }
+.cv-title h1 { font-family: var(--sans); font-weight: 600; font-size: 64pt; line-height: .94; letter-spacing: -.045em; margin: 0 0 9mm; }
+.cv-sub { font-family: var(--sans); font-size: 15pt; letter-spacing: -.01em; margin-bottom: 7mm; }
+.cv-list { font-size: 6.8pt; line-height: 1.7; letter-spacing: .06em; text-transform: uppercase; color: #9a9a96; max-width: 120mm; }
+
+/* ---------- capa preta, versão com grid ---------- */
+.p-cover--grid { --hair: .2mm solid #3d3d3a; }
+.g-row { display: grid; grid-template-columns: repeat(4, 1fr); font-size: 6.6pt; letter-spacing: .12em; text-transform: uppercase; color: #9a9a96; }
+.g-row > * { padding: 3mm 3mm 3mm 0; }
+.g-row > * + * { border-left: var(--hair); padding-left: 3mm; }
+.g-head { border-bottom: var(--hair); }
+.g-mid { flex: 1; display: grid; grid-template-columns: repeat(4, 1fr); position: relative; }
+.g-mid::before, .g-mid::after { content: ''; position: absolute; top: 0; bottom: 0; border-left: var(--hair); }
+.g-mid::before { left: 50%; }
+.g-mid::after { left: 0; display: none; }
+.g-mark { grid-column: 3 / 5; height: 112mm; width: auto; margin: 14mm 0 0 6mm; filter: invert(1); }
+.g-title { border-top: var(--hair); padding-top: 7mm; margin-bottom: 9mm; }
+.g-title h1 { font-family: var(--sans); font-weight: 600; font-size: 64pt; line-height: .94; letter-spacing: -.045em; margin: 0 0 7mm; }
+.g-info { border-top: var(--hair); border-bottom: var(--hair); }
+.g-info dt { font-size: 6pt; color: #77776f; margin-bottom: 1.5mm; }
+.g-info dd { margin: 0; color: #f4f2ec; font-size: 7.2pt; letter-spacing: .04em; text-transform: none; font-family: var(--mono); }
+.g-foot { color: #77776f; }
+.g-mark { width: calc(100% - 6mm); height: auto; max-height: 112mm; object-fit: contain; object-position: left top; margin: 12mm 0 0 6mm; }

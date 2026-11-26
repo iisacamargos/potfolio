@@ -172,9 +172,21 @@ PROJ = [('01', 'Novo Traço', 'Identidade visual · Sistema de marca'), ('02', '
 START = {}
 
 # ================= CAPA + ÍNDICE =================
-page('''<span class="cover-year">2026</span>
-  <div class="cover-title"><span class="cover-kicker">Portfólio · Case</span><h1>Novo Traço</h1><p class="cover-sub">A marca-mãe e suas submarcas: Orquestra Novo Traço, NT Records, NT Sessions, LatinJazz Brazil e NT Collection</p><p>Isadora Camargo</p></div>
-  <span class="cover-site">isadoracamargo.com.br</span>''', 'p-cover')
+if os.environ.get('COVER') == 'grid':
+    page(f'''<div class="g-row g-head"><span>Isadora Camargo</span><span>Portfólio</span><span>Case</span><span>2026</span></div>
+      <div class="g-mid"><img class="g-mark" src="{A}novo-traco/escritos/novo-traco.svg" alt=""></div>
+      <div class="g-title"><h1>Case<br>Novo Traço</h1><p class="cv-sub">Imagens complementares ao portfólio</p></div>
+      <div class="g-row g-info">
+        <div><dt>Cliente</dt><dd>Novo Traço</dd></div><div><dt>Ano</dt><dd>2025 — 2026</dd></div>
+        <div><dt>Papel</dt><dd>Direção de arte</dd></div><div><dt>Marcas</dt><dd>06 projetos</dd></div></div>
+      <div class="g-row g-foot"><span>Identidade visual</span><span>Sistema de marca</span><span>Submarcas</span><span>isadoracamargo.com.br</span></div>''', 'p-cover p-cover--dark p-cover--grid')
+else:
+    page(f'''<div class="cv-top"><span>Isadora Camargo</span><span>2026</span></div>
+      <img class="cv-mark" src="{A}novo-traco/escritos/novo-traco.svg" alt="">
+      <div class="cv-title"><h1>Case<br>Novo Traço</h1>
+        <p class="cv-sub">Imagens complementares ao portfólio</p>
+        <p class="cv-list">Novo Traço · Orquestra Novo Traço · NT Records · NT Sessions · LatinJazz Brazil · NT Collection</p></div>
+      <div class="cv-foot"><span>Identidade visual e direção de arte</span><span>isadoracamargo.com.br</span></div>''', 'p-cover p-cover--dark')
 page('', 'p-blank')
 page('__INDEX__', 'p-index')
 

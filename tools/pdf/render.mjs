@@ -8,7 +8,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const args = process.argv.slice(2);
 const pngIdx = args.indexOf('--png');
 const pngDir = pngIdx >= 0 ? args[pngIdx + 1] : null;
-const out = args.find((a, i) => !a.startsWith('--') && i !== pngIdx + 1) || path.join(ROOT, 'print/Isadora-Camargo-Portfolio-2026.pdf');
+const out = args.find((a, i) => !a.startsWith('--') && (pngIdx < 0 || i !== pngIdx + 1)) || path.join(ROOT, 'print/Isadora-Camargo-Portfolio-2026.pdf');
 
 // playwright local ou global (npm i -g playwright)
 let chromium;
