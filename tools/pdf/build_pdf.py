@@ -59,10 +59,11 @@ def divider(num, name, color, ink=None):
     color, ink = '161616', '#ffffff'   # neutro e igual para todos os projetos
     page(f'<div class="div-field" style="background:#{color};color:{ink}"><span class="div-num">{num}</span><span class="div-name">{name}</span></div>', 'p-bleed')
 
-def opener(lede, items, img):
+def opener(lede, items, logo, cls=''):
+    """Abertura do projeto: texto e ficha em cima, o logo solto embaixo."""
     page(f'''<div class="open-head"><span class="open-num">{CUR['n']}</span>
         <h2 class="open-name">{CUR['title']}</h2><p class="open-lede">{esc(lede)}</p>{meta(items)}</div>
-      <div class="open-img"><img src="{img}" alt=""></div>''', 'p-open', fol())
+      <div class="open-logo"><img class="{cls}" src="{logo}" alt=""></div>''', 'p-open', fol())
 
 def text_page(kicker, statement, body=''):
     b = f'<div class="body">{body}</div>' if body else ''
@@ -182,7 +183,7 @@ project('01', 'Novo Traço', extra=[])
 divider('01', 'Novo Traço', 'F6EA60'); START['01'] = len(pages)
 opener('Uma marca-mãe para um grupo de arte e música: a expressividade brasileira traduzida em traço, cor e contraste.',
        [('Cliente', 'Novo Traço'), ('Ano', '2025 — 2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Identidade, sistema de marca, submarcas e guidelines')],
-       A + 'novo-traco/nt-ecobag.jpg')
+       A + 'novo-traco/escritos/novo-traco.svg', 'tall')
 text_page('Conceito', 'Contrastes e expressividade.',
           '<p>A identidade nasce da expressividade como linguagem vital do povo brasileiro, onde a arte é ferramenta de sobrevivência, comunicação e identidade. Erudito e popular, tradição e ruptura, dor e celebração.</p>'
           '<p>O desafio: reunir educação, música ao vivo, orquestra e gravadora sob uma mesma voz, sem apagar a personalidade de cada projeto.</p>')
@@ -202,7 +203,7 @@ page(f'''{head_txt('Assinaturas', 'Quem traçou a marca.')}
 text_page('O quadro', 'Tudo o que foi traçado, numa peça só.',
           '<p>Os traços, os desenhos, as palavras e as assinaturas de cada pessoa da equipe foram reunidos num cartaz-manifesto que virou quadro na sede da Novo Traço.</p>')
 bleed(E + 'quadro.svg')
-logo_page('A assinatura manuscrita saiu da própria dinâmica: um gesto único, com a energia do pincel preservada.', tile(A + 'novo-traco/escritos/novo-traco.svg', 'FFFFFF', 'h60'))
+one(A + 'novo-traco/nt-ecobag.jpg')
 color_page('Uma paleta ampla de propósito. Cada submarca escolhe suas cores dentro dela e ganha um traço próprio: variedade sem perder a unidade.',
            [NT[k] for k in ('cd', 'ms', 'ot', 'rp', 'tb', 'ft', 'il')])
 type_page('Uma paleta tipográfica: cada segmento de comunicação tem sua voz. A Univers permite misturar pesos dentro da mesma palavra.', [UNIVERS, ROSLINDALE, MARGEM])
@@ -218,13 +219,12 @@ project('02', 'Orquestra Novo Traço', 'Orquestra<br>Novo Traço', extra=[])
 divider('02', 'Orquestra Novo Traço', 'F0EFEB'); START['02'] = len(pages)
 opener('Uma orquestra que toca com artistas da música urbana, com identidade nascida da partitura.',
        [('Cliente', 'Novo Traço'), ('Ano', '2025 — 2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Símbolo, identidade, eventos e vestuário')],
-       A + 'novo-traco/orq-mockup.jpg')
+       A + 'novo-traco/orq-logo-vertical.svg', 'wide')
 text_page('Conceito', 'Uma partitura: clareza, elegância e respiro.',
           '<p>A identidade deriva da marca-mãe, com mais espaço em branco e predominância do preto sobre fundo claro.</p>')
 logo_page('A equipe já chamava a orquestra de “ONT”, e a sigla virou símbolo. As letras se apoiam umas nas outras, como os instrumentos de uma orquestra, em que nenhum atua isolado.',
           tile(A + 'novo-traco/ont.svg', 'FFFFFF', 'w75'), 'Símbolo')
-page(f'''<span class="kicker">Assinaturas</span>
-  <div class="lockups"><img class="lk-v" src="{A}novo-traco/orq-logo-vertical.svg" alt=""><img class="lk-h" src="{A}novo-traco/orq-logo.svg" alt=""></div>''', 'p-lockups', fol())
+one(A + 'novo-traco/orq-mockup.jpg')
 color_page('Três cores: o preto da tinta, o branco do papel e o amarelo como acento.', [NT['ms'], NT['cd'], NT['il']])
 one(A + 'novo-traco/orq-cartoes.jpg', 'Papelaria', 'Cartões em creme e amarelo: o símbolo recortado pela borda e os nomes em Roslindale.')
 one(A + 'novo-traco/orq-batuta-arte.jpg', 'Digital', 'A batuta do maestro sobre o símbolo: colagem, grão e o amarelo da marca.')
@@ -244,12 +244,14 @@ project('03', 'NT Records', extra=[A + 'novo-traco/rec-garrafa-inox.jpg'])
 divider('03', 'NT Records', '003AE7'); START['03'] = len(pages)
 opener('A gravadora do grupo: o traço da marca-mãe ganha tinta spray, textura urbana e um grid que dá solidez.',
        [('Cliente', 'Novo Traço'), ('Ano', '2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Símbolo, identidade, papelaria, merch e digital')],
-       A + 'novo-traco/rec-camiseta.jpg')
+       A + 'novo-traco/rec-logo-vertical.svg', 'tall')
 text_page('Conceito', 'Do pincel à tinta spray. Do traço livre ao grid.',
           '<p><i>Existir para que a música que nasceu no palco e no estúdio continue acessível depois da luz apagar.</i></p><p>O spray traz urbanidade e textura; as linhas retas, a seriedade de uma marca sólida.</p>')
-logo_page('O símbolo NT dentro de um quadro, envolvido por um traço circular de spray — o disco — e assinado “by Novo Traço”.', tile(A + 'novo-traco/rec-logo-vertical.svg', 'FFFFFF', 'h60'))
-one(A + 'novo-traco/rec-linhas.jpg', 'Princípios', 'Linhas organizam; traços expressam. A tensão entre o grid e o gesto é a marca.')
-disc(A + 'novo-traco/rec-traco-circulo.webp', 'Traço — o círculo de spray que envolve o símbolo', 'mid')
+one(A + 'novo-traco/rec-camiseta.jpg')
+page('''<div class="pr-grid"></div><div class="pr-txt"><span class="kicker">Princípios</span><p class="statement">Linhas</p>
+  <div class="body"><p>As linhas retas funcionam como grid estruturante, trazendo seriedade, profissionalismo e clareza à identidade. Enquanto os traços expressam criatividade, o grid estabelece ordem e confiabilidade, criando a hierarquia visual que consolida a NT Records como uma marca sólida.</p></div></div>''', 'p-princ', fol())
+page(f'''<img class="pr-circle" src="{A}novo-traco/rec-traco-circulo.webp" alt=""><div class="pr-txt"><span class="kicker">Princípios</span><p class="statement">Traços</p>
+  <div class="body"><p>Os traços orgânicos seguem a mesma linha estética da Novo Traço. Na gravadora, porém, em vez de pincel e caneta, o traço é feito com tinta spray: mais urbanidade e textura.</p></div></div>''', 'p-princ', fol())
 text_page('Discos', 'Spray, pincel e tinta, direto no vinil.',
           '<p>Discos de vinil pintados à mão no ateliê formam o acervo gráfico da gravadora: camadas de tinta branca a pincel, spray preto por cima e o gesto de raspar e arrastar a tinta.</p><p>Cada disco vira estampa, post, capa ou textura, e nenhum se repete. O erro e o respingo fazem parte da marca.</p>')
 bleed(A + 'novo-traco/rec-processo-coracao.jpg', '96% center', force=True)
@@ -275,11 +277,10 @@ project('04', 'NT Sessions', extra=[A + 'nt-sessions/live-emocao.jpg'])
 divider('04', 'NT Sessions', 'F6EA60'); START['04'] = len(pages)
 opener('A orquestra encontra a música urbana: sessões gravadas, EPs e um show esgotado no Theatro Municipal do Rio.',
        [('Cliente', 'Novo Traço'), ('Ano', '2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Identidade, capas, motion e cenografia em LED')],
-       A + 'nt-sessions/live-teatro-vermelho.jpg')
+       A + 'nt-sessions/logo.svg', 'tall')
 text_page('Conceito', 'O erudito e a rua no mesmo palco.',
           '<p>Cada edição é uma collab entre a Orquestra Novo Traço e um artista urbano: o repertório ganha arranjos para orquestra, é gravado em sessão e vira EP. Já passaram L7NNON e Papatinho, MC Pedrinho e Froid.</p>')
-logo_page('Um carimbo: N e t pintados à mão, presos num quadro, com SESSIONS numa faixa sólida. Assina qualquer capa ou telão sem disputar espaço com o artista.',
-          tile(A + 'nt-sessions/logo.svg', 'FFFFFF', 'h70'))
+one(A + 'nt-sessions/live-teatro-vermelho.jpg')
 color_page('Amarelo e azul sobre preto e branco: as cores da marca-mãe a serviço do contraste.', [NT['il'], NT['ms'], NT['cd'], NT['tb']])
 text_page('Capas', 'Cada artista ganha seu universo; a coleção se reconhece de longe.',
           '<p>Fotografia em preto e branco com grão, recortes de colagem, um contorno amarelo e um traço à mão que atravessa a composição.</p>')
@@ -305,12 +306,10 @@ project('05', 'LatinJazz Brazil', 'LatinJazz<br>Brazil', extra=[A + 'latinjazz/c
 divider('05', 'LatinJazz Brazil', '00733C', '#F6EA60'); START['05'] = len(pages)
 opener('Uma sonoridade que também pertence ao Brasil: Tropicália, colagem e um logo desenhado à mão para um projeto da Novo Traço.',
        [('Cliente', 'Novo Traço'), ('Papel', 'Direção de arte'), ('Escopo', 'Logotipo, identidade visual, motion e aplicações')],
-       A + 'latinjazz/banners.jpg')
+       A + 'latinjazz/logo-vetor.svg', 'tall')
 text_page('Conceito', 'Encontros e atravessamentos culturais.',
           '<p>O conceito nasce do reconhecimento de uma sonoridade que pertence ao Brasil. Cores vibrantes inspiradas na Tropicália, texturas, traços e composições expressivas traduzem essa afirmação.</p>'
           '<p>Assim como o próprio Latin Jazz, o universo visual explora contrastes, ritmos e camadas gráficas: uma estética viva, diversa e em constante movimento.</p>')
-logo_page('Desenhado à mão, com traços orgânicos que refletem expressividade, movimento e dinamismo — e o losango da bandeira no lugar de destaque.',
-          tile(A + 'latinjazz/logo-vetor.svg', 'FFFFFF', 'h70'))
 page(f'''{head_txt('Iterações', 'Para a animação, as letras se recombinam em figuras de musicistas, rostos, notas musicais e outros símbolos.')}
   <img class="iter-img" src="{A}latinjazz/iteracoes.svg" alt="">''', 'p-iter', fol())
 color_page('Amarelo, verde, rosa, azul, branco e preto em contraste, como camadas de uma mesma colagem. As cores vêm do sistema da Novo Traço.',
@@ -330,10 +329,10 @@ project('06', 'NT Collection', extra=[])
 divider('06', 'NT Collection', '161616'); START['06'] = len(pages)
 opener('Uma coleção-cápsula da Novo Traço com Papatinho: o traço da marca, a tag do produtor e Los Angeles 2026 numa mesma peça.',
        [('Cliente', 'Novo Traço'), ('Ano', '2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Coleção, estampas, etiquetas e ecobags')],
-       A + 'nt-collection/moletom-costas.jpg')
+       A + 'nt-collection/logo.svg', 'wide')
 text_page('Conceito', 'Duas assinaturas na mesma peça.',
           '<p>A NT Collection leva o universo da Novo Traço para o vestuário em parceria com artistas. Na primeira edição, com Papatinho, o N pintado à mão da marca encontra a tag manuscrita do produtor, a serifa do “Collection” e as informações da cápsula: Los Angeles, CA, 2026.</p>')
-logo_page('O N pintado à mão da Novo Traço encontra o “Collection” em serifa: uma assinatura pensada para dividir espaço com a tag de cada artista convidado.', tile(A + 'nt-collection/logo.svg', 'FFFFFF', 'w75'))
+bleed(A + 'nt-collection/moletom-costas.jpg')
 color_page('O azul da ecobag, o azul-claro do traço, o amarelo da Novo Traço e o preto e o creme de base.',
            [dict(name='Azul Collection', hex='0E17C2'), dict(name='Azul Tinta', hex='0E008C'), dict(name='Tropical Breeze', hex='87CDE7', pantone='13-4307 TCX'),
             dict(name='Illuminating', hex='F6EA60', pantone='13-0647 TCX'), NT['ms'], dict(name='Creme', hex='F1F0E8')])

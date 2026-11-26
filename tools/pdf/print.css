@@ -259,3 +259,19 @@ img { display: block; }
 /* capa: documentação do case */
 .cover-kicker { display: block; font-size: 7pt; letter-spacing: .14em; text-transform: uppercase; color: var(--soft); margin-bottom: 6mm; }
 .cover-sub { font-family: var(--mono) !important; font-size: 7.6pt !important; line-height: 1.6; color: var(--soft); max-width: 110mm; margin: 0 0 14mm; letter-spacing: 0 !important; }
+
+/* princípios NT Records: Linhas e Traços diagramados */
+.p-princ { justify-content: flex-end; }
+.pr-grid { position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(to right, #cfcfcf .25mm, transparent .25mm), linear-gradient(to bottom, #cfcfcf .25mm, transparent .25mm);
+  background-size: 52.5mm 74.25mm; background-position: -0.125mm -0.125mm; }
+.pr-txt { position: relative; margin-bottom: 26mm; background: var(--paper); padding: 6mm 6mm 6mm 0; max-width: 120mm; }
+.pr-circle { position: absolute; width: 175mm; height: auto; top: 22mm; left: 50%; transform: translateX(-50%); }
+.pr-grid { bottom: auto; height: 178.2mm; }
+.pr-txt { background: none; padding: 0; }
+.pr-circle { width: 150mm; top: 26mm; }
+
+/* abertura com o logo solto embaixo */
+.open-logo { height: 120mm; display: flex; align-items: center; justify-content: flex-start; }
+.open-logo img.tall { height: 100mm; width: auto; max-width: 100%; }
+.open-logo img.wide { width: 120mm; height: auto; max-height: 100mm; }
