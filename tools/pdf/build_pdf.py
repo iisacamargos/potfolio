@@ -332,16 +332,16 @@ opener('Uma coleção-cápsula da Novo Traço com Papatinho: o traço da marca, 
        A + 'nt-collection/logo.svg', 'wide')
 text_page('Conceito', 'Duas assinaturas na mesma peça.',
           '<p>A NT Collection leva o universo da Novo Traço para o vestuário em parceria com artistas. Na primeira edição, com Papatinho, o N pintado à mão da marca encontra a tag manuscrita do produtor, a serifa do “Collection” e as informações da cápsula: Los Angeles, CA, 2026.</p>')
-bleed(A + 'nt-collection/moletom-costas.jpg')
 color_page('O azul da ecobag, o azul-claro do traço, o amarelo da Novo Traço e o preto e o creme de base.',
            [dict(name='Azul Collection', hex='0E17C2'), dict(name='Azul Tinta', hex='0E008C'), dict(name='Tropical Breeze', hex='87CDE7', pantone='13-4307 TCX'),
             dict(name='Illuminating', hex='F6EA60', pantone='13-0647 TCX'), NT['ms'], dict(name='Creme', hex='F1F0E8')])
-page(f'<img class="art-img" src="{A}nt-collection/estampa-moletom.svg" alt=""><p class="esc-cap">Estampa do moletom</p>', 'p-art', fol())
-one(A + 'nt-collection/papatinho-sofa.jpg', 'Papatinho', 'O moletom da coleção no estúdio, com o símbolo NT Collection no peito.')
-page(f'<img class="art-img" src="{A}nt-collection/estampa-camiseta.svg" alt=""><p class="esc-cap">Estampa da camiseta</p>', 'p-art', fol())
-page(f'<div class="art-field" style="background:#0E17C2"><img class="art-img" src="{A}nt-collection/estampa-ecobag.svg" alt=""></div>', 'p-bleed', fol())
+page(f'<img class="art-img" src="{A}nt-collection/estampa-moletom.png" alt=""><p class="esc-cap">Estampa do moletom</p>', 'p-art', fol())
+bleed(A + 'nt-collection/moletom-costas.jpg')
+page(f'<div class="art-field" style="background:#0E17C2"><img class="art-img" src="{A}nt-collection/estampa-ecobag.png" alt=""></div>', 'p-bleed', fol())
 bleed(A + 'nt-collection/ecobags.jpg')
-page(f'<img class="art-img art-img--wide" src="{A}nt-collection/estampa-assinatura.svg" alt=""><p class="esc-cap">Assinatura da cápsula</p>', 'p-art', fol())
+page(f'<img class="art-img art-img--wide" src="{A}nt-collection/estampa-assinatura.png" alt=""><p class="esc-cap">Assinatura da cápsula</p>', 'p-art', fol())
+one(A + 'nt-collection/papatinho-sofa.jpg', 'Papatinho', 'O moletom da coleção no estúdio, com o símbolo NT Collection no peito.')
+page(f'<img class="art-img" src="{A}nt-collection/estampa-camiseta.png" alt=""><p class="esc-cap">Estampa da camiseta</p>', 'p-art', fol())
 bleed(A + 'nt-collection/camisetas.jpg')
 
 # ================= CONTATO + CONTRACAPA =================
