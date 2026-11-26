@@ -339,10 +339,10 @@ color_page('O azul da ecobag, o azul-claro do traço, o amarelo da Novo Traço e
 page(f'<img class="art-img" src="{A}nt-collection/estampa-moletom.svg" alt=""><p class="esc-cap">Estampa do moletom</p>', 'p-art', fol())
 one(A + 'nt-collection/papatinho-sofa.jpg', 'Papatinho', 'O moletom da coleção no estúdio, com o símbolo NT Collection no peito.')
 page(f'<img class="art-img" src="{A}nt-collection/estampa-camiseta.svg" alt=""><p class="esc-cap">Estampa da camiseta</p>', 'p-art', fol())
-bleed(A + 'nt-collection/camisetas.jpg')
 page(f'<div class="art-field" style="background:#0E17C2"><img class="art-img" src="{A}nt-collection/estampa-ecobag.svg" alt=""></div>', 'p-bleed', fol())
 bleed(A + 'nt-collection/ecobags.jpg')
 page(f'<img class="art-img art-img--wide" src="{A}nt-collection/estampa-assinatura.svg" alt=""><p class="esc-cap">Assinatura da cápsula</p>', 'p-art', fol())
+bleed(A + 'nt-collection/camisetas.jpg')
 
 # ================= CONTATO + CONTRACAPA =================
 CUR.update(prev=CUR['extra'], extra=[])
