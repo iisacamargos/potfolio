@@ -134,3 +134,57 @@ img { display: block; }
 .end { margin-bottom: 20mm; }
 .end .statement { margin-bottom: 12mm; }
 .meta--end { font-size: 8pt; gap: 2.4mm 4mm; }
+
+/* ---------- sangrado: 100% da folha, ignora a margem de encadernação ---------- */
+.p-bleed { padding: 0 !important; }
+.bleed-img { width: 100%; height: 100%; object-fit: cover; }
+.spread-img { width: 200%; height: 100%; max-width: none; object-fit: cover; }
+.spread-img--right { margin-left: -100%; }
+.mosaic { display: grid; width: 100%; height: 100%; }
+.mosaic img { width: 100%; height: 100%; object-fit: cover; min-height: 0; }
+.mosaic--m3 { grid-template-columns: 1fr 1fr; grid-template-rows: 140mm 1fr; }
+.mosaic--m3 img:first-child { grid-column: 1 / -1; }
+.mosaic--m4 { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+
+/* ---------- página só de texto ---------- */
+.p-text { justify-content: flex-end; }
+.p-text .txt { margin-bottom: 24mm; }
+
+/* ---------- divisória de projeto: verso inteiro na cor da marca ---------- */
+.div-field { width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: var(--top) var(--out) 20mm; }
+.div-num { font-family: var(--sans); font-weight: 300; font-size: 150pt; line-height: .8; letter-spacing: -.06em; margin-left: -2mm; }
+.div-name { font-size: 7pt; letter-spacing: .14em; text-transform: uppercase; }
+
+/* ---------- subtópicos ---------- */
+.p-logo, .p-color, .p-type, .p-covers { justify-content: space-between; }
+.visual--big { height: 150mm; }
+.p-color .palette { gap: 9mm 5mm; }
+.p-color .chip { height: 34mm; margin-bottom: 3mm; }
+.p-color .palette--n2 .chip, .p-color .palette--n3 .chip, .p-color .palette--n4 .chip { height: 52mm; }
+.p-color .chip-wrap b { font-size: 10pt; }
+.p-color .codes { font-size: 6.4pt; }
+.p-type .types { border-top: .2mm solid var(--line); }
+.p-type .type-row { display: block; padding: 8mm 0 7mm; }
+.p-type .type-spec { margin-bottom: 4mm; }
+.p-type .type-svg { max-height: 13mm; height: 13mm; width: auto; }
+.p-type .type-live { font-size: 34pt; }
+.type-sample { font-size: 13pt; line-height: 1.35; margin-bottom: 4mm; color: #333; }
+.p-type dl { max-width: 120mm; }
+
+/* ---------- capas: uma por página ---------- */
+.p-cover-top { padding-top: 0 !important; justify-content: space-between; }
+.p-cover-top .cover-top-img { width: 210mm; height: 210mm; object-fit: cover; margin-left: calc(-1 * var(--in)); }
+.verso.p-cover-top .cover-top-img { margin-left: calc(-1 * var(--out)); }
+.p-cover-mid { justify-content: center; }
+.cover-mid img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.cover-cap { display: flex; justify-content: space-between; align-items: baseline; margin-top: 5mm; margin-bottom: 8mm; }
+.cover-cap b { font-family: var(--sans); font-weight: 600; font-size: 14pt; letter-spacing: -.02em; }
+.cover-cap span { font-size: 6.6pt; letter-spacing: .1em; text-transform: uppercase; color: var(--soft); }
+.covers-all { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; }
+.covers-all img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+
+/* ---------- mosaicos extras ---------- */
+.mosaic--m2 { grid-template-columns: 1fr 1fr; }
+.mosaic--m3v { grid-template-rows: repeat(3, 1fr); }
+.mosaic--m3h { grid-template-columns: repeat(3, 1fr); }
+.p-blank { }
