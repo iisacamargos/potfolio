@@ -227,3 +227,8 @@ img { display: block; }
 .p-poster, .p-mock { justify-content: center; align-items: center; }
 .poster-img { height: 220mm; width: auto; }
 .mock-img { width: 100%; height: auto; }
+
+/* ---------- três posts lado a lado ---------- */
+.p-row3 { justify-content: space-between; }
+.row3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; margin-bottom: 30mm; }
+.row3 img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
