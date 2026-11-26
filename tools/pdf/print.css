@@ -306,3 +306,29 @@ img { display: block; }
 .g-mark { width: calc(100% - 6mm); height: auto; max-height: 112mm; object-fit: contain; object-position: left top; margin: 12mm 0 0 6mm; }
 /* capa sem logo: título maior */
 .cv-title h1, .g-title h1 { font-size: 78pt; }
+
+/* capa grid minimalista: só duas linhas horizontais, conteúdo no grid de 4 colunas */
+.p-cover--grid .g-row > * + * { border-left: 0; }
+.p-cover--grid .g-row > * { padding: 3mm 0; }
+.p-cover--grid .g-title { border-top: 0; margin-top: auto; padding-top: 0; margin-bottom: 12mm; }
+.p-cover--grid .g-foot { border-top: var(--hair); color: #9a9a96; }
+
+/* ---------- linhas finas no corpo (versão LINES=1) ---------- */
+.lines { --rule: .2mm solid #d6d6d2; }
+/* rodapé apoiado numa linha */
+.lines .folio { border-top: var(--rule); padding-top: 2.6mm; }
+/* cada título de seção abre sobre uma linha */
+.lines .txt .kicker, .lines .p-system > .kicker, .lines .p-syms > .kicker { border-top: var(--rule); padding-top: 3mm; }
+.lines .p-color > .txt, .lines .p-type > .txt, .lines .p-logo > .txt, .lines .p-one > .txt, .lines .p-stack > .txt { border-top: var(--rule); padding-top: 3mm; }
+.lines .p-color > .txt .kicker, .lines .p-type > .txt .kicker, .lines .p-logo > .txt .kicker, .lines .p-one > .txt .kicker, .lines .p-stack > .txt .kicker { border-top: 0; padding-top: 0; }
+/* ficha técnica da abertura em linhas */
+.lines .open-head .meta { grid-template-columns: 26mm 1fr; gap: 0; }
+.lines .open-head .meta dt, .lines .open-head .meta dd { border-top: var(--rule); padding: 1.8mm 0; }
+.lines .open-head .meta dt:last-of-type, .lines .open-head .meta dd:last-of-type { border-bottom: var(--rule); }
+/* páginas de texto: uma coluna marcada por uma linha vertical curta */
+.lines .p-text .txt { border-left: var(--rule); padding-left: 6mm; }
+.lines .p-text .txt .kicker { border-top: 0; padding-top: 0; }
+/* legendas das imagens sobre uma linha */
+.lines .fig figcaption, .lines .disc-cap, .lines .esc-cap { border-top: var(--rule); padding-top: 1.6mm; }
+/* capa: linhas de cima e de baixo em duas metades do grid */
+.p-cover--grid .g-head, .p-cover--grid .g-foot { grid-template-columns: 1fr 1fr; }

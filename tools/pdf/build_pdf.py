@@ -167,25 +167,18 @@ NT = dict(cd=dict(name='Cloud Dancer', hex='F0EFEB', pantone='11-4201 TCX'), ms=
           ot=dict(name='Orange Tiger', hex='F96714', pantone='16-1358 TCX'), rp=dict(name='Red Pink', hex='FB2A54'),
           tb=dict(name='Tropical Breeze', hex='87CDE7', pantone='13-4307 TCX'), ft=dict(name='First Tree', hex='00733C', pantone='18-6031 TCX'),
           il=dict(name='Illuminating', hex='F6EA60', pantone='13-0647 TCX'))
-PROJ = [('01', 'Novo Traço', 'Identidade visual · Sistema de marca'), ('02', 'Orquestra Novo Traço', 'Símbolo · Submarca'),
-        ('03', 'NT Records', 'Submarca · Gravadora'), ('04', 'NT Sessions', 'Identidade · Capas · Cenografia'), ('05', 'LatinJazz Brazil', 'Logotipo · Colagem · Motion'), ('06', 'NT Collection', 'Collab · Vestuário')]
+PROJ = [('01', 'Novo Traço', 'Marca-mãe · Grupo de arte e música'),
+        ('02', 'Orquestra Novo Traço', 'Submarca · Orquestra'),
+        ('03', 'NT Records', 'Submarca · Gravadora'),
+        ('04', 'NT Sessions', 'Submarca · Produto musical'),
+        ('05', 'LatinJazz Brazil', 'Submarca · Marca de um gênero musical'),
+        ('06', 'NT Collection', 'Submarca · Produto educacional')]
 START = {}
 
 # ================= CAPA + ÍNDICE =================
-if os.environ.get('COVER') == 'grid':
-    page(f'''<div class="g-row g-head"><span>Isadora Camargo</span><span>Portfólio</span><span>Case</span><span>2026</span></div>
-      <div class="g-mid"></div>
-      <div class="g-title"><h1>Case<br>Novo Traço</h1><p class="cv-sub">Imagens complementares ao portfólio</p></div>
-      <div class="g-row g-info">
-        <div><dt>Cliente</dt><dd>Novo Traço</dd></div><div><dt>Ano</dt><dd>2025 — 2026</dd></div>
-        <div><dt>Papel</dt><dd>Direção de arte</dd></div><div><dt>Marcas</dt><dd>06 projetos</dd></div></div>
-      <div class="g-row g-foot"><span>Identidade visual</span><span>Sistema de marca</span><span>Submarcas</span><span>isadoracamargo.com.br</span></div>''', 'p-cover p-cover--dark p-cover--grid')
-else:
-    page(f'''<div class="cv-top"><span>Isadora Camargo</span><span>2026</span></div>
-      <div class="cv-title"><h1>Case<br>Novo Traço</h1>
-        <p class="cv-sub">Imagens complementares ao portfólio</p>
-        <p class="cv-list">Novo Traço · Orquestra Novo Traço · NT Records · NT Sessions · LatinJazz Brazil · NT Collection</p></div>
-      <div class="cv-foot"><span>Identidade visual e direção de arte</span><span>isadoracamargo.com.br</span></div>''', 'p-cover p-cover--dark')
+page('''<div class="g-row g-head"><span>Isadora Camargo</span><span>1º semestre de 2026</span></div>
+  <div class="g-title"><h1>Case<br>Novo Traço</h1><p class="cv-sub">Imagens complementares ao portfólio</p></div>
+  <div class="g-row g-foot"><span>Marca-mãe e cinco submarcas</span><span>isadoracamargo.com.br</span></div>''', 'p-cover p-cover--dark p-cover--grid')
 page('', 'p-blank')
 page('__INDEX__', 'p-index')
 
@@ -193,7 +186,7 @@ page('__INDEX__', 'p-index')
 project('01', 'Novo Traço', extra=[])
 divider('01', 'Novo Traço', 'F6EA60'); START['01'] = len(pages)
 opener('Uma marca-mãe para um grupo de arte e música: a expressividade brasileira traduzida em traço, cor e contraste.',
-       [('Cliente', 'Novo Traço'), ('Ano', '2025 — 2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Identidade, sistema de marca, submarcas e guidelines')],
+       [('Marca', 'Marca-mãe do grupo Novo Traço'), ('Período', '1º semestre de 2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Identidade, sistema de marca, submarcas e guidelines')],
        A + 'novo-traco/escritos/novo-traco.svg', 'tall')
 text_page('Conceito', 'Contrastes e expressividade.',
           '<p>A identidade nasce da expressividade como linguagem vital do povo brasileiro, onde a arte é ferramenta de sobrevivência, comunicação e identidade. Erudito e popular, tradição e ruptura, dor e celebração.</p>'
@@ -229,7 +222,7 @@ bleed(A + 'novo-traco/nt-ecobag-estudio.jpg', '35% center')
 project('02', 'Orquestra Novo Traço', 'Orquestra<br>Novo Traço', extra=[])
 divider('02', 'Orquestra Novo Traço', 'F0EFEB'); START['02'] = len(pages)
 opener('Uma orquestra que toca com artistas da música urbana, com identidade nascida da partitura.',
-       [('Cliente', 'Novo Traço'), ('Ano', '2025 — 2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Símbolo, identidade, eventos e vestuário')],
+       [('Marca', 'Submarca da Novo Traço · Orquestra'), ('Período', '1º semestre de 2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Símbolo, identidade, eventos e vestuário')],
        A + 'novo-traco/orq-logo-vertical.svg', 'wide')
 text_page('Conceito', 'Uma partitura: clareza, elegância e respiro.',
           '<p>A identidade deriva da marca-mãe, com mais espaço em branco e predominância do preto sobre fundo claro.</p>')
@@ -254,7 +247,7 @@ one(A + 'novo-traco/orq-grupo-panorama.jpg', cap='A orquestra completa')
 project('03', 'NT Records', extra=[A + 'novo-traco/rec-garrafa-inox.jpg'])
 divider('03', 'NT Records', '003AE7'); START['03'] = len(pages)
 opener('A gravadora do grupo: o traço da marca-mãe ganha tinta spray, textura urbana e um grid que dá solidez.',
-       [('Cliente', 'Novo Traço'), ('Ano', '2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Símbolo, identidade, papelaria, merch e digital')],
+       [('Marca', 'Submarca da Novo Traço · Gravadora'), ('Período', '1º semestre de 2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Símbolo, identidade, papelaria, merch e digital')],
        A + 'novo-traco/rec-logo-vertical.svg', 'tall')
 text_page('Conceito', 'Do pincel à tinta spray. Do traço livre ao grid.',
           '<p><i>Existir para que a música que nasceu no palco e no estúdio continue acessível depois da luz apagar.</i></p><p>O spray traz urbanidade e textura; as linhas retas, a seriedade de uma marca sólida.</p>')
@@ -287,7 +280,7 @@ for f in ('rec-post-jazz', 'rec-post-discos', 'rec-post-frase'):
 project('04', 'NT Sessions', extra=[A + 'nt-sessions/live-emocao.jpg'])
 divider('04', 'NT Sessions', 'F6EA60'); START['04'] = len(pages)
 opener('A orquestra encontra a música urbana: sessões gravadas, EPs e um show esgotado no Theatro Municipal do Rio.',
-       [('Cliente', 'Novo Traço'), ('Ano', '2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Identidade, capas, motion e cenografia em LED')],
+       [('Marca', 'Submarca da Novo Traço · Produto musical'), ('Período', '1º semestre de 2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Identidade, capas, motion e cenografia em LED')],
        A + 'nt-sessions/logo.svg', 'tall')
 text_page('Conceito', 'O erudito e a rua no mesmo palco.',
           '<p>Cada edição é uma collab entre a Orquestra Novo Traço e um artista urbano: o repertório ganha arranjos para orquestra, é gravado em sessão e vira EP. Já passaram L7NNON e Papatinho, MC Pedrinho e Froid.</p>')
@@ -315,8 +308,8 @@ one(A + 'nt-sessions/live-lanternas.jpg', cap='A plateia acende as lanternas')
 # ================= 05 LATINJAZZ BRAZIL =================
 project('05', 'LatinJazz Brazil', 'LatinJazz<br>Brazil', extra=[A + 'latinjazz/cartaz.jpg'])
 divider('05', 'LatinJazz Brazil', '00733C', '#F6EA60'); START['05'] = len(pages)
-opener('Uma sonoridade que também pertence ao Brasil: Tropicália, colagem e um logo desenhado à mão para um projeto da Novo Traço.',
-       [('Cliente', 'Novo Traço'), ('Papel', 'Direção de arte'), ('Escopo', 'Logotipo, identidade visual, motion e aplicações')],
+opener('A marca de um gênero musical: o latin jazz que também pertence ao Brasil, com Tropicália, colagem e um logo desenhado à mão.',
+       [('Marca', 'Submarca da Novo Traço · Marca de um gênero musical'), ('Período', '1º semestre de 2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Logotipo, identidade visual, motion e aplicações')],
        A + 'latinjazz/logo-vetor.svg', 'tall')
 text_page('Conceito', 'Encontros e atravessamentos culturais.',
           '<p>O conceito nasce do reconhecimento de uma sonoridade que pertence ao Brasil. Cores vibrantes inspiradas na Tropicália, texturas, traços e composições expressivas traduzem essa afirmação.</p>'
@@ -339,7 +332,7 @@ text_page('Uma marca Novo Traço', 'Um vocabulário próprio, pensado para se me
 project('06', 'NT Collection', extra=[])
 divider('06', 'NT Collection', '161616'); START['06'] = len(pages)
 opener('Uma coleção-cápsula da Novo Traço com Papatinho: o traço da marca, a tag do produtor e Los Angeles 2026 numa mesma peça.',
-       [('Cliente', 'Novo Traço'), ('Ano', '2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Coleção, estampas, etiquetas e ecobags')],
+       [('Marca', 'Submarca da Novo Traço · Produto educacional'), ('Período', '1º semestre de 2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Coleção, estampas, etiquetas e ecobags')],
        A + 'nt-collection/logo.svg', 'wide')
 text_page('Conceito', 'Duas assinaturas na mesma peça.',
           '<p>A NT Collection leva o universo da Novo Traço para o vestuário em parceria com artistas. Na primeira edição, com Papatinho, o N pintado à mão da marca encontra a tag manuscrita do produtor, a serifa do “Collection” e as informações da cápsula: Los Angeles, CA, 2026.</p>')
@@ -380,7 +373,7 @@ for i, (b, cls, folio) in enumerate(pages, 1):
 css = open(os.path.join(os.path.dirname(__file__), 'print.css')).read()
 out = f'''<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Portfólio — Isadora Camargo</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Lexend:wght@300&family=Outfit:wght@400&family=Space+Grotesk:wght@400&family=Inter:wght@300;700&family=Lato:wght@300&display=block" rel="stylesheet">
-<style>{css}</style></head><body>
+<style>{css}</style></head><body class="{'lines' if os.environ.get('LINES') else ''}">
 {body}</body></html>'''
 open(os.path.join(ROOT, 'print/portfolio.html'), 'w').write(out)
 print(len(pages), 'páginas')
