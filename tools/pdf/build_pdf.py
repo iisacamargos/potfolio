@@ -56,7 +56,7 @@ def head_txt(kicker, text, statement=False):
 def divider(num, name, color, ink=None):
     """Verso inteiro na cor da marca, de frente para a abertura do projeto."""
     pad_to_verso(prev_first=True)
-    ink = ink or on(color)
+    color, ink = '161616', '#ffffff'   # neutro e igual para todos os projetos
     page(f'<div class="div-field" style="background:#{color};color:{ink}"><span class="div-num">{num}</span><span class="div-name">{name}</span></div>', 'p-bleed')
 
 def opener(lede, items, img):
@@ -156,10 +156,7 @@ NT = dict(cd=dict(name='Cloud Dancer', hex='F0EFEB', pantone='11-4201 TCX'), ms=
           tb=dict(name='Tropical Breeze', hex='87CDE7', pantone='13-4307 TCX'), ft=dict(name='First Tree', hex='00733C', pantone='18-6031 TCX'),
           il=dict(name='Illuminating', hex='F6EA60', pantone='13-0647 TCX'))
 PROJ = [('01', 'Novo Traço', 'Identidade visual · Sistema de marca'), ('02', 'Orquestra Novo Traço', 'Símbolo · Submarca'),
-        ('03', 'NT Records', 'Submarca · Gravadora'), ('04', 'NT Sessions', 'Identidade · Capas · Cenografia'), ('05', 'LatinJazz Brazil', 'Logotipo · Colagem · Motion'),
-        ('06', 'ANJU MACE', 'Identidade visual · Símbolos'), ('07', 'Aquarie', 'Identidade visual · Ilustração'),
-        ('08', 'Zouti', 'Sistema de templates'), ('09', 'Be Brave Lab', 'Símbolo · Identidade visual'),
-        ('10', 'Funnel Builder', 'Marca · Sistema de lançamento')]
+        ('03', 'NT Records', 'Submarca · Gravadora'), ('04', 'NT Sessions', 'Identidade · Capas · Cenografia'), ('05', 'LatinJazz Brazil', 'Logotipo · Colagem · Motion')]
 START = {}
 
 # ================= CAPA + ÍNDICE =================
@@ -184,8 +181,19 @@ text_page('Processo criativo', 'Feito à mão, pelas pessoas que vivem a marca.'
           '<p>Esse material virou a base gráfica da identidade: uma expressividade genuína, impossível de simular digitalmente.</p>')
 mosaic('m3', [A + 'novo-traco/processo-5.jpg', A + 'novo-traco/processo-1.jpg', A + 'novo-traco/processo-4.jpg'], ['center 40%', 'center', 'center'])
 spread(A + 'novo-traco/processo-2.jpg')
-logo_page('A assinatura manuscrita saiu da própria dinâmica: um gesto único, com a energia do pincel preservada.', tile(A + 'novo-traco/logo-print.png', 'FFFFFF', 'h60'))
-one(A + 'novo-traco/nt-poster.jpg', 'Do gesto ao sistema', 'O material vira cartaz-manifesto: traços, desenhos e as assinaturas da equipe.')
+E = A + 'novo-traco/escritos/'
+page(f'<img class="esc-img esc-img--logo" src="{E}novo-traco.svg" alt="">', 'p-esc', fol())
+page(f'<img class="esc-img esc-img--words" src="{E}palavras.svg" alt=""><p class="esc-cap">Alegria · Música · Amor · Arte · Dinheiro · Emoção</p>', 'p-esc', fol())
+page(f'<img class="esc-img esc-img--year" src="{E}2026.svg" alt="">', 'p-esc', fol())
+import os as _os
+_sig = sorted(f for f in _os.listdir(_os.path.join(ROOT, 'assets/img/novo-traco/escritos/assinaturas')) if f.endswith('.svg'))
+page(f'''{head_txt('Assinaturas', 'Quem traçou a marca.')}
+  <div class="sigs">{''.join(f'<img src="{E}assinaturas/{f}" alt="">' for f in _sig)}</div>''', 'p-sigs', fol())
+text_page('O quadro', 'Tudo o que foi traçado, numa peça só.',
+          '<p>Os traços, os desenhos, as palavras e as assinaturas de cada pessoa da equipe foram reunidos num cartaz-manifesto que virou quadro na sede da Novo Traço.</p>')
+bleed(E + 'quadro.svg')
+one(A + 'novo-traco/nt-poster.jpg', cap='O quadro impresso')
+logo_page('A assinatura manuscrita saiu da própria dinâmica: um gesto único, com a energia do pincel preservada.', tile(A + 'novo-traco/escritos/novo-traco.svg', 'FFFFFF', 'h60'))
 color_page('Uma paleta ampla de propósito. Cada submarca escolhe suas cores dentro dela e ganha um traço próprio: variedade sem perder a unidade.',
            [NT[k] for k in ('cd', 'ms', 'ot', 'rp', 'tb', 'ft', 'il')])
 type_page('Uma paleta tipográfica: cada segmento de comunicação tem sua voz. A Univers permite misturar pesos dentro da mesma palavra.', [UNIVERS, ROSLINDALE, MARGEM])
@@ -229,7 +237,7 @@ bleed(A + 'novo-traco/orq-violinistas.jpg')
 one(A + 'novo-traco/orq-bastidores.jpg', 'Bastidores', 'Gravação de sessão: a marca presente em cada detalhe da produção.')
 spread(A + 'novo-traco/orq-silhueta.jpg', 'center')
 spread_band(A + 'novo-traco/orq-grupo-panorama.jpg')
-spread(A + 'novo-traco/orq-sessao.jpg')
+one(A + 'novo-traco/orq-sessao.jpg', cap='Sessão de gravação com Rincon Sapiência')
 one(A + 'novo-traco/orq-foto.jpg', cap='Ensaio')
 
 # ================= 03 NT RECORDS =================
@@ -326,113 +334,6 @@ spread(A + 'latinjazz/vinil.jpg')
 bleed(A + 'latinjazz/cartazes.jpg')
 text_page('Uma marca Novo Traço', 'Um vocabulário próprio, pensado para se mexer.',
           '<p>O LatinJazz Brazil compartilha com a marca-mãe as cores, a Univers, a Margem e o gesto feito à mão, mas ganha colagem, raios de sol e papel amassado — feitos para as redes, os telões e a rua.</p>')
-
-# ================= 05 ANJU MACE =================
-project('06', 'ANJU MACE', extra=[A + 'anju-mace/02-assinatura.jpg'])
-divider('06', 'ANJU MACE', '7A8569', '#F5F5DD'); START['06'] = len(pages)
-opener('Uma identidade para o fitness feminino construída sobre o equilíbrio entre força e leveza.',
-       [('Cliente', 'ANJU MACE'), ('Ano', '2025'), ('Papel', 'Direção de arte e coordenação da equipe'), ('Escopo', 'Identidade, símbolos, brandbook e digital')],
-       A + 'anju-mace/01-capa.jpg')
-text_page('Conceito', 'Força e leveza. O refinamento está na disciplina.',
-          '<p>Contra o excesso do fitness — cores saturadas, promessas rápidas, estética de esforço —, a calma e a sofisticação de uma marca de luxo consciente.</p>')
-logos = ''.join(f'<div class="logo-cell" style="background:#{bg}"><img src="{A}anju-mace/logos/{f}.svg" alt=""></div>'
-                for f, bg in [('horizontal-grafite', 'F5F5DD'), ('vertical-grafite', 'FFFFFF'), ('empilhada-salvia', '262626'), ('horizontal-amarelo', '7A8569')])
-logo_page('Caixa-alta com espaçamento generoso e contraste de peso entre ANJU e MACE. Horizontal, vertical e empilhada são extensões da mesma assinatura.', f'<div class="logo-grid">{logos}</div>')
-syms = [('alvo', 'Excelência como auto-respeito', 'Um alvo: precisão, foco, disciplina e domínio técnico.'),
-        ('elo', 'Mudança real e duradoura', 'Um elo entre passado e futuro: transformação que permanece.'),
-        ('mola', 'Inteligência feminina', 'Uma mola que impulsiona: influência, liderança e inspiração.'),
-        ('bolha', 'Conhecimento é libertação', 'A saída de uma bolha: quebrar padrões e criar o próprio caminho.'),
-        ('orbitas', 'Funcionalidade e beleza', 'Órbitas em equilíbrio: harmonia entre forma e função.')]
-page(f'''{head_txt('Símbolos', 'Cinco símbolos de traço fino traduzem os pilares da marca: um alfabeto gráfico para embalagens, conteúdo e produto.')}
-  <div class="syms">{''.join(f'<div class="sym"><img src="{A}anju-mace/simbolos/{s}.svg" alt=""><div><b>{t}</b><p>{d}</p></div></div>' for s, t, d in syms)}</div>''', 'p-syms', fol())
-one(A + 'anju-mace/06-simbolos.jpg', cap='Os símbolos aplicados')
-color_page('Neutros naturais para calma e autocuidado; grafite para ancorar; amarelo suave para energia controlada. Nada é decorativo.',
-           [dict(name='Preto Grafite', hex='262626', cmyk='72 65 64 69'), dict(name='Verde Oliva', hex='7A8569', cmyk='54 36 62 10'),
-            dict(name='Verde Sálvia', hex='9EAB87', cmyk='41 23 53 1'), dict(name='Creme Neutro', hex='F5F5DD', cmyk='3 1 15 0'),
-            dict(name='Amarelo Suave', hex='E6E6AD', cmyk='11 3 39 0')])
-type_page('Lexend assina com desenho preciso e espaçamento generoso; Outfit suaviza o texto sem perder o minimalismo.',
-          [dict(family='Lexend', live="'Lexend'", w=300, use='Logotipo e títulos', weights='Thin, Light, Bold, Black'),
-           dict(family='Outfit', live="'Outfit'", w=400, use='Textos, interface e apoio', weights='Light, Regular, Medium')])
-one(A + 'anju-mace/07-aplicacoes.jpg', 'Touchpoints', 'A assinatura vertical vira estampa; os símbolos viram padrão.')
-one(A + 'anju-mace/08-app.jpg', cap='Aplicativo de treino')
-one(A + 'anju-mace/09-site.jpg', cap='Site')
-text_page('Resultado', '“Ninguém nunca tinha entendido a minha essência tão bem.”',
-          '<p>A identidade foi lançada junto com o aplicativo de treino, hoje no ar, e as alunas se identificaram de imediato com a nova marca.</p>')
-
-# ================= 06 AQUARIE =================
-project('07', 'Aquarie', extra=[A + 'aquarie/01-capa.jpg'])
-divider('07', 'Aquarie', '055E89'); START['07'] = len(pages)
-opener('Moda praia de Santa Catarina com o verão do sul da Itália como referência.',
-       [('Cliente', 'Aquarie Beach & Swimwear'), ('Ano', '2025'), ('Papel', 'Designer de marca'), ('Escopo', 'Identidade, ilustrações e aplicações')],
-       A + 'aquarie/06-ecobag.jpg')
-text_page('Conceito', 'Um verão mediterrâneo, longe do óbvio tropical.',
-          '<p>Num mercado em que o beachwear segue a mesma estética tropical, a referência veio das praias do sul da Itália: listras de guarda-sóis, padronagens e gravuras clássicas.</p>')
-logo_page('Serifa de alto contraste com curvas que lembram o movimento da água, na barra do A e na cauda do Q.', tile(A + 'aquarie/logo.svg', 'F1EBDF', 'w75'))
-one(A + 'aquarie/02-detalhe.jpg', 'Desenho de letra', 'A cauda do Q se estende como uma onda e vira elemento gráfico autônomo.')
-one(A + 'aquarie/03-ilustracoes.jpg', 'Ilustrações', 'Traço de gravura em uma única cor: sozinhas, como símbolo; juntas, como padrão.')
-mosaic('m3v', [A + 'aquarie/cavalo-marinho.jpg', A + 'aquarie/concha.jpg', A + 'aquarie/janela.jpg'])
-color_page('Areia como base, o amarelo do sol, o verde-água, o azul do oceano e o coral das listras.',
-           [dict(name='Areia', hex='F1EBDF'), dict(name='Sol', hex='EDC07C'), dict(name='Verde-água', hex='84C1BC'), dict(name='Azul Oceano', hex='055E89'), dict(name='Vermelho Coral', hex='C53D30')])
-type_page('Royale Couture Serif para o tom de alfaiataria; Lato, limpa e legível, no texto.',
-          [dict(family='Royale Couture Serif', svg='royale', use='Pequenos detalhes e assinaturas', weights='Regular'),
-           dict(family='Lato', live="'Lato'", w=300, use='Textos e títulos', weights='Light, Regular')])
-one(A + 'aquarie/05-tags.jpg', 'Aplicações', 'Logotipo vertical e concha recortada pela borda.')
-one(A + 'aquarie/07-instagram.jpg', cap='Instagram')
-
-# ================= 07 ZOUTI =================
-project('08', 'Zouti', extra=[A + 'zouti/mobile.jpg'])
-divider('08', 'Zouti', '141414', '#E4FF00'); START['08'] = len(pages)
-opener('Templates de redes sociais que transformam funcionalidades de produto em posts com cara de lançamento.',
-       [('Cliente', 'Zouti'), ('Papel', 'Design'), ('Escopo', 'Templates, sistema visual e cenas de produto')], A + 'zouti/capa.jpg')
-text_page('Conceito', 'O produto vira a imagem.',
-          '<p>Fundo quase preto, vidro fosco, uma luz verde-limão pela borda e a interface real do produto no lugar de ilustrações genéricas. Regras fixas, replicáveis pelo time.</p>')
-logo_page('Um Z formado por duas faixas diagonais em verde-limão.', tile(A + 'zouti/logo.svg', '141414', 'w35'))
-color_page('Uma escala de verdes sobre grafite: a luz é a única cor.',
-           [dict(name='Verde Zouti', hex='E4FF00'), dict(name='Verde Lima', hex='BCCF1C'), dict(name='Verde Claro', hex='D7DF75'), dict(name='Grafite', hex='141414'), dict(name='Branco', hex='FFFFFF')])
-type_page('Space Grotesk nos títulos, com degradê do branco ao cinza; Inter no apoio e na interface.',
-          [dict(family='Space Grotesk', live="'Space Grotesk'", w=400, use='Títulos e etiquetas', weights='Regular, Medium'),
-           dict(family='Inter', live="'Inter'", w=300, use='Textos de apoio e interface', weights='Light, Medium, Semi Bold, Bold')])
-mosaic('m4', [A + 'zouti/parcelamento.jpg', A + 'zouti/taxas.jpg', A + 'zouti/app-vendas.jpg', A + 'zouti/pixel.jpg'])
-mosaic('m4', [A + 'zouti/area-membros.jpg', A + 'zouti/reembolso.jpg', A + 'zouti/metricas.jpg', A + 'zouti/integracoes.jpg'])
-
-# ================= 08 BE BRAVE =================
-project('09', 'Be Brave Lab', extra=[A + 'be-brave/logo-laranja.jpg'])
-divider('09', 'Be Brave Lab', 'FA4C05'); START['09'] = len(pages)
-opener('Uma identidade com coragem de sobra para uma agência audiovisual que disputa atenção em segundos.',
-       [('Cliente', 'Be Brave Lab'), ('Segmento', 'Agência audiovisual'), ('Papel', 'Design de marca'), ('Escopo', 'Símbolo, identidade e aplicações')],
-       A + 'be-brave/caixa.jpg')
-text_page('Conceito', 'Duas formas que se abrem como asas: impulso.',
-          '<p>A marca precisava ser reconhecível em thumbnails, vinhetas e redes, e comunicar coragem, presença e confiança — a imagem de quem avança sem pedir licença.</p>')
-logo_page('Símbolo em forma de asas sobre BE BRAVE LAB em letras extended.', tile(A + 'be-brave/logo.svg', 'FFFFFF', 'w75'))
-one(A + 'be-brave/construcao.jpg', 'Construção', 'Um grid de círculos e linhas paralelas: do ícone de perfil à animação 3D.')
-bleed(A + 'be-brave/3d.jpg', '55% center')
-color_page('O laranja é a assinatura: energia e urgência. O azul profundo é o contraponto.',
-           [dict(name='Laranja Brave', hex='FA4C05'), dict(name='Azul Profundo', hex='0D0B9D'), dict(name='Off-white', hex='EFEFEF'), dict(name='Preto', hex='0F0F0F')])
-type_page('A Monument Extended transmite escala e ambição e conversa com as formas do símbolo.',
-          [dict(family='PP Monument Extended', svg='monument', use='Títulos, thumbnails e motion', weights='Regular, Black'),
-           dict(family='Helvetica Neue LT Pro', svg='helvetica', use='Texto corrido e informações', weights='45 Light, 55 Roman, 65 Medium, 75 Bold')])
-one(A + 'be-brave/foto.jpg', 'Aplicações', 'Halftone e dither: a estética audiovisual dentro da linguagem gráfica.')
-one(A + 'be-brave/garrafas.jpg', cap='Garrafas')
-one(A + 'be-brave/instagram.jpg', cap='Instagram')
-
-# ================= 09 FUNNEL BUILDER =================
-project('10', 'Funnel Builder', extra=[])
-divider('10', 'Funnel Builder', '002D51'); START['10'] = len(pages)
-opener('Marca e sistema de lançamento para formar a primeira geração de construtores de funis de venda do Brasil.',
-       [('Cliente', 'Bilhon'), ('Ano', '2024 — 2025'), ('Papel', 'Head de Design: marca e direção do lançamento'), ('Escopo', 'Símbolo, ícone, sistema visual e criativos')],
-       A + 'funnel-builder/logo-3d.jpg')
-text_page('Conceito', 'Um F desenhado a partir de um funil.',
-          '<p>Um triângulo invertido sobre diagonais paralelas: movimento e fluxo, como um cliente que avança etapa por etapa.</p>')
-page(f'''{head_txt('Construção', 'Diagonais paralelas e círculos definem o F. Em 3D, com reflexos em azul-petróleo, o símbolo virou o protagonista da campanha.')}
-  <div class="duo">{fig(A + 'funnel-builder/construcao.jpg', 'Construção')}{fig(A + 'funnel-builder/icone.jpg', 'Ícone do app')}</div>''', 'p-logo', fol())
-color_page('Um sistema escuro, com luz azul e acentos em amarelo.',
-           [dict(name='Preto Profundo', hex='030A09'), dict(name='Azul Noturno', hex='002D51'), dict(name='Azul Luz', hex='5BBED9'), dict(name='Amarelo Bônus', hex='FFDE37'), dict(name='Grafite', hex='0E0F0F'), dict(name='Branco Gelo', hex='F0F2F8')])
-type_page('Inter na marca e na interface; Aspekta nos títulos de página.',
-          [dict(family='Inter', live="'Inter'", w=700, use='Marca, títulos e interface', weights='Regular, Medium, SemiBold, Bold'),
-           dict(family='Aspekta', svg='aspekta', use='Títulos de página e chamadas', weights='400, 500, 600')])
-grid4([A + 'funnel-builder/mobile.jpg', A + 'funnel-builder/funis.jpg', A + 'funnel-builder/bonus.jpg', A + 'funnel-builder/icone.jpg'], 'Aplicações', 'Página de vendas, cards de funis e bônus e o ícone do app no mesmo sistema.', 'portrait')
-text_page('Resultado', 'R$ 30 milhões em faturamento no lançamento.',
-          '<p>Com um time interno de três pessoas e designers freelancers sob a minha liderança: o sistema permitiu produzir em escala sem perder consistência.</p>')
 
 # ================= CONTATO + CONTRACAPA =================
 CUR.update(prev=CUR['extra'], extra=[])
