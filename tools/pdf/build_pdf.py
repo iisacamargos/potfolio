@@ -172,7 +172,7 @@ START = {}
 
 # ================= CAPA + ÍNDICE =================
 page('''<span class="cover-year">2026</span>
-  <div class="cover-title"><h1>Portfólio</h1><p>Isadora Camargo</p></div>
+  <div class="cover-title"><span class="cover-kicker">Portfólio · Case</span><h1>Novo Traço</h1><p class="cover-sub">A marca-mãe e suas submarcas: Orquestra Novo Traço, NT Records, NT Sessions, LatinJazz Brazil e NT Collection</p><p>Isadora Camargo</p></div>
   <span class="cover-site">isadoracamargo.com.br</span>''', 'p-cover')
 page('', 'p-blank')
 page('__INDEX__', 'p-index')
@@ -191,9 +191,8 @@ text_page('Processo criativo', 'Feito à mão, pelas pessoas que vivem a marca.'
           '<p>Os traços não foram desenhados no computador. Nasceram de uma dinâmica com a equipe à beira-mar, no Rio de Janeiro: cada pessoa traçou com marcador, pincel e tinta as palavras que definem o grupo — alegria, música, arte, emoção.</p>'
           '<p>Esse material virou a base gráfica da identidade: uma expressividade genuína, impossível de simular digitalmente.</p>')
 mosaic('m3', [A + 'novo-traco/processo-5.jpg', A + 'novo-traco/processo-1.jpg', A + 'novo-traco/processo-4.jpg'], ['center 40%', 'center', 'center'])
-spread(A + 'novo-traco/processo-2.jpg')
+stack((A + 'novo-traco/processo-6.jpg', ''), (A + 'novo-traco/processo-2.jpg', ''))
 E = A + 'novo-traco/escritos/'
-page(f'<img class="esc-img esc-img--logo" src="{E}novo-traco.svg" alt="">', 'p-esc', fol())
 page(f'<img class="esc-img esc-img--words" src="{E}palavras.svg" alt=""><p class="esc-cap">Alegria · Música · Amor · Arte · Dinheiro · Emoção</p>', 'p-esc', fol())
 page(f'<img class="esc-img esc-img--year" src="{E}2026.svg" alt="">', 'p-esc', fol())
 import os as _os
@@ -209,14 +208,10 @@ color_page('Uma paleta ampla de propósito. Cada submarca escolhe suas cores den
 type_page('Uma paleta tipográfica: cada segmento de comunicação tem sua voz. A Univers permite misturar pesos dentro da mesma palavra.', [UNIVERS, ROSLINDALE, MARGEM])
 text_page('Vestuário', 'A marca vestida por quem faz a música.',
           '<p>A assinatura manuscrita vai para moletons, bonés, camisetas e ecobags, usados pela equipe, pelos músicos e pelos artistas convidados nas sessões e nos bastidores.</p>')
-bleed(A + 'novo-traco/nt-moletom-2.jpg')
-one(A + 'novo-traco/nt-sessao-moletom.jpg', cap='Sessão com a orquestra')
+mosaic('m3v', [A + 'novo-traco/nt-moletom-2.jpg', A + 'novo-traco/nt-sessao-moletom.jpg', A + 'novo-traco/nt-moletom-1.jpg'], ['center 30%', 'center 40%', 'center 45%'])
 bleed(A + 'novo-traco/nt-camiseta-pb.jpg')
-one(A + 'novo-traco/nt-moletom-1.jpg', cap='Moletom e boné Novo Traço')
 stack((A + 'novo-traco/nt-camiseta-marrom.jpg', 'Camiseta'), (A + 'novo-traco/nt-ecobag-vermelha.jpg', 'Ecobag'))
 bleed(A + 'novo-traco/nt-ecobag-estudio.jpg', '35% center')
-text_page('Resultado', 'Um sistema que sustenta toda a comunicação do grupo.',
-          '<p>Dos eventos ao digital, cada novo projeto nasce dentro dele. Como diretora de arte, coordeno um time de três designers e desenvolvo os manuais e guidelines que mantêm a marca consistente.</p>')
 
 # ================= 02 ORQUESTRA =================
 project('02', 'Orquestra Novo Traço', 'Orquestra<br>Novo Traço', extra=[])
@@ -240,15 +235,12 @@ page(f'<img class="mock-img" src="{A}novo-traco/orq-hoodie-costas.webp" alt=""><
 page(f'<img class="mock-img" src="{A}novo-traco/orq-blusao.webp" alt=""><p class="disc-cap">Assinatura completa no peito</p>', 'p-mock', fol())
 bleed(A + 'novo-traco/orq-retrato-1.jpg', 'left center')
 bleed(A + 'novo-traco/orq-retrato-2.jpg')
-one(A + 'novo-traco/orq-batuta.jpg', 'Detalhe', 'O símbolo no peito do maestro, a batuta na mão.')
-one(A + 'novo-traco/orq-bastidores.jpg', 'Bastidores', 'Gravação de sessão: a marca presente em cada detalhe da produção.')
 spread(A + 'novo-traco/orq-silhueta.jpg', 'center', force=True)
 bleed(A + 'novo-traco/orq-violinistas.jpg')
-one(A + 'novo-traco/orq-grupo-costas.jpg', 'O grupo', 'Juntos, os moletons formam a sigla repetida: a orquestra como um só corpo.')
 one(A + 'novo-traco/orq-grupo-panorama.jpg', cap='A orquestra completa')
 
 # ================= 03 NT RECORDS =================
-project('03', 'NT Records', extra=[A + 'novo-traco/rec-hoodie-preto.jpg', A + 'novo-traco/rec-garrafa-inox.jpg'])
+project('03', 'NT Records', extra=[A + 'novo-traco/rec-garrafa-inox.jpg'])
 divider('03', 'NT Records', '003AE7'); START['03'] = len(pages)
 opener('A gravadora do grupo: o traço da marca-mãe ganha tinta spray, textura urbana e um grid que dá solidez.',
        [('Cliente', 'Novo Traço'), ('Ano', '2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Símbolo, identidade, papelaria, merch e digital')],
@@ -263,22 +255,17 @@ text_page('Discos', 'Spray, pincel e tinta, direto no vinil.',
 bleed(A + 'novo-traco/rec-processo-coracao.jpg', '96% center', force=True)
 stack((A + 'novo-traco/rec-processo-pincel.jpg', 'Pinceladas sobre o vinil'), (A + 'novo-traco/rec-processo-branco.jpg', 'Base de tinta branca'))
 disc(A + 'novo-traco/rec-disco-02.webp', 'Disco 02', 'edge')
-disc(A + 'novo-traco/rec-disco-13.webp', 'Disco 13', 'mid')
 disc(A + 'novo-traco/rec-disco-06.webp', 'Disco 06', 'edge')
-disc(A + 'novo-traco/rec-disco-08.webp', 'Disco 08', 'mid')
 disc(A + 'novo-traco/rec-disco-10.webp', 'Disco 10', 'edge')
-disc(A + 'novo-traco/rec-disco-12.webp', 'Disco 12', 'mid')
 page(f'''{head_txt('Acervo', 'Treze discos, um mesmo gesto.')}
   <div class="discs-all">{''.join(f'<img src="{A}novo-traco/rec-disco-{i:02d}.webp" alt="">' for i in range(1, 14))}</div>''', 'p-discs', fol())
 color_page('Preto, azul e branco: autoridade e confiança, com o spray como protagonista.', [NT['ms'], dict(name='Azul Records', hex='003AE7'), NT['cd']])
 one(A + 'novo-traco/rec-papelaria.jpg', 'Papelaria', 'Carta, envelope, pasta e caderno.')
 stack((A + 'novo-traco/rec-cartao.jpg', 'Cartão de visita'), (A + 'novo-traco/rec-placa.jpg', 'Placa de 1 milhão de streams'))
 bleed(A + 'novo-traco/rec-estampa.jpg')
-mosaic('m2', [A + 'novo-traco/rec-hoodie-azul-frente.jpg', A + 'novo-traco/rec-hoodie-azul-costas.jpg'])
 page(f'<img class="poster-img" src="{A}novo-traco/rec-poster.webp" alt="">', 'p-poster', fol())
 one(A + 'novo-traco/rec-tote-1.jpg', 'Merch', 'O disco pintado vira estampa; o símbolo assina com discrição.')
 page(f'<img class="mock-img" src="{A}novo-traco/rec-tote-discos.webp" alt=""><p class="disc-cap">Ecobag com os discos</p>', 'p-mock', fol())
-one(A + 'novo-traco/rec-hoodie-spray.webp', cap='Hoodie tingido com spray')
 text_page('Digital', 'O azul da gravadora, o spray e o disco como linguagem nas redes.')
 for f in ('rec-post-jazz', 'rec-post-discos', 'rec-post-frase'):
     page(f'<img class="post-img" src="{A}novo-traco/{f}.jpg" alt="">', 'p-post', fol())
@@ -300,16 +287,15 @@ covers = [('pedrinho-rua', 'MC Pedrinho', 'A rua e a batuta do maestro'), ('pedr
           ('pedrinho-tv', 'MC Pedrinho', 'A TV de tubo e a multidão do baile'), ('pedrinho-sorriso', 'MC Pedrinho', 'Retrato com contorno amarelo'),
           ('froid-sol', 'Froid', 'O perfil contra pinceladas amarelas'), ('froid-partitura', 'Froid', 'A partitura refletida nas lentes'),
           ('froid-espelho', 'Froid', 'Violino entre cacos de espelho'), ('froid-janela', 'Froid', 'Uma janela suspensa nas nuvens')]
-for i, (f, t, s) in enumerate(covers):
+for i, (f, t, s) in enumerate([c for c in covers if c[0] in ('pedrinho-rua', 'pedrinho-violino', 'froid-partitura', 'froid-janela')]):
     cover(A + f'nt-sessions/{f}.jpg', t, s, 'top' if i % 2 == 0 and f.startswith('pedrinho') else 'mid')
 page(f'''{head_txt('Coleção', 'Oito capas, uma linguagem.')}
   <div class="covers-all">{''.join(f'<img src="{A}nt-sessions/{f}.jpg" alt="">' for f, _, _ in covers)}</div>''', 'p-covers', fol())
-spread(A + 'nt-sessions/live-teatro-dourado.jpg')
+spread(A + 'nt-sessions/live-teatro-dourado.jpg', force=True)
 text_page('Ao vivo', 'Ingressos esgotados em menos de 15 minutos.',
           '<p>Na estreia ao vivo, no Theatro Municipal do Rio de Janeiro, a identidade virou cenografia: testeira, painéis de LED e telão animados com os traços à mão, num sistema de amarelo e azul sobre preto que conversa com a arquitetura do teatro.</p>')
 spread(A + 'nt-sessions/live-palco.jpg')
 bleed(A + 'nt-sessions/live-papatinho.jpg', '40% center')
-bleed(A + 'nt-sessions/live-teatro-vermelho.jpg', '55% center')
 one(A + 'nt-sessions/live-abraco.jpg', cap='O abraço no fim do show')
 bleed(A + 'nt-sessions/live-l7nnon.jpg')
 one(A + 'nt-sessions/live-lanternas.jpg', cap='A plateia acende as lanternas')
@@ -351,25 +337,25 @@ logo_page('O N pintado à mão da Novo Traço encontra o “Collection” em ser
 color_page('O azul da ecobag, o azul-claro do traço, o amarelo da Novo Traço e o preto e o creme de base.',
            [dict(name='Azul Collection', hex='0E17C2'), dict(name='Azul Tinta', hex='0E008C'), dict(name='Tropical Breeze', hex='87CDE7', pantone='13-4307 TCX'),
             dict(name='Illuminating', hex='F6EA60', pantone='13-0647 TCX'), NT['ms'], dict(name='Creme', hex='F1F0E8')])
-text_page('Estampas', 'Cada peça, uma composição.',
-          '<p>O N gigante pintado à mão nas costas do moletom; as palavras da Novo Traço sob o traço amarelo na camiseta; a tag do Papatinho em branco sobre o azul da ecobag. Em todas, a mesma assinatura: Los Angeles, CA, 2026.</p>')
 page(f'<img class="art-img" src="{A}nt-collection/estampa-moletom.svg" alt=""><p class="esc-cap">Estampa do moletom</p>', 'p-art', fol())
-bleed(A + 'nt-collection/moletom-costas.jpg')
 one(A + 'nt-collection/papatinho-sofa.jpg', 'Papatinho', 'O moletom da coleção no estúdio, com o símbolo NT Collection no peito.')
 page(f'<img class="art-img" src="{A}nt-collection/estampa-camiseta.svg" alt=""><p class="esc-cap">Estampa da camiseta</p>', 'p-art', fol())
 bleed(A + 'nt-collection/camisetas.jpg')
 page(f'<div class="art-field" style="background:#0E17C2"><img class="art-img" src="{A}nt-collection/estampa-ecobag.svg" alt=""></div>', 'p-bleed', fol())
 bleed(A + 'nt-collection/ecobags.jpg')
 page(f'<img class="art-img art-img--wide" src="{A}nt-collection/estampa-assinatura.svg" alt=""><p class="esc-cap">Assinatura da cápsula</p>', 'p-art', fol())
-bleed(A + 'nt-collection/etiqueta.jpg')
 
 # ================= CONTATO + CONTRACAPA =================
 CUR.update(prev=CUR['extra'], extra=[])
 page('''<div class="end"><span class="kicker">Contato</span><p class="statement">Obrigada.</p>
   <dl class="meta meta--end"><dt>WhatsApp</dt><dd>+55 19 97116-3478</dd><dt>Site</dt><dd>isadoracamargo.com.br</dd>
   <dt>LinkedIn</dt><dd>in/isadora-camargo-86a217266</dd><dt>Instagram</dt><dd>@isaccamargo__</dd></dl></div>''', 'p-end')
-page('<span class="cover-site">isadoracamargo.com.br</span>', 'p-back')
-if len(pages) % 2: pages.insert(-1, ('', 'p-blank', None))
+if len(pages) % 2 == 0:
+    # contato na própria contracapa, para não sobrar página em branco
+    end = pages.pop()
+    pages.append((end[0], 'p-end p-back-end', None))
+else:
+    page('<span class="cover-site">isadoracamargo.com.br</span>', 'p-back')
 
 # ---------- índice ----------
 idx = ''.join(f'<li><span class="i-num">{n}</span><span class="i-name">{nm}<small>{t}</small></span><span class="i-page">{START[n]:02d}</span></li>' for n, nm, t in PROJ)

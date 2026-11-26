@@ -255,3 +255,7 @@ img { display: block; }
 .art-img--wide { width: 70%; }
 .art-field { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
 .art-field .art-img { width: 72%; }
+
+/* capa: documentação do case */
+.cover-kicker { display: block; font-size: 7pt; letter-spacing: .14em; text-transform: uppercase; color: var(--soft); margin-bottom: 6mm; }
+.cover-sub { font-family: var(--mono) !important; font-size: 7.6pt !important; line-height: 1.6; color: var(--soft); max-width: 110mm; margin: 0 0 14mm; letter-spacing: 0 !important; }
