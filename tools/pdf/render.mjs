@@ -1,4 +1,4 @@
-// Renderiza print/portfolio.html em PDF (A4 paisagem) com o Chromium do Playwright.
+// Renderiza print/portfolio.html em PDF (A4 retrato) com o Chromium do Playwright.
 // Uso: node tools/pdf/render.mjs [saida.pdf] [--png pasta]  (--png gera prévias das páginas)
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -16,10 +16,10 @@ try { ({ chromium } = await import('playwright')); }
 catch { const { execSync } = await import('node:child_process');
   ({ chromium } = await import(path.join(execSync('npm root -g').toString().trim(), 'playwright/index.mjs'))); }
 const browser = await chromium.launch({ executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium' });
-const page = await browser.newPage({ viewport: { width: 1123, height: 794 }, deviceScaleFactor: 2 });
+const page = await browser.newPage({ viewport: { width: 794, height: 1123 }, deviceScaleFactor: 2 });
 await page.goto('file://' + path.join(ROOT, 'print/portfolio.html'), { waitUntil: 'networkidle' });
 await page.evaluate(() => document.fonts.ready);
-await page.pdf({ path: out, width: '297mm', height: '210mm', printBackground: true, preferCSSPageSize: true });
+await page.pdf({ path: out, width: '210mm', height: '297mm', printBackground: true, preferCSSPageSize: true });
 console.log('PDF:', out);
 
 if (pngDir) {
