@@ -174,7 +174,7 @@ START = {}
 # ================= CAPA + ÍNDICE =================
 if os.environ.get('COVER') == 'grid':
     page(f'''<div class="g-row g-head"><span>Isadora Camargo</span><span>Portfólio</span><span>Case</span><span>2026</span></div>
-      <div class="g-mid"><img class="g-mark" src="{A}novo-traco/escritos/novo-traco.svg" alt=""></div>
+      <div class="g-mid"></div>
       <div class="g-title"><h1>Case<br>Novo Traço</h1><p class="cv-sub">Imagens complementares ao portfólio</p></div>
       <div class="g-row g-info">
         <div><dt>Cliente</dt><dd>Novo Traço</dd></div><div><dt>Ano</dt><dd>2025 — 2026</dd></div>
@@ -182,7 +182,6 @@ if os.environ.get('COVER') == 'grid':
       <div class="g-row g-foot"><span>Identidade visual</span><span>Sistema de marca</span><span>Submarcas</span><span>isadoracamargo.com.br</span></div>''', 'p-cover p-cover--dark p-cover--grid')
 else:
     page(f'''<div class="cv-top"><span>Isadora Camargo</span><span>2026</span></div>
-      <img class="cv-mark" src="{A}novo-traco/escritos/novo-traco.svg" alt="">
       <div class="cv-title"><h1>Case<br>Novo Traço</h1>
         <p class="cv-sub">Imagens complementares ao portfólio</p>
         <p class="cv-list">Novo Traço · Orquestra Novo Traço · NT Records · NT Sessions · LatinJazz Brazil · NT Collection</p></div>

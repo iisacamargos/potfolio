@@ -304,3 +304,5 @@ img { display: block; }
 .g-info dd { margin: 0; color: #f4f2ec; font-size: 7.2pt; letter-spacing: .04em; text-transform: none; font-family: var(--mono); }
 .g-foot { color: #77776f; }
 .g-mark { width: calc(100% - 6mm); height: auto; max-height: 112mm; object-fit: contain; object-position: left top; margin: 12mm 0 0 6mm; }
+/* capa sem logo: título maior */
+.cv-title h1, .g-title h1 { font-size: 78pt; }
