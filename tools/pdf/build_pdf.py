@@ -241,12 +241,11 @@ page(f'<img class="mock-img" src="{A}novo-traco/orq-blusao.webp" alt=""><p class
 bleed(A + 'novo-traco/orq-retrato-1.jpg', 'left center')
 bleed(A + 'novo-traco/orq-retrato-2.jpg')
 one(A + 'novo-traco/orq-batuta.jpg', 'Detalhe', 'O símbolo no peito do maestro, a batuta na mão.')
-bleed(A + 'novo-traco/orq-violinistas.jpg')
 one(A + 'novo-traco/orq-bastidores.jpg', 'Bastidores', 'Gravação de sessão: a marca presente em cada detalhe da produção.')
-spread(A + 'novo-traco/orq-silhueta.jpg', 'center')
-stack((A + 'novo-traco/orq-grupo-costas.jpg', 'Os músicos de costas: ONT, ONT, ONT'), (A + 'novo-traco/orq-grupo-costas-2.jpg', ''), 'O grupo', 'Juntos, os moletons formam a sigla repetida: a orquestra como um só corpo.')
+spread(A + 'novo-traco/orq-silhueta.jpg', 'center', force=True)
+bleed(A + 'novo-traco/orq-violinistas.jpg')
+one(A + 'novo-traco/orq-grupo-costas.jpg', 'O grupo', 'Juntos, os moletons formam a sigla repetida: a orquestra como um só corpo.')
 one(A + 'novo-traco/orq-grupo-panorama.jpg', cap='A orquestra completa')
-spread(A + 'novo-traco/orq-foto.jpg', force=True)
 
 # ================= 03 NT RECORDS =================
 project('03', 'NT Records', extra=[A + 'novo-traco/rec-hoodie-preto.jpg', A + 'novo-traco/rec-garrafa-inox.jpg'])
@@ -349,11 +348,20 @@ opener('Uma coleção-cápsula da Novo Traço com Papatinho: o traço da marca, 
 text_page('Conceito', 'Duas assinaturas na mesma peça.',
           '<p>A NT Collection leva o universo da Novo Traço para o vestuário em parceria com artistas. Na primeira edição, com Papatinho, o N pintado à mão da marca encontra a tag manuscrita do produtor, a serifa do “Collection” e as informações da cápsula: Los Angeles, CA, 2026.</p>')
 logo_page('O N pintado à mão da Novo Traço encontra o “Collection” em serifa: uma assinatura pensada para dividir espaço com a tag de cada artista convidado.', tile(A + 'nt-collection/logo.svg', 'FFFFFF', 'w75'))
-bleed(A + 'nt-collection/etiqueta.jpg')
-one(A + 'nt-collection/papatinho-sofa.jpg', 'Papatinho', 'O moletom da coleção no estúdio, com o símbolo NT Collection no peito.')
-bleed(A + 'nt-collection/ecobags.jpg')
-bleed(A + 'nt-collection/camisetas.jpg')
+color_page('O azul da ecobag, o azul-claro do traço, o amarelo da Novo Traço e o preto e o creme de base.',
+           [dict(name='Azul Collection', hex='0E17C2'), dict(name='Azul Tinta', hex='0E008C'), dict(name='Tropical Breeze', hex='87CDE7', pantone='13-4307 TCX'),
+            dict(name='Illuminating', hex='F6EA60', pantone='13-0647 TCX'), NT['ms'], dict(name='Creme', hex='F1F0E8')])
+text_page('Estampas', 'Cada peça, uma composição.',
+          '<p>O N gigante pintado à mão nas costas do moletom; as palavras da Novo Traço sob o traço amarelo na camiseta; a tag do Papatinho em branco sobre o azul da ecobag. Em todas, a mesma assinatura: Los Angeles, CA, 2026.</p>')
+page(f'<img class="art-img" src="{A}nt-collection/estampa-moletom.svg" alt=""><p class="esc-cap">Estampa do moletom</p>', 'p-art', fol())
 bleed(A + 'nt-collection/moletom-costas.jpg')
+one(A + 'nt-collection/papatinho-sofa.jpg', 'Papatinho', 'O moletom da coleção no estúdio, com o símbolo NT Collection no peito.')
+page(f'<img class="art-img" src="{A}nt-collection/estampa-camiseta.svg" alt=""><p class="esc-cap">Estampa da camiseta</p>', 'p-art', fol())
+bleed(A + 'nt-collection/camisetas.jpg')
+page(f'<div class="art-field" style="background:#0E17C2"><img class="art-img" src="{A}nt-collection/estampa-ecobag.svg" alt=""></div>', 'p-bleed', fol())
+bleed(A + 'nt-collection/ecobags.jpg')
+page(f'<img class="art-img art-img--wide" src="{A}nt-collection/estampa-assinatura.svg" alt=""><p class="esc-cap">Assinatura da cápsula</p>', 'p-art', fol())
+bleed(A + 'nt-collection/etiqueta.jpg')
 
 # ================= CONTATO + CONTRACAPA =================
 CUR.update(prev=CUR['extra'], extra=[])
