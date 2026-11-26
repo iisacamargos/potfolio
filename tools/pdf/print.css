@@ -188,3 +188,9 @@ img { display: block; }
 .mosaic--m3v { grid-template-rows: repeat(3, 1fr); }
 .mosaic--m3h { grid-template-columns: repeat(3, 1fr); }
 .p-blank { }
+
+/* ---------- faixa panorâmica na página dupla ---------- */
+.p-band { position: relative; }
+.band-img { position: absolute; top: 50%; transform: translateY(-50%); width: 200%; max-width: none; height: auto; }
+.band-img--left { left: 0; }
+.band-img--right { left: -100%; }

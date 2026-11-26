@@ -28,11 +28,11 @@ def next_is_verso(): return (len(pages) + 1) % 2 == 0
 CUR = {'n': '', 'nm': '', 'extra': [], 'prev': []}   # projeto atual (rodapé e imagens de reserva)
 def fol(): return (CUR['n'], CUR['nm'])
 
-def pad_to_verso():
+def pad_to_verso(prev_first=False):
     """Garante que a próxima página seja um verso (par). Se não for, entra uma
     imagem sangrada de reserva do projeto atual (ou uma página em branco)."""
     if next_is_verso(): return
-    pool = CUR['prev'] if CUR['prev'] else CUR['extra']
+    pool = (CUR['prev'] or CUR['extra']) if prev_first else (CUR['extra'] or CUR['prev'])
     if pool: bleed(pool.pop(0))
     else: page('', 'p-blank')
 
@@ -55,7 +55,7 @@ def head_txt(kicker, text, statement=False):
 # ---------- páginas ----------
 def divider(num, name, color, ink=None):
     """Verso inteiro na cor da marca, de frente para a abertura do projeto."""
-    pad_to_verso()
+    pad_to_verso(prev_first=True)
     ink = ink or on(color)
     page(f'<div class="div-field" style="background:#{color};color:{ink}"><span class="div-num">{num}</span><span class="div-name">{name}</span></div>', 'p-bleed')
 
@@ -119,6 +119,12 @@ def spread(src, pos_y='center'):
     for side in ('left', 'right'):
         page(f'<img class="spread-img spread-img--{side}" src="{src}" style="object-position:{side} {pos_y}" alt="">', 'p-bleed')
 
+def spread_band(src):
+    """Foto panorâmica numa faixa que atravessa a página dupla, com branco acima e abaixo."""
+    pad_to_verso()
+    for side in ('left', 'right'):
+        page(f'<img class="band-img band-img--{side}" src="{src}" alt="">', 'p-bleed p-band')
+
 def mosaic(kind, imgs, pos=None):
     pos = pos or ['center'] * len(imgs)
     cells = ''.join(f'<img src="{s}" style="object-position:{p}" alt="">' for s, p in zip(imgs, pos))
@@ -181,6 +187,13 @@ type_page('Uma paleta tipográfica: cada segmento de comunicação tem sua voz. 
 one(A + 'novo-traco/nt-livro.jpg', 'Aplicações', 'Box de livros com o propósito da marca na capa.')
 one(A + 'novo-traco/nt-cartazes.jpg', cap='Cartazes NT Academy e NT Music Sessions')
 one(A + 'novo-traco/nt-stories.jpg', cap='Stories de agenda de shows')
+text_page('Vestuário', 'A marca vestida por quem faz a música.',
+          '<p>A assinatura manuscrita vai para moletons, bonés, camisetas e ecobags, usados pela equipe, pelos músicos e pelos artistas convidados nas sessões e nos bastidores.</p>')
+bleed(A + 'novo-traco/nt-moletom-2.jpg')
+one(A + 'novo-traco/nt-sessao-moletom.jpg', cap='Sessão com a orquestra')
+bleed(A + 'novo-traco/nt-camiseta-pb.jpg')
+one(A + 'novo-traco/nt-moletom-1.jpg', cap='Moletom e boné Novo Traço')
+stack((A + 'novo-traco/nt-camiseta-marrom.jpg', 'Camiseta'), (A + 'novo-traco/nt-ecobag-vermelha.jpg', 'Ecobag'))
 text_page('Resultado', 'Um sistema que sustenta toda a comunicação do grupo.',
           '<p>Dos eventos ao digital, cada novo projeto nasce dentro dele. Como diretora de arte, coordeno um time de três designers e desenvolvo os manuais e guidelines que mantêm a marca consistente.</p>')
 
@@ -198,7 +211,18 @@ bleed(V + 'orquestra-simbolo.jpg', '62% center')
 color_page('Três cores: o preto da tinta, o branco do papel e o amarelo como acento.', [NT['ms'], NT['cd'], NT['il']])
 type_page('A Roslindale traz o refinamento de um programa de concerto; a Margem organiza as informações.', [dict(ROSLINDALE, use='Títulos e nomes'), MARGEM])
 one(V + 'orquestra-evento.jpg', 'Aplicações', 'Post do evento: Orquestra NT convida L7NNON.')
-stack((A + 'novo-traco/orq-moletom-branco.jpg', 'Símbolo bordado'), (A + 'novo-traco/orq-moletom-preto.jpg', 'Símbolo em escala'))
+text_page('Vestuário', 'O símbolo veste a orquestra.',
+          '<p>Nos ensaios, nas sessões e nos bastidores, os músicos usam o moletom ONT: o símbolo no peito, a assinatura “orquestra Novo traço” logo abaixo. A identidade sai do papel e passa a fazer parte do grupo.</p>')
+bleed(A + 'novo-traco/orq-retrato-violino.jpg')
+stack((A + 'novo-traco/orq-moletom-branco.jpg', 'Símbolo bordado no peito'), (A + 'novo-traco/orq-moletom-preto.jpg', 'Símbolo em escala nas costas'))
+bleed(A + 'novo-traco/orq-retrato-1.jpg', 'left center')
+bleed(A + 'novo-traco/orq-retrato-2.jpg')
+one(A + 'novo-traco/orq-batuta.jpg', 'Detalhe', 'O símbolo no peito do maestro, a batuta na mão.')
+spread(A + 'novo-traco/orq-grupo-costas.jpg')
+bleed(A + 'novo-traco/orq-violinistas.jpg')
+one(A + 'novo-traco/orq-bastidores.jpg', 'Bastidores', 'Gravação de sessão: a marca presente em cada detalhe da produção.')
+spread_band(A + 'novo-traco/orq-grupo-panorama.jpg')
+spread(A + 'novo-traco/orq-sessao.jpg')
 one(A + 'novo-traco/orq-foto.jpg', cap='Ensaio')
 
 # ================= 03 NT RECORDS =================
