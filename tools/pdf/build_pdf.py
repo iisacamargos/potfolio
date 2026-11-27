@@ -186,7 +186,7 @@ page('__INDEX__', 'p-index')
 project('01', 'Novo Traço', extra=[])
 divider('01', 'Novo Traço', 'F6EA60'); START['01'] = len(pages)
 opener('Uma marca-mãe para um grupo de arte e música: a expressividade brasileira traduzida em traço, cor e contraste.',
-       [('Marca', 'Marca-mãe do grupo Novo Traço'), ('Período', '1º semestre de 2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Identidade, sistema de marca, submarcas e guidelines')],
+       [('Período', '1º semestre de 2026'), ('Escopo', 'Identidade visual e direção artística')],
        A + 'novo-traco/escritos/novo-traco.svg', 'tall')
 page('''<div class="pillars">
   <div class="pl"><span class="kicker">O que a Novo Traço é</span><p class="pl-h">Uma empresa de cultura.</p></div>
@@ -224,7 +224,7 @@ bleed(A + 'novo-traco/nt-ecobag-estudio.jpg', '35% center')
 project('02', 'Orquestra Novo Traço', 'Orquestra<br>Novo Traço', extra=[])
 divider('02', 'Orquestra Novo Traço', 'F0EFEB'); START['02'] = len(pages)
 opener('Uma orquestra que toca com artistas da música urbana, com identidade nascida da partitura.',
-       [('Marca', 'Submarca da Novo Traço · Artista'), ('Período', '1º semestre de 2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Símbolo, identidade, eventos e vestuário')],
+       [('Período', '1º semestre de 2026'), ('Escopo', 'Identidade visual e direção artística')],
        A + 'novo-traco/orq-logo-vertical.svg', 'wide')
 text_page('Conceito', 'Uma partitura: clareza, elegância e respiro.',
           '<p>A identidade deriva da marca-mãe, com mais espaço em branco e predominância do preto sobre fundo claro.</p>')
@@ -249,7 +249,7 @@ one(A + 'novo-traco/orq-grupo-panorama.jpg', cap='A orquestra completa')
 project('03', 'NT Records', extra=[A + 'novo-traco/rec-garrafa-inox.jpg'])
 divider('03', 'NT Records', '003AE7'); START['03'] = len(pages)
 opener('A gravadora do grupo: o traço da marca-mãe ganha tinta spray, textura urbana e um grid que dá solidez.',
-       [('Marca', 'Submarca da Novo Traço · Gravadora'), ('Período', '1º semestre de 2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Símbolo, identidade, papelaria, merch e digital')],
+       [('Período', '1º semestre de 2026'), ('Escopo', 'Identidade visual e direção artística')],
        A + 'novo-traco/rec-logo-vertical.svg', 'tall')
 text_page('Conceito', 'Do pincel à tinta spray. Do traço livre ao grid.',
           '<p><i>Existir para que a música que nasceu no palco e no estúdio continue acessível depois da luz apagar.</i></p><p>O spray traz urbanidade e textura; as linhas retas, a seriedade de uma marca sólida.</p>')
@@ -282,7 +282,7 @@ for f in ('rec-post-jazz', 'rec-post-discos', 'rec-post-frase'):
 project('04', 'NT Sessions', extra=[A + 'nt-sessions/live-emocao.jpg'])
 divider('04', 'NT Sessions', 'F6EA60'); START['04'] = len(pages)
 opener('A orquestra encontra a música urbana: sessões gravadas, EPs e um show esgotado no Theatro Municipal do Rio.',
-       [('Marca', 'Submarca da Novo Traço · Produto musical'), ('Período', '1º semestre de 2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Identidade, capas, motion e cenografia em LED')],
+       [('Período', '1º semestre de 2026'), ('Escopo', 'Identidade visual e direção artística')],
        A + 'nt-sessions/logo.svg', 'tall')
 text_page('Conceito', 'O erudito e a rua no mesmo palco.',
           '<p>Cada edição é uma collab entre a Orquestra Novo Traço e um artista urbano: o repertório ganha arranjos para orquestra, é gravado em sessão e vira EP. Já passaram L7NNON e Papatinho, MC Pedrinho e Froid.</p>')
@@ -311,7 +311,7 @@ one(A + 'nt-sessions/live-lanternas.jpg', cap='A plateia acende as lanternas')
 project('05', 'LatinJazz Brazil', 'LatinJazz<br>Brazil', extra=[A + 'latinjazz/cartaz.jpg'])
 divider('05', 'LatinJazz Brazil', '00733C', '#F6EA60'); START['05'] = len(pages)
 opener('A marca de um gênero musical: o latin jazz que também pertence ao Brasil, com Tropicália, colagem e um logo desenhado à mão.',
-       [('Marca', 'Submarca da Novo Traço · Marca de um gênero musical'), ('Período', '1º semestre de 2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Logotipo, identidade visual, motion e aplicações')],
+       [('Período', '1º semestre de 2026'), ('Escopo', 'Identidade visual e direção artística')],
        A + 'latinjazz/logo-vetor.svg', 'tall')
 text_page('Conceito', 'Encontros e atravessamentos culturais.',
           '<p>O conceito nasce do reconhecimento de uma sonoridade que pertence ao Brasil. Cores vibrantes inspiradas na Tropicália, texturas, traços e composições expressivas traduzem essa afirmação.</p>'
@@ -334,7 +334,7 @@ text_page('Uma marca Novo Traço', 'Um vocabulário próprio, pensado para se me
 project('06', 'NT Collection', extra=[])
 divider('06', 'NT Collection', '161616'); START['06'] = len(pages)
 opener('Uma coleção-cápsula da Novo Traço com Papatinho: o traço da marca, a tag do produtor e Los Angeles 2026 numa mesma peça.',
-       [('Marca', 'Submarca da Novo Traço · Produto educacional'), ('Período', '1º semestre de 2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Coleção, estampas, etiquetas e ecobags')],
+       [('Período', '1º semestre de 2026'), ('Escopo', 'Identidade visual, direção artística e website')],
        A + 'nt-collection/logo.svg', 'wide')
 text_page('Conceito', 'Duas assinaturas na mesma peça.',
           '<p>A NT Collection leva o universo da Novo Traço para o vestuário em parceria com artistas. Na primeira edição, com Papatinho, o N pintado à mão da marca encontra a tag manuscrita do produtor, a serifa do “Collection” e as informações da cápsula: Los Angeles, CA, 2026.</p>')
