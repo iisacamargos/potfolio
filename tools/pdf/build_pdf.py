@@ -375,7 +375,7 @@ for i, (b, cls, folio) in enumerate(pages, 1):
 css = open(os.path.join(os.path.dirname(__file__), 'print.css')).read()
 out = f'''<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Portfólio — Isadora Camargo</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Lexend:wght@300&family=Outfit:wght@400&family=Space+Grotesk:wght@400&family=Inter:wght@300;700&family=Lato:wght@300&display=block" rel="stylesheet">
-<style>{css}</style></head><body class="{'lines' if os.environ.get('LINES') else ''}">
+<style>{css}</style></head><body class="{'' if os.environ.get('NOLINES') else 'lines'}">
 {body}</body></html>'''
 open(os.path.join(ROOT, 'print/portfolio.html'), 'w').write(out)
 print(len(pages), 'páginas')
