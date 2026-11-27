@@ -168,7 +168,7 @@ NT = dict(cd=dict(name='Cloud Dancer', hex='F0EFEB', pantone='11-4201 TCX'), ms=
           tb=dict(name='Tropical Breeze', hex='87CDE7', pantone='13-4307 TCX'), ft=dict(name='First Tree', hex='00733C', pantone='18-6031 TCX'),
           il=dict(name='Illuminating', hex='F6EA60', pantone='13-0647 TCX'))
 PROJ = [('01', 'Novo Traço', 'Marca-mãe · Grupo de arte e música'),
-        ('02', 'Orquestra Novo Traço', 'Submarca · Orquestra'),
+        ('02', 'Orquestra Novo Traço', 'Submarca · Artista'),
         ('03', 'NT Records', 'Submarca · Gravadora'),
         ('04', 'NT Sessions', 'Submarca · Produto musical'),
         ('05', 'LatinJazz Brazil', 'Submarca · Marca de um gênero musical'),
@@ -224,7 +224,7 @@ bleed(A + 'novo-traco/nt-ecobag-estudio.jpg', '35% center')
 project('02', 'Orquestra Novo Traço', 'Orquestra<br>Novo Traço', extra=[])
 divider('02', 'Orquestra Novo Traço', 'F0EFEB'); START['02'] = len(pages)
 opener('Uma orquestra que toca com artistas da música urbana, com identidade nascida da partitura.',
-       [('Marca', 'Submarca da Novo Traço · Orquestra'), ('Período', '1º semestre de 2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Símbolo, identidade, eventos e vestuário')],
+       [('Marca', 'Submarca da Novo Traço · Artista'), ('Período', '1º semestre de 2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Símbolo, identidade, eventos e vestuário')],
        A + 'novo-traco/orq-logo-vertical.svg', 'wide')
 text_page('Conceito', 'Uma partitura: clareza, elegância e respiro.',
           '<p>A identidade deriva da marca-mãe, com mais espaço em branco e predominância do preto sobre fundo claro.</p>')
