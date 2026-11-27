@@ -189,7 +189,7 @@ opener('Uma marca-mãe para um grupo de arte e música: a expressividade brasile
        [('Período', '1º semestre de 2026'), ('Escopo', 'Identidade visual e direção artística')],
        A + 'novo-traco/escritos/novo-traco.svg', 'tall')
 page('''<div class="pillars">
-  <div class="pl"><span class="kicker">O que a Novo Traço é</span><p class="pl-h">Uma empresa de cultura.</p></div>
+  <div class="pl"><span class="kicker">O que a Novo Traço é</span><p class="pl-h">Uma produtora de cultura.</p></div>
   <div class="pl"><span class="kicker">O que a Novo Traço faz</span><p class="pl-h">Eventos e projetos culturais.</p></div>
   <div class="pl"><span class="kicker">O que a Novo Traço fala</span><p class="pl-h">Todos são dignos de cultura.</p></div>
 </div>''', 'p-pillars', fol())
