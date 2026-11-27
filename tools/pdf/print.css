@@ -342,3 +342,5 @@ img { display: block; }
 .pl-h { font-family: var(--sans); font-weight: 600; font-size: 19pt; line-height: 1.08; letter-spacing: -.03em; margin-bottom: 3mm; }
 .pl p:not(.pl-h) { color: #4a4a4a; max-width: 115mm; }
 .lines .pl .kicker { border-top: 0; padding-top: 0; }
+.pl { padding: 8mm 0 12mm; }
+.pl-h { font-size: 24pt; }
