@@ -188,9 +188,16 @@ divider('01', 'Novo Traço', 'F6EA60'); START['01'] = len(pages)
 opener('Uma marca-mãe para um grupo de arte e música: a expressividade brasileira traduzida em traço, cor e contraste.',
        [('Marca', 'Marca-mãe do grupo Novo Traço'), ('Período', '1º semestre de 2026'), ('Papel', 'Direção de arte'), ('Escopo', 'Identidade, sistema de marca, submarcas e guidelines')],
        A + 'novo-traco/escritos/novo-traco.svg', 'tall')
-text_page('Conceito', 'Contrastes e expressividade.',
-          '<p>A identidade nasce da expressividade como linguagem vital do povo brasileiro, onde a arte é ferramenta de sobrevivência, comunicação e identidade. Erudito e popular, tradição e ruptura, dor e celebração.</p>'
-          '<p>O desafio: reunir educação, música ao vivo, orquestra e gravadora sob uma mesma voz, sem apagar a personalidade de cada projeto.</p>')
+page('''<div class="pillars">
+  <div class="pl"><span class="kicker">O que a marca é</span><p class="pl-h">Uma empresa de cultura.</p>
+    <p>A Novo Traço produz cultura e a coloca no mundo, com um propósito simples e ambicioso: fazer a arte chegar a todas as pessoas. Uma marca humana, feita para vibrar, feita para marcar.</p></div>
+  <div class="pl"><span class="kicker">O que a marca faz</span><p class="pl-h">Eventos e projetos culturais.</p>
+    <p>Uma agência que idealiza e produz eventos e projetos culturais, viabilizados por leis de incentivo e também por parcerias e investimento próprio.</p></div>
+  <div class="pl"><span class="kicker">O que a marca fala</span><p class="pl-h">Todos são dignos de cultura.</p>
+    <p>Cultura não é privilégio, é direito. A Novo Traço acredita na potência humana e no que acontece quando as pessoas se encontram: um momento musical, um show, um evento, uma oficina de capacitação, a celebração da cultura. É essa conexão que atravessa cada projeto e cada submarca.</p></div>
+  <div class="pl"><span class="kicker">Conceito</span><p class="pl-h">Contrastes e expressividade.</p>
+    <p>A expressividade como linguagem vital do povo brasileiro: erudito e popular, tradição e ruptura, dor e celebração, reunidos sob uma mesma voz.</p></div>
+</div>''', 'p-pillars', fol())
 bleed(A + 'novo-traco/processo-3.jpg')
 text_page('Processo criativo', 'Feito à mão, pelas pessoas que vivem a marca.',
           '<p>Os traços não foram desenhados no computador. Nasceram de uma dinâmica com a equipe à beira-mar, no Rio de Janeiro: cada pessoa traçou com marcador, pincel e tinta as palavras que definem o grupo — alegria, música, arte, emoção.</p>'

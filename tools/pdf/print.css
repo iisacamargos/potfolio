@@ -332,3 +332,13 @@ img { display: block; }
 .lines .fig figcaption, .lines .disc-cap, .lines .esc-cap { border-top: var(--rule); padding-top: 1.6mm; }
 /* capa: linhas de cima e de baixo em duas metades do grid */
 .p-cover--grid .g-head, .p-cover--grid .g-foot { grid-template-columns: 1fr 1fr; }
+
+/* ---------- o que a marca é / faz / fala ---------- */
+.p-pillars { justify-content: flex-end; }
+.pillars { display: flex; flex-direction: column; margin-bottom: 10mm; }
+.pl { border-top: .2mm solid #d6d6d2; padding: 6mm 0 9mm; max-width: 140mm; }
+.pl:last-child { border-bottom: .2mm solid #d6d6d2; }
+.pl .kicker { margin-bottom: 3mm; }
+.pl-h { font-family: var(--sans); font-weight: 600; font-size: 19pt; line-height: 1.08; letter-spacing: -.03em; margin-bottom: 3mm; }
+.pl p:not(.pl-h) { color: #4a4a4a; max-width: 115mm; }
+.lines .pl .kicker { border-top: 0; padding-top: 0; }
