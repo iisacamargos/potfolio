@@ -230,20 +230,17 @@ text_page('Conceito', 'Uma partitura: clareza, elegância e respiro.',
           '<p>A identidade deriva da marca-mãe, com mais espaço em branco e predominância do preto sobre fundo claro.</p>')
 logo_page('A equipe já chamava a orquestra de “ONT”, e a sigla virou símbolo. As letras se apoiam umas nas outras, como os instrumentos de uma orquestra, em que nenhum atua isolado.',
           tile(A + 'novo-traco/ont.svg', 'FFFFFF', 'w75'), 'Símbolo')
-one(A + 'novo-traco/orq-mockup.jpg')
 color_page('Três cores: o preto da tinta, o branco do papel e o amarelo como acento.', [NT['ms'], NT['cd'], NT['il']])
 one(A + 'novo-traco/orq-cartoes.jpg', 'Papelaria', 'Cartões em creme e amarelo: o símbolo recortado pela borda e os nomes em Roslindale.')
 one(A + 'novo-traco/orq-batuta-arte.jpg', 'Digital', 'A batuta do maestro sobre o símbolo: colagem, grão e o amarelo da marca.')
-text_page('Vestuário', 'O símbolo veste a orquestra.',
-          '<p>Nos ensaios, nas sessões e nos bastidores, os músicos usam o moletom ONT: o símbolo no peito, a assinatura “orquestra Novo traço” logo abaixo. A identidade sai do papel e passa a fazer parte do grupo.</p>')
 bleed(A + 'novo-traco/orq-retrato-violino.jpg')
 page(f'<img class="mock-img" src="{A}novo-traco/orq-hoodie-costas.webp" alt=""><p class="disc-cap">O símbolo em escala nas costas</p>', 'p-mock', fol())
 page(f'<img class="mock-img" src="{A}novo-traco/orq-blusao.webp" alt=""><p class="disc-cap">Assinatura completa no peito</p>', 'p-mock', fol())
 bleed(A + 'novo-traco/orq-retrato-1.jpg', 'left center')
 bleed(A + 'novo-traco/orq-retrato-2.jpg')
-spread(A + 'novo-traco/orq-silhueta.jpg', 'center', force=True)
 bleed(A + 'novo-traco/orq-violinistas.jpg')
 one(A + 'novo-traco/orq-grupo-panorama.jpg', cap='A orquestra completa')
+spread(A + 'novo-traco/orq-silhueta.jpg', 'center', force=True)
 
 # ================= 03 NT RECORDS =================
 project('03', 'NT Records', extra=[A + 'novo-traco/rec-garrafa-inox.jpg'])
